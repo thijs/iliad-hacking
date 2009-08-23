@@ -1,0 +1,11 @@
+Package: lesstif
+Version: 0.94.4-1
+Description: lesstif library
+Section: libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: lesstif-0.94.4
+Homepage: unknown
+Depends: libxp (>= 0.0cvs20051025), libxt6 (>= 0.1.5), libsm6 (>= 6.0.3), libice6 (>= 6.3.3), libxext6 (>= 0.0cvs20051025), libx11-6 (>= 6.2.1cvs20051025), libxau0 (>= 0.1.1), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Source: http://surfnet.dl.sourceforge.net/sourceforge/lesstif/lesstif-0.94.4.tar.bz2 file://man2html.patch;patch=1

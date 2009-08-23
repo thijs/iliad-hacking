@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: Xau
+Description: X authorization file management libary
+Version: 0.1.1
+Libs: -L${libdir} -lXau
+Cflags: -I${includedir}

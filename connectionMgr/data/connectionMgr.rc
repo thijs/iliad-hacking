@@ -1,0 +1,274 @@
+#
+# Theme : connection manager application
+# -----
+
+#
+#  common styles
+#
+style "bar_666_75_grey"
+{
+    bg_pixmap[NORMAL] = "Bar_666_75_grey.png"
+}
+
+style "bar_666_115_grey"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "bar_666_140_grey"
+{
+    bg_pixmap[NORMAL] = "Bar_666_140_grey.png"
+}
+
+style "bar_666_168_grey"
+{
+    bg_pixmap[NORMAL] = "Bar_666_168_grey.png"
+}
+
+style "bar_666_245_grey"
+{
+    bg_pixmap[NORMAL] = "Bar_666_245_grey.png"
+}
+
+style "bar_666_273_grey"
+{
+    bg_pixmap[NORMAL] = "Bar_666_273_grey.png"
+}
+
+#
+# background
+#
+style "screenBackground"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+style "titleBackground"
+{
+    bg_pixmap[NORMAL] = "Titlebar_black.png"
+}
+
+style "titleItem"
+{
+    font_name = "Bitstream Vera Sans 18"
+    fg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+style "settingsArea"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+#
+#  gtkProfileGroup
+#
+style "profileGroupBackground"
+{
+    bg_pixmap[NORMAL] = "Bar_666_547_grey.png"
+}
+
+style "profileGroupInfoText"
+{
+    font_name = "Bitstream Vera Sans 7"
+}
+
+#
+# GtkProfileEntry
+#
+style "profileEntrySignal0Background"
+{
+    bg_pixmap[NORMAL] = "signal_strength0.png"
+}
+
+style "profileEntrySignal1Background"
+{
+    bg_pixmap[NORMAL] = "signal_strength1.png"
+}
+
+style "profileEntrySignal2Background"
+{
+    bg_pixmap[NORMAL] = "signal_strength2.png"
+}
+
+style "profileEntrySignal3Background"
+{
+    bg_pixmap[NORMAL] = "signal_strength3.png"
+}
+
+style "profileEntrySignal4Background"
+{
+    bg_pixmap[NORMAL] = "signal_strength4.png"
+}
+
+style "profileEntryEncrImgBackground"
+{
+    bg_pixmap[NORMAL] = "key.png"
+}
+
+style "profileEntryStatus"
+{
+    font_name = "Bitstream Vera Sans 6.5"
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+    fg[ACTIVE]= "#aaaaaa"
+}
+
+#
+# GtkSettingItemTextEntry
+#
+style "settingitemTeBackground"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "settingitemTeLabel"
+{
+    font_name = "Bitstream Vera Sans 6.5"
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+style "settingitemTeEntry"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL]= {1.0, 1.0, 1.0}
+}
+
+#
+# GtkInfoItem
+#
+style "infoitemBackground"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "infoitemIcon"
+{
+    bg_pixmap[NORMAL] = "Referencematerials.png"
+}
+
+style "infoitemOkIcon"
+{
+    bg_pixmap[NORMAL] = "Icon_checked.png"
+}
+
+style "infoitemFailedIcon"
+{
+    bg_pixmap[NORMAL] = "Icon_warning.png"
+}
+
+style "infoitemText"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+#
+#  gtkSettingItem
+#
+style "settingitemBackground"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+style "settingitemClientAreaBackground"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+style "settingitemHeader"
+{
+    font_name = "Bitstream Vera Sans bold 7"
+    fg[NORMAL]= {1.0, 1.0, 1.0}
+}
+
+style "settingitemInfotext"
+{
+    font_name = "Bitstream Vera Sans 7"
+}
+
+style "settingitemHeaderBackground"
+{
+    bg_pixmap[NORMAL] = "Rootbar.png"
+}
+
+style "noteBook"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+style "button_grey"
+{
+    engine "pixmap" {
+        image 
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = IN
+            file            = "Btn_190_35_black.png"
+            stretch         = TRUE
+        }
+        image 
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = OUT
+            file            = "Btn_190_35_grey.png"
+            stretch         = TRUE
+        }
+    }
+}
+
+style "button_grey_label"
+{
+    font_name = "Bitstream Vera Sans bold 6.5"
+
+    fg[PRELIGHT] = "black"
+    fg[NORMAL]   = "black"
+    fg[ACTIVE]   = "#aaaaaa"
+}
+
+widget_class "*GtkNotebook*" style "noteBook"
+
+widget "*edit_ok_button" style "button_grey"
+widget "*edit_ok_button.GtkLabel" style "button_grey_label"
+
+widget "*screen_background" style "screenBackground"
+widget "*padding" style "screenBackground"
+widget "*title_background" style "titleBackground"
+widget "*title_item" style "titleItem"
+widget "*settings_area" style "settingsArea"
+
+widget "*settingitem_background" style "settingitemBackground"
+widget "*settingitem_header" style "settingitemHeader"
+widget "*settingitem_infotext" style "settingitemInfotext"
+widget "*settingitem_headerbackground" style "settingitemHeaderBackground"
+widget "*settingitem_clientArea_background" style "settingitemClientAreaBackground"
+
+widget "*profile_group_background" style "profileGroupBackground"
+widget "*profile_group_info_text" style "profileGroupInfoText"
+
+widget "*profile_entry_signal0_background" style "profileEntrySignal0Background"
+widget "*profile_entry_signal1_background" style "profileEntrySignal1Background"
+widget "*profile_entry_signal2_background" style "profileEntrySignal2Background"
+widget "*profile_entry_signal3_background" style "profileEntrySignal3Background"
+widget "*profile_entry_signal4_background" style "profileEntrySignal4Background"
+widget "*profile_entry_encrimg_background" style "profileEntryEncrImgBackground"
+widget "*profile_entry_status" style "profileEntryStatus"
+
+widget "*settingitem_te_background" style "settingitemTeBackground"
+widget "*settingitem_te_label" style "settingitemTeLabel"
+widget "*settingitem_te_entry" style "settingitemTeEntry"
+
+widget "*infoitem_background" style "infoitemBackground"
+widget "*infoitem_icon" style "infoitemIcon"
+widget "*infoitem_ok_icon" style "infoitemOkIcon"
+widget "*infoitem_failed_icon" style "infoitemFailedIcon"
+widget "*infoitem_text" style "infoitemText"
+
+widget "*bk_grey_666_75" style "bar_666_75_grey"
+widget "*bk_grey_666_115" style "bar_666_115_grey"
+widget "*bk_grey_666_140" style "bar_666_140_grey"
+widget "*bk_grey_666_168" style "bar_666_168_grey"
+widget "*bk_grey_666_245" style "bar_666_245_grey"
+widget "*bk_grey_666_273" style "bar_666_273_grey"
+widget "*info_label" style "settingitemTeLabel"
+

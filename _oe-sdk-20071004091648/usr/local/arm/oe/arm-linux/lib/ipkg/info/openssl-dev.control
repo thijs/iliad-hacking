@@ -1,0 +1,10 @@
+Package: openssl-dev
+Version: 0.9.7e-r1
+Description: Secure Socket Layer (SSL) binary and related cryptographic tools.
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: openssl-0.9.7e
+Homepage: http://www.openssl.org/
+Source: http://www.openssl.org/source/openssl-0.9.7e.tar.gz file://debian.patch;patch=1 file://armeb.patch;patch=1

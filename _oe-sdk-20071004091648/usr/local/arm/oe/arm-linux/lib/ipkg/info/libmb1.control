@@ -1,0 +1,11 @@
+Package: libmb1
+Version: 1.7-r1
+Description: Matchbox window manager core library
+Section: x11/libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libmatchbox-1.7
+Homepage: unknown
+Depends: libxext6 (>= 0.0cvs20051025), libx11-6 (>= 6.2.1cvs20051025), pango (>= 1.8.1), libglib-2.0-0 (>= 2.6.6), libc6 (>= 2.3.2+cvs20040726), libjpeg62 (>= 6b), libpng12-0 (>= 1.2.8), libz1 (>= 1.2.3), libgcc1 (>= 3.4.4)
+Source: http://projects.o-hand.com/matchbox/sources/libmatchbox/1.7/libmatchbox-1.7.tar.gz file://check.m4

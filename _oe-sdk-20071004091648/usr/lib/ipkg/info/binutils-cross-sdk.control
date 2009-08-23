@@ -1,0 +1,11 @@
+Package: binutils-cross-sdk
+Version: 2.15.94.0.1-r1
+Description: A GNU collection of binary utilities
+Section: devel
+Priority: optional
+Maintainer: Gerald Britton <gbritton@doomcom.org>
+Architecture: i686
+OE: binutils-cross-sdk-2.15.94.0.1
+Homepage: http://www.gnu.org/software/binutils/
+Depends: binutils-cross-sdk-locale*, libc6 (>= 2.3.2+cvs20040726)
+Source: http://ftp.kernel.org/pub/linux/devel/binutils/binutils-2.15.94.0.1.tar.bz2 file://ld_makefile.patch;patch=1 file://better_file_error.patch;patch=1 file://signed_char_fix.patch;patch=1 file://binutils-100_cflags_for_build.patch;patch=1 file://binutils-2.15.91.0.1-uclibc-100-conf.patch;patch=1 file://binutils-2.15.90.0.3-uclibc-200-build_modules.patch;patch=1

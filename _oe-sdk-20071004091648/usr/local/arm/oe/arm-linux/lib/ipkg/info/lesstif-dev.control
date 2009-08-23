@@ -1,0 +1,11 @@
+Package: lesstif-dev
+Version: 0.94.4-1
+Description: lesstif library
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: lesstif-0.94.4
+Homepage: unknown
+Depends: lesstif
+Source: http://surfnet.dl.sourceforge.net/sourceforge/lesstif/lesstif-0.94.4.tar.bz2 file://man2html.patch;patch=1

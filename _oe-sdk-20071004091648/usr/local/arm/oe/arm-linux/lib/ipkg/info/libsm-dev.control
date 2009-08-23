@@ -1,0 +1,11 @@
+Package: libsm-dev
+Version: 6.0.3-r1
+Description: Session management library
+Section: devel
+Priority: optional
+Maintainer: Phil Blundell <pb@handhelds.org>
+Architecture: arm
+OE: libsm-6.0.3
+Homepage: unknown
+Depends: libsm6
+Source: http://xlibs.freedesktop.org/release/libSM-6.0.3.tar.bz2 file://autofoo.patch;patch=1

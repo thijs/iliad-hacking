@@ -1,0 +1,11 @@
+Package: liberscribble0
+Version: 0.211+svn20071003-r0
+Description: eReader Scribble Library
+Section: libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: liberscribble-0.211+svn20071003
+Homepage: unknown
+Depends: libglib-2.0-0 (>= 2.6.6), libermanifest0 (>= 0.211+svn20071003), libxml2 (>= 2.6.26), libc6 (>= 2.3.2+cvs20040726), libz1 (>= 1.2.3), liberdm2 (>= 0.211+svn20071003), libgcc1 (>= 3.4.4)
+Source: svn://repo.irexnet.com/software/eReader//trunk/lib/;module=erscribble;proto=https;rev=HEAD

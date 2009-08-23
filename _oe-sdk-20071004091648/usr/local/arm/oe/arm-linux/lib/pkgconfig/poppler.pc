@@ -1,0 +1,11 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: poppler
+Description: PDF rendering library
+Version: 0.5.4
+
+Libs: -L${libdir} -lpoppler
+Cflags: -I${includedir}/poppler -I${includedir}/poppler/goo -I${includedir}/poppler/splash -I${includedir}/poppler/poppler

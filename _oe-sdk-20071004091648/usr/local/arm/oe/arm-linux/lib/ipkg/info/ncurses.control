@@ -1,0 +1,12 @@
+Package: ncurses
+Version: 5.4-r8
+Description: Ncurses library
+Section: libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: ncurses-5.4
+Homepage: http://www.gnu.org/software/ncurses/ncurses.html
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Suggests: ncurses-terminfo
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.4.tar.gz file://visibility.patch;patch=1

@@ -1,0 +1,11 @@
+Package: libfreetype6
+Version: 2.1.10-r0
+Description: Freetype font rendering library
+Section: libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: freetype-2.1.10
+Homepage: http://www.freetype.org
+Depends: libz1 (>= 1.2.3), libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Source: http://heanet.dl.sourceforge.net/sourceforge/freetype/freetype-2.1.10.tar.bz2 file://configure.patch;patch=1

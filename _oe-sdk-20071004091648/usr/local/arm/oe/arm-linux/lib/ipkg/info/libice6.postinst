@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ x"$D" = "x" ]; then
+	ldconfig
+fi

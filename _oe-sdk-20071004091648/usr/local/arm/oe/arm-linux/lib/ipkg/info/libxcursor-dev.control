@@ -1,0 +1,11 @@
+Package: libxcursor-dev
+Version: 1.1.2-r2
+Description: X Cursor library
+Section: devel
+Priority: optional
+Maintainer: Phil Blundell <pb@handhelds.org>
+Architecture: arm
+OE: libxcursor-1.1.2
+Homepage: unknown
+Depends: libxrender-dev
+Source: http://xlibs.freedesktop.org/release/libXcursor-1.1.2.tar.bz2 file://autofoo.patch;patch=1

@@ -1,0 +1,15 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+target=x11
+
+gtk_binary_version=2.4.0
+gtk_host=arm-unknown-linux-gnu
+
+Name: GTK+
+Description: GIMP Tool Kit (${target} target)
+Version: 2.6.7
+Requires: gdk-${target}-2.0 atk
+Libs: -L${libdir} -lgtk-${target}-2.0 
+Cflags: -I${includedir}/gtk-2.0 

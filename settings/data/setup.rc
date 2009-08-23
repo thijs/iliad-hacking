@@ -1,0 +1,411 @@
+#
+# Theme : setup/settings application
+# -----
+
+style "screenBackground"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+style "titleBackground"
+{
+    bg_pixmap[NORMAL] = "Titlebar_black.png"
+}
+
+style "titleItem"
+{
+    font_name = "Bitstream Vera Sans 18"
+    fg[NORMAL] = { 1.0, 1.0, 1.0}       
+}
+
+style "titleVersion"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL] = { 1.0, 1.0, 1.0}       
+}
+
+style "settingsArea"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}       
+}
+
+# GtkSettingItem
+style "settingitemBackground"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+style "settingitemClientAreaBackground"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+style "settingitemHeader"
+{
+    font_name = "Bitstream Vera Sans bold 7"
+    fg[NORMAL]= {1.0, 1.0, 1.0}
+}
+
+style "settingitemInfotext"
+{
+    font_name = "Bitstream Vera Sans 7"
+}
+
+style "settingitemHeaderBackground"
+{
+    bg_pixmap[NORMAL] = "Rootbar.png"
+}
+
+
+#
+# GtkSettingItemTextEntry
+#
+style "settingitemTeBackground"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "settingitemTeLabel"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+#
+# GtkInfoItem
+#
+style "infoitemBackground"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "infoitemIcon"
+{
+    bg_pixmap[NORMAL] = "Info_icon.png"
+}
+
+style "infoitemText"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+#
+# User screen
+#
+style "user_account_settings_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_230_grey.png"
+}
+
+#
+# Background connect screen
+#
+style "background_onoff_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "background_select_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_345_grey.png"
+}
+
+style "background_select_info_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_230_grey.png"
+}
+
+style "background_screen_info_text"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL] = { 0.0, 0.0, 0.0}   
+}
+
+#
+# PINCODE_UI
+#
+style "pincode_onoff_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "pincode_select_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_230_grey.png"
+}
+
+style "pincode_screen_info_text"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL] = { 0.0, 0.0, 0.0}   
+}
+
+# pc connect screen in settings
+style "pc_connect_screen_info_text"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+style "pc_connect_user_password_widget"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "pc_connect_confirm_widget"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+#
+# archive location screen
+#
+style "archive_location_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "archive_location_title"
+{
+    font_name = "Bitstream Vera Sans bold 7"
+    fg[NORMAL] = { 0.0, 0.0, 0.0}   
+}
+
+style "archive_location_info_text"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL] = { 0.0, 0.0, 0.0}   
+}
+
+#
+# Date time screen
+#
+style "datetime_display_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "timezone_selection_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_425_grey.png"
+}
+
+style "datetime_screen_info_text"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL] = { 0.0, 0.0, 0.0}
+}
+
+style "datetime_screen_date_text"
+{
+    font_name = "Bitstream Vera Sans bold 10"
+    fg[NORMAL] = { 0.0, 0.0, 0.0}
+}
+
+style "datetime_date_heading_text"
+{
+    font_name = "Bitstream Vera Sans 8"
+    fg[NORMAL] = { 0.0, 0.0, 0.0}
+}
+
+#
+# Start-up screen
+#
+style "startup_behaviour_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_300_grey.png"
+}
+
+style "startup_calibration_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "startup_info_text"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL] = { 0.0, 0.0, 0.0}   
+}
+
+#
+# Language selection screen
+#
+style "language_background"
+{
+    bg_pixmap[NORMAL] = "Background_language_settings.png"
+}
+
+#
+# Timed iDS connection screen
+#
+style "timedids_enable_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "timedids_settime_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_230_grey.png"
+}
+
+style "timedids_info_text"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL] = { 0.0, 0.0, 0.0}
+}
+
+style "gtk_check_button"
+{
+    font_name = "Bitstream Vera Sans 7"
+
+    engine "pixmap"
+    {
+        image
+        {
+            function        = FOCUS
+            overlay_file    = "Transparent.png"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = FLAT_BOX
+            overlay_file    = "Transparent.png"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = BOX
+            overlay_file    = "Transparent.png"
+            overlay_stretch = TRUE
+        }
+    }
+}
+
+#
+# Device overview screen
+#
+style "device_info_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_395_grey.png"
+}
+
+style "device_ack_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "device_overview_info_text"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL] = { 0.0, 0.0, 0.0}
+}
+
+#
+# Generic styles
+#
+style "noteBook"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+#
+# button
+#
+style "button"
+{   
+    font_name = "Bitstream Vera Sans bold 6.5"
+    fg[PRELIGHT]= {0.0, 0.0, 0.0}
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+    fg[INSENSITIVE]= {0.0, 0.0, 0.0}
+    fg[ACTIVE]= {1.0, 1.0, 1.0}
+    fg[SELECTED]= {1.0, 1.0, 1.0}
+
+    engine "pixmap" {
+        image
+        {
+            function          = FOCUS
+            file              = "Transparent.png"
+            stretch           = TRUE
+        }     
+        image 
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = IN
+            file            = "Itemfield_selected.png"
+            stretch         = TRUE
+        }
+        image 
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = OUT
+            file            = "Itemfield.png"
+            stretch         = TRUE
+        }
+    }     
+}
+
+
+widget_class "*GtkNotebook*" style "noteBook"
+widget_class "*GtkCheckButton*" style "gtk_check_button"
+
+widget "*screen_background" style "screenBackground"
+widget "*title_background" style "titleBackground"
+widget "*title_item" style "titleItem"
+widget "*title_version" style "titleVersion"
+widget "*settings_area" style "settingsArea"
+
+widget "*settingitem_background" style "settingitemBackground"
+widget "*settingitem_header" style "settingitemHeader"
+widget "*settingitem_infotext" style "settingitemInfotext"
+widget "*settingitem_headerbackground" style "settingitemHeaderBackground"
+widget "*settingitem_clientArea_background" style "settingitemClientAreaBackground"
+
+widget "*settingitem_te_background" style "settingitemTeBackground"
+widget "*settingitem_te_label" style "settingitemTeLabel"
+
+widget "*button_without_border" style "button"
+
+widget "*user_account_settings_background" style "user_account_settings_background"
+
+widget "*pc_connect_screen_info_text" style "pc_connect_screen_info_text"
+widget "*pc_connect_user_password_widget" style "pc_connect_user_password_widget"
+widget "*pc_connect_confirm_widget" style "pc_connect_confirm_widget"
+
+widget "*infoitem_background" style "infoitemBackground"
+widget "*infoitem_icon" style "infoitemIcon"
+widget "*infoitem_text" style "infoitemText"
+
+widget "*background_onoff_background" style "background_onoff_background"
+widget "*background_idspc_background" style "background_onoff_background"
+widget "*background_screen_info_text" style "background_screen_info_text"
+
+widget "*pincode_onoff_background" style "pincode_onoff_background"
+widget "*pincode_select_background" style "pincode_select_background"
+widget "*pincode_screen_info_text" style "pincode_screen_info_text"
+
+widget "*archive_location_background" style "archive_location_background"
+widget "*archive_location_title" style "archive_location_title"
+widget "*archive_location_info_text" style "archive_location_info_text"
+
+widget "*datetime_display_background" style "datetime_display_background"
+widget "*timezone_selection_background" style "timezone_selection_background"
+widget "*datetime_screen_info_text" style "datetime_screen_info_text"
+widget "*datetime_screen_date_text" style "datetime_screen_date_text"
+widget "*datetime_date_heading_text" style "datetime_date_heading_text"
+
+widget "*startup_behaviour_background" style "startup_behaviour_background"
+widget "*startup_calibration_background" style "startup_calibration_background"
+widget "*startup_info_text" style "startup_info_text"
+
+widget "*language_background" style "language_background"
+
+widget "*timedids_enable_background" style "timedids_enable_background"
+widget "*timedids_settime_background" style "timedids_settime_background"
+widget "*timedids_info_text" style "timedids_info_text"
+
+widget "*device_info_background" style "device_info_background"
+widget "*device_ack_background" style "device_ack_background"
+widget "*device_overview_info_text" style "device_overview_info_text"

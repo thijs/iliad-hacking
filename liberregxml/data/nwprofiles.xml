@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<iLiadRegistry>
+
+    <networkProfileList>
+        <networkProfile profileID="NW_0">
+            <profileName>Wired network</profileName>
+            <networkType>WIRED</networkType>
+            <useProxy>false</useProxy>
+            <useDhcp>true</useDhcp>
+        </networkProfile>
+    </networkProfileList>
+
+</iLiadRegistry>
+

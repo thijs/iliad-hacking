@@ -1,0 +1,11 @@
+Package: libxdmcp-dev
+Version: 0.1.3-r1
+Description: X Display Manager Control Protocol library.
+Section: devel
+Priority: optional
+Maintainer: Greg Gilbert <greg@treke.net>
+Architecture: arm
+OE: libxdmcp-0.1.3
+Homepage: unknown
+Depends: libxdmcp0
+Source: http://xlibs.freedesktop.org/release/libXdmcp-0.1.3.tar.bz2 file://autofoo.patch;patch=1

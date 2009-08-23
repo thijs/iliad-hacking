@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: gpg-error
+Description: a library that defines common error values for all GnuPG components
+Version: 1.0
+Libs: -L{libdir} -lgpg-error
+Cflags: -I${includedir}

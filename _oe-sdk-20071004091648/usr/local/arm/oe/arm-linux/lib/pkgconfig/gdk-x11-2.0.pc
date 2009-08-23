@@ -1,0 +1,12 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+target=x11
+
+Name: GDK
+Description: GIMP Drawing Kit (${target} target)
+Version: 2.6.7
+Requires: gdk-pixbuf-2.0 pangoxft pangox
+Libs: -L${libdir} -lgdk-${target}-2.0 
+Cflags: -I${includedir}/gtk-2.0 -I${libdir}/gtk-2.0/include -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include   -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include   

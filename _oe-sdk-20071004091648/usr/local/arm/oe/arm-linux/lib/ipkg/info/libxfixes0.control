@@ -1,0 +1,11 @@
+Package: libxfixes0
+Version: 2.0.1-r1
+Description: X Fixes extension library.
+Section: x11/libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libxfixes-2.0.1
+Homepage: unknown
+Depends: libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Source: http://xlibs.freedesktop.org/release/libXfixes-2.0.1.tar.bz2 file://autofoo.patch;patch=1

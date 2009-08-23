@@ -1,0 +1,89 @@
+# Italian translations for pcsharemgr package.
+# Copyright (C) 2008 iRex Technologies
+# This file is distributed under the same license as the pcsharemgr package.
+# Automatically generated, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pcsharemgr 0.211\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-07 14:17+0100\n"
+"PO-Revision-Date: 2008-08-29 17:23+0100\n"
+"Last-Translator: Marco Croella <marco.croella@simplicissimus.it>\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/sharethread.c:102
+msgid "Connecting to PC share..."
+msgstr "Connessione alla cartella condivisa sul PC..."
+
+#: src/sharethread.c:109 src/sharethread.c:122
+msgid "Cannot find download history location"
+msgstr "Impossibile trovare la posizione della cronologia download"
+
+#: src/sharethread.c:133
+msgid "Cannot find the shared folder on the PC"
+msgstr "Impossibile trovare la cartella condivisa sul PC"
+
+#: src/sharethread.c:168
+msgid "--- Transfer Complete ---"
+msgstr "--- Trasferimento Completato ---"
+
+#: src/sharethread.c:172
+msgid "--- Nothing to Transfer ---"
+msgstr "--- Nulla da trasferire ---"
+
+#: src/sharethread.c:183
+#, c-format
+msgid ""
+"There were errors during the transfer of %d items. Please make sure the "
+"destination location on your iLiad has enough free space and the PC share "
+"has both read and write permissions."
+msgstr ""
+"Ci sono stati errori nel trasferimento di %d elementi. Assicurarsi che sul "
+"supporto di memoria di destinazione ci sia spazio e che la cartella "
+"condivisa sul PC abbia i permessi di lettura e scrittura."
+
+#: src/sharethread.c:348
+#, c-format
+msgid ""
+"Unable to upload files to PC: cannot create inbox folder.\n"
+"File upload has been cancelled."
+msgstr ""
+"Impossibile caricare i file sul PC: non è possibile creare la cartella "
+"inbox.\n"
+"L'upload è stato annullato."
+
+#: src/sharethread.c:360
+#, c-format
+msgid ""
+"Unable to upload files to PC: cannot create temporary inbox folder.\n"
+"File upload has been cancelled."
+msgstr ""
+"Impossibile caricare i file sul PC: non è possibile creare la cartella "
+"temporanea inbox.\n"
+"L'upload è stato annullato."
+
+#: src/sharethread.c:392
+msgid "Uploading to PC:"
+msgstr "Caricamento file sul PC in corso:"
+
+#: src/sharethread.c:429
+#, c-format
+msgid ""
+"Error while uploading %s to PC. File upload has been cancelled.\n"
+"Error: %s (%d)"
+msgstr ""
+"Errore durante il cariicamento di %s sul PC. L'upload è stato annullato.\n"
+"Errore: %s (%d)"
+
+#: src/sharethread.c:639 src/sharethread.c:676
+msgid "Downloading from PC:"
+msgstr "Download dal PC in corso:"
+
+#: src/view.c:187
+msgid "Please click here to confirm."
+msgstr "Cliccare qui per confermare."

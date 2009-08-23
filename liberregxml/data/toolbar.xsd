@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The elements named in  "*_t " are custom defined simple type element -->
+<!-- The elements named in uppercase are enumeration  -->
+<!-- We use attribute "type" to reference to simpleType element-->
+<!-- We use attribute "ref" to reference to complexType element-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- definition of  "iLiadRegistry" element -->
+  <xs:element name="iLiadRegistry">
+    <xs:complexType>
+      <xs:all>
+         <xs:element ref="toolbarIcons"/>
+       </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- definition of  "toolbarIcons" element -->
+  <xs:element name="toolbarIcons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="iconBasePath"/>
+        <xs:element maxOccurs="unbounded" ref="toolbarIcon"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="iconBasePath" type="xs:anyURI" default="/usr/share/pixmaps/"/>
+
+  <xs:element name="toolbarIcon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="iconFileName"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="iconFileName">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="id" use="required" type="xs:integer"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="iconType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NORMAL"/>
+      <xs:enumeration value="GREY"/>
+      <xs:enumeration value="SELECTED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

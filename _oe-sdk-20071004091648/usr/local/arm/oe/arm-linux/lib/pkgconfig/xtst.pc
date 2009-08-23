@@ -1,0 +1,11 @@
+prefix=/usr/local/arm/oe/arm-linux/local/kx
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: XTest
+Description: X Test Library
+
+Version: 6.2.2
+Cflags: -I${includedir} -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include  
+Libs: -L${libdir} -lXtst -L/usr/local/arm/oe/arm-linux/lib -lXext -lX11 -ldl  

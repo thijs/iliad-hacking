@@ -1,0 +1,17 @@
+/usr/include/liberregxml/erregapi.h
+/usr/include/liberregxml/erregrwlock.h
+/usr/include/liberregxml/erregtoolbar.h
+/usr/include/liberregxml/erregxsd.h
+/usr/include/liberregxml/erregcfg.h
+/usr/include/liberregxml/erregtypes_f.h
+/usr/lib/pkgconfig/liberregxml.pc
+/usr/include/liberregxml/erregnwprofiles.h
+/usr/include/liberregxml/erregxml.h
+/usr/lib/liberregxml.a
+/usr/lib/liberregxml.so
+/usr/include/liberregxml/erregbasis.h
+/usr/include/liberregxml/erreg.h
+/usr/include/liberregxml/erreglog.h
+/usr/include/liberregxml/system.h
+/usr/lib/liberregxml.la
+/usr/include/liberregxml/erregtypes.h

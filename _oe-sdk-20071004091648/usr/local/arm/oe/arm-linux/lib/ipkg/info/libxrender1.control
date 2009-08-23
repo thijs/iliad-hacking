@@ -1,0 +1,11 @@
+Package: libxrender1
+Version: 0.8.4-r1
+Description: X Render extension library.
+Section: libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libxrender-0.8.4
+Homepage: unknown
+Depends: libc6 (>= 2.3.2+cvs20040726), libx11-6 (>= 6.2.1cvs20051025), libgcc1 (>= 3.4.4)
+Source: http://xlibs.freedesktop.org/release/libXrender-0.8.4.tar.bz2 file://autofoo.patch;patch=1

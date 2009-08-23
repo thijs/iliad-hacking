@@ -1,0 +1,9 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: XProto
+Description: Sundry X headers
+Version: 6.6.2
+Cflags: -I${includedir} -D_XOPEN_SOURCE=500

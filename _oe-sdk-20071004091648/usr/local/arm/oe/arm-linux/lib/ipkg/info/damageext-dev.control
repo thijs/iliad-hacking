@@ -1,0 +1,10 @@
+Package: damageext-dev
+Version: 1.0-r1
+Description: X Damage extension headers and specification
+Section: devel
+Priority: optional
+Maintainer: Greg Gilbert <greg@treke.net>
+Architecture: arm
+OE: damageext-1.0
+Homepage: unknown
+Source: http://xlibs.freedesktop.org/release/damageext-1.0.tar.bz2 file://autofoo.patch;patch=1

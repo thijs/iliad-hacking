@@ -1,0 +1,11 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: GdkPixbuf Xlib
+Description: GdkPixbuf rendering for Xlib
+Version: 2.6.7
+Requires: gobject-2.0,gmodule-2.0,gdk-pixbuf-2.0
+Libs: -L${libdir} -lgdk_pixbuf_xlib-2.0
+Cflags: -I${includedir}

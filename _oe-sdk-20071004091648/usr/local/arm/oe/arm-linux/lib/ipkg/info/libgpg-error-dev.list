@@ -1,0 +1,8 @@
+/usr/share/aclocal/gpg-error.m4
+/usr/lib/pkgconfig/gpg-error.pc
+/usr/bin/gpg-error-config
+/usr/lib/libgpg-error.la
+/usr/bin/gpg-error
+/usr/lib/libgpg-error.so
+/usr/lib/libgpg-error.a
+/usr/include/gpg-error.h

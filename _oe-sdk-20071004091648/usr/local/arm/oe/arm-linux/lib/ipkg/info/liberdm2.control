@@ -1,0 +1,11 @@
+Package: liberdm2
+Version: 0.211+svn20071003-r0
+Description: eReader display manager library
+Section: libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: liberdm-0.211+svn20071003
+Homepage: unknown
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Source: svn://repo.irexnet.com/software/eReader//trunk/lib/;module=erdm;proto=https;rev=HEAD

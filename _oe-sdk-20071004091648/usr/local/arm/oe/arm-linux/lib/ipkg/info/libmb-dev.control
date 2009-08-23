@@ -1,0 +1,11 @@
+Package: libmb-dev
+Version: 1.7-r1
+Description: Matchbox window manager core library
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libmatchbox-1.7
+Homepage: unknown
+Depends: libmb1
+Source: http://projects.o-hand.com/matchbox/sources/libmatchbox/1.7/libmatchbox-1.7.tar.gz file://check.m4

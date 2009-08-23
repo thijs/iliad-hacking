@@ -1,0 +1,13 @@
+/usr/include/X11/Xcms.h
+/usr/lib/libX11.la
+/usr/lib/libX11.so
+/usr/lib/libX11.a
+/usr/include/X11/Xutil.h
+/usr/include/X11/Xresource.h
+/usr/include/X11/Xlib.h
+/usr/include/X11/region.h
+/usr/include/X11/Xlibint.h
+/usr/include/X11/Xlocale.h
+/usr/include/X11/cursorfont.h
+/usr/include/X11/XKBlib.h
+/usr/lib/pkgconfig/x11.pc

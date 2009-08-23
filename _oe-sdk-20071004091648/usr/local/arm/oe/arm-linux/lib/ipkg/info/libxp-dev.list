@@ -1,0 +1,11 @@
+/usr/lib/libXprintUtil.so
+/usr/lib/libXprintUtil.a
+/usr/lib/libXp.la
+/usr/include/X11/XprintUtil/xprintutil.h
+/usr/lib/libXp.so
+/usr/include/X11/extensions/XpExtUtil.h
+/usr/include/X11/extensions/Printstr.h
+/usr/lib/pkgconfig/xp.pc
+/usr/lib/libXp.a
+/usr/include/X11/extensions/Print.h
+/usr/lib/libXprintUtil.la

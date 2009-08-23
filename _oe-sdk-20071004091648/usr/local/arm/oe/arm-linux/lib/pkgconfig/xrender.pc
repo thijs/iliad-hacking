@@ -1,0 +1,11 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: Xrender
+Description: X Render Library
+Version: 0.8.4
+Requires: x11
+Cflags: -I${includedir} -I/usr/local/arm/oe/arm-linux/include   
+Libs: -L${libdir} -lXrender 

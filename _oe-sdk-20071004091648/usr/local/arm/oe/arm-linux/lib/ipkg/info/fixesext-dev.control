@@ -1,0 +1,10 @@
+Package: fixesext-dev
+Version: 0.0cvs20051025-r0
+Description: X Fixes extension headers and specification.
+Section: devel
+Priority: optional
+Maintainer: Greg Gilbert <greg@treke.net>
+Architecture: arm
+OE: fixesext-0.0cvs20051025
+Homepage: unknown
+Source: cvs://anoncvs:anoncvs@pdx.freedesktop.org/cvs/xlibs;module=FixesExt

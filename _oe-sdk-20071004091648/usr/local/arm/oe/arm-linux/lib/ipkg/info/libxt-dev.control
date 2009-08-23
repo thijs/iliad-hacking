@@ -1,0 +1,11 @@
+Package: libxt-dev
+Version: 0.1.5-r1
+Description: X Toolkit Intrinsics
+Section: devel
+Priority: optional
+Maintainer: Phil Blundell <pb@handhelds.org>
+Architecture: arm
+OE: xt-0.1.5
+Homepage: unknown
+Depends: libxt6
+Source: http://xlibs.freedesktop.org/release/libXt-0.1.5.tar.bz2 file://autofoo.patch;patch=1

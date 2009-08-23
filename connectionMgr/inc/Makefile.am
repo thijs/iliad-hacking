@@ -1,0 +1,36 @@
+EXTRA_DIST = connectionMgrLog.h \
+  connectionMgr.h \
+  connectionMgrData.h \
+  commonData.h \
+  connectScreenData.h \
+  editScreenData.h \
+  connectScan.h \
+  connectPing.h \
+  connectBackground.h \
+  background.h \
+  connectScreen.h \
+  connectScreenOptions.h \
+  connectScreenProfiles.h \
+  editScreen.h \
+  connectScreenProfiles.h \
+  editScreenOverview.h \
+  editScreenProxy.h \
+  editScreenStatic.h \
+  editScreenSearch.h \
+  editScreenWireless.h \
+  editScreenWirelessExt.h \
+  editScreenDialup.h \
+  gtkProfileEntry.h \
+  gtkProfileGroup.h \
+  gtkSettingItem.h \
+  gtkSettingItemTextEntry.h \
+  gtkInfoItem.h \
+  widgetUtils.h \
+  pingThread.h \
+  scanThread.h \
+  system.h \
+  erbusy.h \
+  displayStatus.h \
+  pagebar.h \
+  toolbar.h \
+  modemUtils.h

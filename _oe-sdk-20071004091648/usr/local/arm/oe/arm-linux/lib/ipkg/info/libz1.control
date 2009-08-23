@@ -1,0 +1,11 @@
+Package: libz1
+Version: 1.2.3-r0
+Description: Zlib Compression Library
+Section: libs
+Priority: required
+Maintainer: Chris Larson <kergoth@handhelds.org>
+Architecture: arm
+OE: zlib-1.2.3
+Homepage: http://www.gzip.org/zlib/
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Source: http://www.zlib.net/zlib-1.2.3.tar.bz2 file://visibility.patch;patch=1

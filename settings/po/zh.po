@@ -1,0 +1,599 @@
+# Chinese translations for ersetup package.
+# Copyright (C) 2006 iRex Technologies BV
+# This file is distributed under the same license as the ersetup package.
+# Automatically generated, 2006.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: ersetup 0.14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-12-14 15:27+0100\n"
+"PO-Revision-Date: 2006-05-01 12:20+0200\n"
+"Last-Translator: matthijs\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/iLiadBgConnectScreen.c:448
+msgid "Wireless connection preferences"
+msgstr "无线连接设置"
+
+#: src/iLiadBgConnectScreen.c:450
+msgid ""
+"Select whether to automatically connect to a non-secured (open) wireless "
+"network."
+msgstr "请选择是否自动连接未加密的无线网络。"
+
+#: src/iLiadBgConnectScreen.c:452 src/iLiadBgConnectScreen.c:476
+#: src/iLiadPincodeScreen.c:402 src/iLiadConfigScreen.c:440
+#: src/iLiadConfigScreen.c:450 src/iLiadTimediDSScreen.c:308
+msgid "On"
+msgstr "打开"
+
+#: src/iLiadBgConnectScreen.c:453 src/iLiadBgConnectScreen.c:477
+#: src/iLiadPincodeScreen.c:403 src/iLiadConfigScreen.c:441
+#: src/iLiadConfigScreen.c:451 src/iLiadTimediDSScreen.c:309
+msgid "Off"
+msgstr "关闭"
+
+#: src/iLiadBgConnectScreen.c:460
+msgid "Background connect"
+msgstr "后台连接"
+
+#: src/iLiadBgConnectScreen.c:462
+msgid "Select whether to download content from the iDS or a computer."
+msgstr "请选择下载源:iDS或计算机。"
+
+#: src/iLiadBgConnectScreen.c:463
+msgid "iDS"
+msgstr "iDS"
+
+#: src/iLiadBgConnectScreen.c:464
+msgid "Computer"
+msgstr "计算机"
+
+#: src/iLiadBgConnectScreen.c:471
+msgid "Automatic background connect"
+msgstr "自动后台连接"
+
+#: src/iLiadBgConnectScreen.c:473
+msgid ""
+"Enabling \"Automatic background connect\" causes the iLiad to receive or "
+"send content items at a fixed interval."
+msgstr "允许“后台连接”使得iLiad每隔一段固定时间自动接受或发送内容。"
+
+#: src/iLiadBgConnectScreen.c:484
+msgid "Enter the time interval for the background connect."
+msgstr "请输入后台连接的时间间隔。"
+
+#: src/iLiadBgConnectScreen.c:485
+#, c-format
+msgid "minutes (min. %d, max. %d)"
+msgstr "分钟（最小值 %d，最大值 %d）"
+
+#: src/iLiadBgConnectScreen.c:494
+msgid ""
+"During the background connection you can operate the iLiad as usual.\n"
+"\n"
+"Warning!\n"
+"Background connect will empty your battery faster."
+msgstr ""
+"后台连接运行的同时您仍可以正常使用iLiad。\n"
+"\n"
+"警告！\n"
+"运行后台连接会增大电池的耗电量。"
+
+#: src/iLiadPincodeScreen.c:391
+msgid "PIN Code"
+msgstr "PIN码"
+
+#: src/iLiadPincodeScreen.c:396
+msgid ""
+"The PIN code protects your reader against unauthorized use.\n"
+"The code is requested each time the reader is switched on."
+msgstr ""
+"PIN码保护您的设备被未授权的用户使用。\n"
+"每次开机时会检查PIN码设置。"
+
+#: src/iLiadPincodeScreen.c:410
+msgid "Select PIN code"
+msgstr "设置PIN码"
+
+#: src/iLiadPincodeScreen.c:414
+msgid "Please select a PIN code of 4 digits."
+msgstr "请设置PIN码，长度为4位数字。"
+
+#: src/iLiadPincodeScreen.c:419
+msgid "Please enter current PIN code"
+msgstr "请输入当前的PIN码"
+
+#: src/iLiadPincodeScreen.c:424
+msgid "Please enter new PIN code"
+msgstr "请输入新设置的PIN码"
+
+#: src/iLiadPincodeScreen.c:429
+msgid "Please verify new PIN code"
+msgstr "请验证新设置的PIN码"
+
+#: src/iLiadPincodeScreen.c:435
+msgid "Confirm"
+msgstr "确认"
+
+#: src/iLiadPincodeScreen.c:470
+msgid ""
+"Please create a user account at 'MyiRex' and fill in the account settings in "
+"your iLiad."
+msgstr "请创建您的MyiRex帐号并在您的iLiad上填写帐号信息."
+
+#: src/iLiadPincodeScreen.c:475
+msgid ""
+"Warning!\n"
+"You can only enter the PIN code with the iLiad's stylus. Make sure that you "
+"always have the stylus available after enabling the pin code functionality."
+msgstr ""
+"警告！\n"
+"您只能使用配置的触摸笔进行输入PIN码。当您打开PIN码的检查功能之后，请确认您的"
+"触摸笔能够使用。"
+
+#: src/iLiadPincodeScreen.c:608
+msgid "Illegal characters or illegal length, pincode unchanged"
+msgstr "存在非法字符或非法长度，PIN码修改失败"
+
+#: src/iLiadPincodeScreen.c:620
+msgid "Pincode verification failed, pincode unchanged"
+msgstr "验证PIN码失败，PIN码修改失败"
+
+#: src/iLiadPincodeScreen.c:631 src/iLiadPincodeScreen.c:658
+msgid "Pincode updated successfully"
+msgstr "PIN码修改成功"
+
+#: src/iLiadPincodeScreen.c:648
+msgid "Current pincode incorrect, pincode unchanged"
+msgstr "当前PIN码输入不正确，PIN码修改失败"
+
+#: src/iLiadConfigScreen.c:437
+msgid "Sound"
+msgstr "声音"
+
+#: src/iLiadConfigScreen.c:439
+msgid "With this function you can enable or disable the sound of your iLiad."
+msgstr "该功能打开或关闭iLiad的声音。"
+
+#: src/iLiadConfigScreen.c:447
+msgid "Key buffering"
+msgstr "记录按键历史"
+
+#: src/iLiadConfigScreen.c:449
+msgid ""
+"When you enable key buffering, the iLiad will remember the keys pressed and "
+"process them when the device is ready."
+msgstr "打开该功能，iLiad记录按键历史以便在设备空闲时按顺序处理这些按键。"
+
+#: src/iLiadConfigScreen.c:457
+msgid "Keys"
+msgstr "按键"
+
+#: src/iLiadConfigScreen.c:459
+msgid ""
+"With this function you can set the minimum duration for a long keypress."
+msgstr "利用这个功能，您可设定长按键的时间阈值（即按多久理解为长按）。"
+
+#: src/iLiadConfigScreen.c:460
+msgid "0.5 seconds"
+msgstr "0.5秒"
+
+#: src/iLiadConfigScreen.c:461
+msgid "1 second"
+msgstr "1秒"
+
+#: src/iLiadConfigScreen.c:462
+msgid "1.5 seconds"
+msgstr "1.5秒"
+
+#: src/iLiadConfigScreen.c:463
+msgid "2 seconds"
+msgstr "2 秒"
+
+#: src/iLiadConfigScreen.c:469
+msgid "Flipbar direction"
+msgstr "翻页方向"
+
+#: src/iLiadConfigScreen.c:471
+msgid ""
+"With this function you choose how to move the flipbar for advancing in a "
+"document."
+msgstr "利用这个功能，您可以选择翻页的按键方向。"
+
+#: src/iLiadConfigScreen.c:472
+msgid "Left"
+msgstr "向左"
+
+#: src/iLiadConfigScreen.c:473
+msgid "Right"
+msgstr "向右"
+
+#: src/iLiadConfigScreen.c:479
+msgid "Pen interface"
+msgstr "数字化器"
+
+#: src/iLiadConfigScreen.c:480
+msgid "Calibration"
+msgstr "定标"
+
+#: src/iLiadConfigScreen.c:486
+msgid "Languages"
+msgstr "语言"
+
+#: src/iLiadConfigScreen.c:488
+msgid "With this function you can set the language of the iLiad."
+msgstr "该功能设置iLiad的默认语言。"
+
+#: src/iLiadDateTimeScreen.c:287
+msgid "Time Selection"
+msgstr "时间设定"
+
+#: src/iLiadDateTimeScreen.c:290
+msgid "The current time and date on your iLiad is:"
+msgstr "当前您的iLiad上的时间是:"
+
+#: src/iLiadDateTimeScreen.c:301
+msgid ""
+"To change the clock, select your current date and time from the list below."
+msgstr "下表列举了全球主要时区的当前时间, 请选择您所在时区的时间."
+
+#. TRANSLATORS: This is a date and time format specifier, according to the strftime(3) man page.
+#. The corresponding string should be something like Monday, July 30 2007.
+#: src/iLiadDateTimeScreen.c:309 src/iLiadDateTimeScreen.c:315
+#, no-c-format
+msgid "%A, %x"
+msgstr "%x, %A"
+
+#: src/iLiadDateTimeScreen.c:323
+msgid ""
+"You can set your date and time by connecting to iDS. Afterwards you can use "
+"this page to update the time for your current timezone."
+msgstr ""
+"当您连接到iDS时您的系统时钟会得到更新, 然后您可以在本页设置您的当地时间."
+
+#. TRANSLATORS: This is a date and time format specifier, according to the strftime(3) man page.
+#. The corresponding string should be something like 13:23 Monday, July 30 2007.
+#. Keep %R unchanged.
+#: src/iLiadDateTimeScreen.c:452
+#, no-c-format
+msgid "%R %A, %x"
+msgstr "%x %A    %R"
+
+#: src/iLiadUserScreen.c:186
+msgid "Name"
+msgstr "用户名"
+
+#: src/iLiadUserScreen.c:187
+msgid "Please enter your name"
+msgstr "请输入用户名"
+
+#: src/iLiadUserScreen.c:193
+msgid "MyiRex account settings"
+msgstr "MyiRex帐号设置"
+
+#: src/iLiadUserScreen.c:194
+msgid "Please enter the email address used to create your 'MyiRex' account"
+msgstr "请输入您创建'MyiRex'帐号注册的电子邮件地址"
+
+#: src/iLiadUserScreen.c:195
+msgid "Please enter your 'MyiRex' password"
+msgstr "请输入您在'MyiRex'的帐号密码"
+
+#: src/iLiadUserScreen.c:202
+msgid ""
+"\n"
+"To connect to iRex Delivery Service (iDS) you need to create an account.\n"
+"Visit https://myirex.irexnet.com/ and follow the instructions."
+msgstr ""
+"\n"
+"您需要创建一个帐号以访问iRex递送服务(iDS)\n"
+"具体步骤请参见https://myirex.irexnet.com/"
+
+#: src/iLiadPCConnectScreen.c:334
+msgid "Proceed"
+msgstr "继续"
+
+#: src/iLiadPCConnectScreen.c:340
+msgid "iLiad settings / Setting for computer connection "
+msgstr "配置计算机连接"
+
+#: src/iLiadPCConnectScreen.c:346
+msgid "STEP 1: Please type the name of your computer."
+msgstr "第一步：请输入您的计算机名。"
+
+#: src/iLiadPCConnectScreen.c:351
+msgid ""
+"You can create a connection between the iLiad and your computer by entering "
+"the specifications of your PC.\n"
+"The \"full computer name\" is located at the system properties of your "
+"computer."
+msgstr ""
+"输入指定的计算机名，创建PC和iLiad的连接。\n"
+"查看您的计算机属性，找到\"完整的计算机名\"。"
+
+#: src/iLiadPCConnectScreen.c:362
+msgid "STEP 2: Please enter the name of the \"shared\" destination folder."
+msgstr "第二步：请输入共享文件夹名称。"
+
+#: src/iLiadPCConnectScreen.c:367
+msgid ""
+"Create a destination folder on your computer. In the folder properties you "
+"can \"share this folder\"."
+msgstr "指定您的计算机共享文件夹名称。即在文件夹属性您指定的\"共享名称\"。"
+
+#: src/iLiadPCConnectScreen.c:375
+msgid "STEP 3: Please enter the domain group / work group of your computer."
+msgstr "第三步：请输入您的计算机所在的域名或工作组名称。"
+
+#: src/iLiadPCConnectScreen.c:380
+msgid ""
+"When the computer is part of a business network, you can enter the domain "
+"group.\n"
+"In most cases you can leave this entry field blank."
+msgstr ""
+"当您的计算机属于公司网络，输入您的域名或工作组名。\n"
+"通常情况下，您可以不填写域名或工作组名称。"
+
+#: src/iLiadPCConnectScreen.c:386
+msgid "STEP 4: Please enter the username and password of your computer."
+msgstr "第四步：请输入您的用户名和密码。"
+
+#: src/iLiadPCConnectScreen.c:390
+msgid "User name"
+msgstr "用户名"
+
+#: src/iLiadPCConnectScreen.c:394
+msgid "Password"
+msgstr "密码"
+
+#: src/iLiadPCConnectScreen.c:399
+msgid ""
+"You can leave this entry field blank when you didn't create a user name and "
+"password."
+msgstr "如果不需要用户名和密码，您可以不填写该区域。"
+
+#: src/iLiadArcLocScreen.c:215
+msgid "Archive locations"
+msgstr "设置存储位置"
+
+#: src/iLiadArcLocScreen.c:218
+msgid "Newspapers"
+msgstr "报纸"
+
+#: src/iLiadArcLocScreen.c:219
+msgid "Select a memory type for the 'NEWS' button."
+msgstr "请选择保存‘报纸’的存储卡类型"
+
+#: src/iLiadArcLocScreen.c:222
+msgid "Books"
+msgstr "书阁"
+
+#: src/iLiadArcLocScreen.c:223
+msgid "Select a memory type for the 'BOOKS' button."
+msgstr "请选择保存‘书阁’的存储卡类型"
+
+#: src/iLiadArcLocScreen.c:226
+msgid "Documents"
+msgstr "文档"
+
+#: src/iLiadArcLocScreen.c:227
+msgid "Select a memory type for the 'DOCS' button."
+msgstr "请选择保存‘文档’的存储卡类型"
+
+#: src/iLiadArcLocScreen.c:230
+msgid "Notes"
+msgstr "笔记"
+
+#: src/iLiadArcLocScreen.c:231
+msgid "Select a memory type for the 'NOTES' button."
+msgstr "请选择保存‘笔记’的存储卡类型"
+
+#: src/iLiadArcLocScreen.c:237 src/iLiadArcLocScreen.c:254
+msgid "Internal memory"
+msgstr "内部主存"
+
+#: src/iLiadArcLocScreen.c:238 src/iLiadArcLocScreen.c:255
+msgid "MMC card"
+msgstr "MMC卡"
+
+#: src/iLiadArcLocScreen.c:239 src/iLiadArcLocScreen.c:256
+msgid "USB stick"
+msgstr "U盘"
+
+#: src/iLiadArcLocScreen.c:240 src/iLiadArcLocScreen.c:257
+msgid "CF card"
+msgstr "CF卡"
+
+#: src/iLiadArcLocScreen.c:246
+msgid "USB Connection"
+msgstr "USB连接"
+
+#: src/iLiadArcLocScreen.c:250
+msgid "Export via USB"
+msgstr "由USB导出"
+
+#: src/iLiadArcLocScreen.c:251
+msgid "Select a memory type to be exported to the PC via the USB cable."
+msgstr "请选择当iLiad通过USB接口连接到PC上时导出的存储卡类型."
+
+#: src/iLiadArcLocScreen.c:264
+msgid ""
+"\n"
+"When you select a memory type for an archive key, the iLiad will use this as "
+"storage for newly downloaded items from iDS."
+msgstr ""
+"\n"
+"当您选择某个存储卡类型后，从iDS下载的内容将保存到对应的存储卡。"
+
+#: src/iLiadStartUpScreen.c:38
+msgid "Quick Start Guide"
+msgstr "快速入门"
+
+#: src/iLiadStartUpScreen.c:39
+msgid "Reference materials"
+msgstr "参考资料"
+
+#: src/iLiadStartUpScreen.c:40
+msgid "Device manager"
+msgstr "设备管理器"
+
+#: src/iLiadStartUpScreen.c:41
+msgid "Recent documents"
+msgstr "最近打开的文档"
+
+#: src/iLiadStartUpScreen.c:42
+msgid "Last read document"
+msgstr "最后阅读的文档"
+
+#: src/iLiadStartUpScreen.c:43
+msgid "News folder"
+msgstr "报纸"
+
+#: src/iLiadStartUpScreen.c:44
+msgid "Books folder"
+msgstr "书阁"
+
+#: src/iLiadStartUpScreen.c:45
+msgid "Documents folder"
+msgstr "文档"
+
+#: src/iLiadStartUpScreen.c:46
+msgid "Notes folder"
+msgstr "笔记"
+
+#: src/iLiadStartUpScreen.c:281
+msgid "Start-up Settings"
+msgstr "启动设置"
+
+#: src/iLiadStartUpScreen.c:282
+msgid "Please select what to open when starting up your iLiad."
+msgstr "请选择您的iLiad启动行为。"
+
+#: src/iLiadStartUpScreen.c:289
+msgid "Stylus calibration"
+msgstr "屏幕校准"
+
+#: src/iLiadStartUpScreen.c:290
+msgid "With this function you can re-calibrate your stylus."
+msgstr "该功能重新校准屏幕坐标。"
+
+#: src/iLiadStartUpScreen.c:291
+msgid "Start Calibration"
+msgstr "校准"
+
+#: src/iLiadDeviceOverview.c:226
+msgid "Device Identification"
+msgstr "设备信息"
+
+#: src/iLiadDeviceOverview.c:228
+msgid "Product type:"
+msgstr "产品型号:"
+
+#: src/iLiadDeviceOverview.c:229
+msgid "Language set:"
+msgstr "语言类别代码:"
+
+#: src/iLiadDeviceOverview.c:230
+msgid "OEM code:"
+msgstr "OEM代码:"
+
+#: src/iLiadDeviceOverview.c:231
+msgid "Country code:"
+msgstr "国别代码:"
+
+#: src/iLiadDeviceOverview.c:232
+msgid "PCBA revision:"
+msgstr "PCB修订版本号:"
+
+#: src/iLiadDeviceOverview.c:233
+msgid "EPD ID:"
+msgstr "EPD识别码:"
+
+#: src/iLiadDeviceOverview.c:234
+msgid "Product ID:"
+msgstr "产品识别号:"
+
+#: src/iLiadDeviceOverview.c:235
+msgid "Wired MAC address:"
+msgstr "有线网卡MAC地址:"
+
+#: src/iLiadDeviceOverview.c:236
+msgid "Wireless MAC address:"
+msgstr "无线网卡MAC地址:"
+
+#: src/iLiadDeviceOverview.c:237
+msgid "Software version:"
+msgstr "软件版本:"
+
+#: src/iLiadDeviceOverview.c:238
+msgid "Software build number:"
+msgstr "软件构建号:"
+
+#: src/iLiadDeviceOverview.c:239
+msgid "Kernel version:"
+msgstr "内核版本:"
+
+#: src/iLiadDeviceOverview.c:241
+msgid "Acknowledgements"
+msgstr "致谢"
+
+#: src/iLiadDeviceOverview.c:244
+msgid ""
+"iRex Technologies wants to thank the following people for contributing to "
+"the iLiad software:"
+msgstr "iRex非常感谢以下为iLiad软件做出贡献的人:"
+
+#: src/iLiadDeviceOverview.c:247
+#, c-format
+msgid "German translation: %s"
+msgstr "德语翻译: %s"
+
+#: src/iLiadDeviceOverview.c:250
+#, c-format
+msgid "Stylus calibration: %s"
+msgstr "手写笔校正: %s"
+
+#: src/iLiadTimediDSScreen.c:304
+msgid "Time to connect to iDS"
+msgstr "自动连接iDS"
+
+#: src/iLiadTimediDSScreen.c:306
+msgid ""
+"Enabling \"time to connection\" causes the iLiad to download content from "
+"the iDS at a set time."
+msgstr "允许“自动连接iDS”使得iLiad在指定的时间连接到iDS并下载内容及更新."
+
+#: src/iLiadTimediDSScreen.c:312
+msgid "Set the time"
+msgstr "时间设置"
+
+#: src/iLiadTimediDSScreen.c:313
+msgid "The iLiad will connect to iDS at the set time:"
+msgstr "iLiad将在以下的时刻连接到iDS:"
+
+#: src/iLiadTimediDSScreen.c:318
+msgid "Connect at"
+msgstr "连接建立于"
+
+#: src/iLiadTimediDSScreen.c:322
+msgid "Include software downloads while connected to iDS."
+msgstr "连接到iDS时自动下载软件更新."
+
+#: src/iLiadTimediDSScreen.c:324
+msgid "Switch off again after waking up the device."
+msgstr "在iLiad被唤醒并下载完毕后再次关闭iLiad."
+
+#: src/iLiadTimediDSScreen.c:328
+msgid ""
+"When the iLiad is switched off, it will 'wake-up' to download content from "
+"the iDS."
+msgstr "如果在指定的时刻iLiad处于关机状态, iLiad会被自动唤醒."
+
+#: src/background.c:90
+msgid "iLiad Settings"
+msgstr "iLiad设置"

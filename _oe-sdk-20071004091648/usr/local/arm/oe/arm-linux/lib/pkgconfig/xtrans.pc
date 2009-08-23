@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+xtransincludedir=/usr/local/arm/oe/arm-linux/include/X11/Xtrans
+
+Name: XTrans
+Description: Abstract network code for X
+Version: 0.1
+Cflags: -I${xtransincludedir} -I${includedir}

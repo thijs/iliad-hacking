@@ -1,0 +1,11 @@
+Package: libgcc1
+Version: 3.4.4-r3
+Description: The GNU cc and gcc C compilers.
+Section: devel
+Priority: optional
+Maintainer: Gerald Britton <gbritton@doomcom.org>
+Architecture: arm
+OE: gcc-cross-3.4.4
+Homepage: http://www.gnu.org/software/gcc/
+Depends: gcc-cross-locale*, libc6 (>= 2.3.2+cvs20040726)
+Source: ftp://ftp.gnu.org/gnu/gcc/gcc-3.4.4/gcc-3.4.4.tar.bz2 file://gcc34-reverse-compare.patch;patch=1 file://gcc34-arm-ldm.patch;patch=1 file://gcc34-arm-ldm-peephole.patch;patch=1 file://gcc34-arm-tune.patch;patch=1 file://gcc-3.4.1-uclibc-100-conf.patch;patch=1 file://gcc-3.4.1-uclibc-200-locale.patch;patch=1 file://gcc-3.4.0-arm-lib1asm.patch;patch=1 file://gcc-3.4.0-arm-nolibfloat.patch;patch=1 file://gcc-3.4.0-arm-bigendian.patch;patch=1 file://gcc-3.4.0-arm-bigendian-uclibc.patch;patch=1 file://GCC3.4.0VisibilityPatch.diff;patch=1 file://15342.patch;patch=1 file://always-fixincperm.patch;patch=1 file://gcc34-configure.in.patch;patch=1 file://gcc34-thumb-support.patch;patch=1

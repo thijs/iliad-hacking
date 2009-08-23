@@ -1,0 +1,11 @@
+Package: libidl-2-0
+Version: 0.8.6-r1
+Description: Library for parsing CORBA IDL files
+Section: gnome/libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libidl-0.8.6
+Homepage: unknown
+Depends: libglib-2.0-0 (>= 2.6.6), libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Source: http://ftp.gnome.org/pub/GNOME/sources/libIDL/0.8/libIDL-0.8.6.tar.bz2

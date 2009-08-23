@@ -1,0 +1,11 @@
+# language specific source files
+
+src/control.c
+src/control_share.c
+src/erMdsXml.c
+src/lister.c
+src/gtkMetadataWnd.c
+src/gtkSearchWnd.c
+src/gtkPincodeScreen.c
+src/gtkSortWnd.c
+src/gtkDistListWnd.c

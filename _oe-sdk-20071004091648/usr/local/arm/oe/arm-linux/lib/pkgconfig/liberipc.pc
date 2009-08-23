@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: liberipc
+Description: IPC library used by eReader
+Version: 0.211
+Libs: -L${libdir} -leripc
+Cflags: -I${includedir} 

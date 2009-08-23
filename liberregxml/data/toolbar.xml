@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<iLiadRegistry>
+
+    <toolbarIcons>
+        
+        <iconBasePath>/usr/share/pixmaps/</iconBasePath>
+
+        <toolbarIcon name="battery">
+            <iconFileName id="1">battery00_grey.png</iconFileName>
+            <iconFileName id="2">battery00.png</iconFileName>
+            <iconFileName id="3">battery01.png</iconFileName>
+            <iconFileName id="4">battery02.png</iconFileName>
+            <iconFileName id="5">battery03.png</iconFileName>
+            <iconFileName id="6">battery04.png</iconFileName>
+            <iconFileName id="7">battery05.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="bookmark">
+            <iconFileName id="1">bookmark.png</iconFileName>
+            <iconFileName id="2">bookmark_grey.png</iconFileName>
+            <iconFileName id="3">bookmark_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="collapse">
+            <iconFileName id="1">collapse.png</iconFileName>
+            <iconFileName id="2">collapse_grey.png</iconFileName>
+            <iconFileName id="3">collapse_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="connectivity">
+            <iconFileName id="1">connectivity00_grey.png</iconFileName>
+            <iconFileName id="2">connectivity00.png</iconFileName>
+            <iconFileName id="3">connectivity01.png</iconFileName>
+            <iconFileName id="4">connectivity02.png</iconFileName>
+            <iconFileName id="5">connectivity03.png</iconFileName>
+            <iconFileName id="6">connectivity04.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="copy">
+            <iconFileName id="1">copy.png</iconFileName>
+            <iconFileName id="2">copy_grey.png</iconFileName>
+            <iconFileName id="3">copy_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="cut">
+            <iconFileName id="1">cut.png</iconFileName>
+            <iconFileName id="2">cut_grey.png</iconFileName>
+            <iconFileName id="3">cut_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="empty">
+            <iconFileName id="1">empty.png</iconFileName>
+            <iconFileName id="2">empty_grey.png</iconFileName>
+            <iconFileName id="3">empty_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="error">
+            <iconFileName id="1">error.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="erase">
+            <iconFileName id="1">erase.png</iconFileName>
+            <iconFileName id="2">erase_grey.png</iconFileName>
+            <iconFileName id="3">erase_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="expand">
+            <iconFileName id="1">expand.png</iconFileName>
+            <iconFileName id="2">expand_grey.png</iconFileName>
+            <iconFileName id="3">expand_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="filemanager">
+            <iconFileName id="1">filemanager.png</iconFileName>
+            <iconFileName id="2">filemanager_grey.png</iconFileName>
+            <iconFileName id="3">filemanager_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="fontlarger">
+            <iconFileName id="1">fontlarger.png</iconFileName>
+            <iconFileName id="2">fontlarger_grey.png</iconFileName>
+            <iconFileName id="3">fontlarger_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="fontsmaller">
+            <iconFileName id="1">fontsmaller.png</iconFileName>
+            <iconFileName id="2">fontsmaller_grey.png</iconFileName>
+            <iconFileName id="3">fontsmaller_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="keyboard">
+            <iconFileName id="1">keyboard.png</iconFileName>
+            <iconFileName id="2">keyboard_grey.png</iconFileName>
+            <iconFileName id="3">keyboard_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="orientation">
+            <iconFileName id="1">orientation.png</iconFileName>
+            <iconFileName id="2">orientation_grey.png</iconFileName>
+            <iconFileName id="3">orientation_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="paste">
+            <iconFileName id="1">paste.png</iconFileName>
+            <iconFileName id="2">paste_grey.png</iconFileName>
+            <iconFileName id="3">paste_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pen">
+            <iconFileName id="1">pen.png</iconFileName>
+            <iconFileName id="2">pen_grey.png</iconFileName>
+            <iconFileName id="3">pen_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pen1pixel">
+            <iconFileName id="1">pen1pixel.png</iconFileName>
+            <iconFileName id="2">pen1pixel_grey.png</iconFileName>
+            <iconFileName id="3">pen1pixel_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pen3pixel">
+            <iconFileName id="1">pen3pixel.png</iconFileName>
+            <iconFileName id="2">pen3pixel_grey.png</iconFileName>
+            <iconFileName id="3">pen3pixel_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pen5pixel">
+            <iconFileName id="1">pen5pixel.png</iconFileName>
+            <iconFileName id="2">pen5pixel_grey.png</iconFileName>
+            <iconFileName id="3">pen5pixel_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pen7pixel">
+            <iconFileName id="1">pen7pixel.png</iconFileName>
+            <iconFileName id="2">pen7pixel_grey.png</iconFileName>
+            <iconFileName id="3">pen7pixel_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="penheavier">
+            <iconFileName id="1">penheavier.png</iconFileName>
+            <iconFileName id="2">penheavier_grey.png</iconFileName>
+            <iconFileName id="3">penheavier_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="penlighter">
+            <iconFileName id="1">penlighter.png</iconFileName>
+            <iconFileName id="2">penlighter_grey.png</iconFileName>
+            <iconFileName id="3">penlighter_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="penpressure">
+            <iconFileName id="1">penpressure.png</iconFileName>
+            <iconFileName id="2">penpressure_grey.png</iconFileName>
+            <iconFileName id="3">penpressure_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="selecttext">
+            <iconFileName id="1">selecttext.png</iconFileName>
+            <iconFileName id="2">selecttext_grey.png</iconFileName>
+            <iconFileName id="3">selecttext_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="share">
+            <iconFileName id="1">share.png</iconFileName>
+            <iconFileName id="2">share_grey.png</iconFileName>
+            <iconFileName id="3">share_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="summarize">
+            <iconFileName id="1">summarize.png</iconFileName>
+            <iconFileName id="2">summarize_grey.png</iconFileName>
+            <iconFileName id="3">summarize_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="trashcan">
+            <iconFileName id="1">trashcan.png</iconFileName>
+            <iconFileName id="2">trashcan_grey.png</iconFileName>
+            <iconFileName id="3">trashcan_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="zoomin">
+            <iconFileName id="1">zoomin.png</iconFileName>
+            <iconFileName id="2">zoomin_grey.png</iconFileName>
+            <iconFileName id="3">zoomin_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="zoomout">
+            <iconFileName id="1">zoomout.png</iconFileName>
+            <iconFileName id="2">zoomout_grey.png</iconFileName>
+            <iconFileName id="3">zoomout_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="eraseline">
+            <iconFileName id="1">eraseline.png</iconFileName>
+            <iconFileName id="2">eraseline_grey.png</iconFileName>
+            <iconFileName id="3">eraseline_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="npage">
+            <iconFileName id="1">npage.png</iconFileName>
+            <iconFileName id="2">npage_grey.png</iconFileName>
+            <iconFileName id="3">npage_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="penblack">
+            <iconFileName id="1">penblack.png</iconFileName>
+            <iconFileName id="2">penblack_grey.png</iconFileName>
+            <iconFileName id="3">penblack_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pendarkgrey">
+            <iconFileName id="1">pendarkgrey.png</iconFileName>
+            <iconFileName id="2">pendarkgrey_grey.png</iconFileName>
+            <iconFileName id="3">pendarkgrey_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="penlightgrey">
+            <iconFileName id="1">penlightgrey.png</iconFileName>
+            <iconFileName id="2">penlightgrey_grey.png</iconFileName>
+            <iconFileName id="3">penlightgrey_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="penwhite">
+            <iconFileName id="1">penwhite.png</iconFileName>
+            <iconFileName id="2">penwhite_grey.png</iconFileName>
+            <iconFileName id="3">penwhite_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pan">
+            <iconFileName id="1">pan.png</iconFileName>
+            <iconFileName id="2">pan_grey.png</iconFileName>
+            <iconFileName id="3">pan_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="index">
+            <iconFileName id="1">index.png</iconFileName>
+            <iconFileName id="2">index_grey.png</iconFileName>
+            <iconFileName id="3">index_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pen1pixelLow">
+            <iconFileName id="1">pen1pixelLow.png</iconFileName>
+            <iconFileName id="2">empty_grey.png</iconFileName>
+            <iconFileName id="3">pen1pixelLow_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pen3pixelLow">
+            <iconFileName id="1">pen3pixelLow.png</iconFileName>
+            <iconFileName id="2">empty_grey.png</iconFileName>
+            <iconFileName id="3">pen3pixelLow_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pen5pixelLow">
+            <iconFileName id="1">pen5pixelLow.png</iconFileName>
+            <iconFileName id="2">empty_grey.png</iconFileName>
+            <iconFileName id="3">pen5pixelLow_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pen7pixelLow">
+            <iconFileName id="1">pen7pixelLow.png</iconFileName>
+            <iconFileName id="2">empty_grey.png</iconFileName>
+            <iconFileName id="3">pen7pixelLow_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="penblackLow">
+            <iconFileName id="1">penblackLow.png</iconFileName>
+            <iconFileName id="2">empty_grey.png</iconFileName>
+            <iconFileName id="3">penblackLow_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="pendarkgreyLow">
+            <iconFileName id="1">pendarkgreyLow.png</iconFileName>
+            <iconFileName id="2">empty_grey.png</iconFileName>
+            <iconFileName id="3">pendarkgreyLow_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="penlightgreyLow">
+            <iconFileName id="1">penlightgreyLow.png</iconFileName>
+            <iconFileName id="2">empty_grey.png</iconFileName>
+            <iconFileName id="3">penlightgreyLow_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="penwhiteLow">
+            <iconFileName id="1">penwhiteLow.png</iconFileName>
+            <iconFileName id="2">empty_grey.png</iconFileName>
+            <iconFileName id="3">penwhiteLow_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="locked">
+            <iconFileName id="1">locked.png</iconFileName>
+            <iconFileName id="2">locked_grey.png</iconFileName>
+            <iconFileName id="3">locked_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="tagging">
+            <iconFileName id="1">tagging.png</iconFileName>
+            <iconFileName id="2">tagging_grey.png</iconFileName>
+            <iconFileName id="3">tagging_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="search">
+            <iconFileName id="1">search.png</iconFileName>
+            <iconFileName id="2">search_grey.png</iconFileName>
+            <iconFileName id="3">search_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="zoomfit">
+            <iconFileName id="1">zoomfit.png</iconFileName>
+            <iconFileName id="2">zoomfit_grey.png</iconFileName>
+            <iconFileName id="3">zoomfit_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="landscape_portrait">
+            <iconFileName id="1">landscape_portrait.png</iconFileName>
+            <iconFileName id="2">landscape_portrait_grey.png</iconFileName>
+            <iconFileName id="3">landscape_portrait_selected.png</iconFileName>
+            <iconFileName id="4">portrait_landscape.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="portrait_landscape">
+            <iconFileName id="1">portrait_landscape.png</iconFileName>
+            <iconFileName id="2">portrait_landscape_grey.png</iconFileName>
+            <iconFileName id="3">portrait_landscape_selected.png</iconFileName>
+            <iconFileName id="4">landscape_portrait.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="zoomwidth">
+            <iconFileName id="1">zoomwidth.png</iconFileName>
+            <iconFileName id="2">zoomwidth_grey.png</iconFileName>
+            <iconFileName id="3">zoomwidth_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="zoomback">
+            <iconFileName id="1">zoomback.png</iconFileName>
+            <iconFileName id="2">zoomback_grey.png</iconFileName>
+            <iconFileName id="3">zoomback_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="find">
+            <iconFileName id="1">find.png</iconFileName>
+            <iconFileName id="2">find_grey.png</iconFileName>
+            <iconFileName id="3">find_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="lock_screen">
+            <iconFileName id="1">lock_screen.png</iconFileName>
+            <iconFileName id="2">lock_screen_grey.png</iconFileName>
+            <iconFileName id="3">lock_screen_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="continuous_mode">
+            <iconFileName id="1">continuous_mode.png</iconFileName>
+            <iconFileName id="2">continuous_mode_grey.png</iconFileName>
+            <iconFileName id="3">continuous_mode_selected.png</iconFileName>
+            <iconFileName id="4">page_mode.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="page_mode">
+            <iconFileName id="1">page_mode.png</iconFileName>
+            <iconFileName id="2">page_mode_grey.png</iconFileName>
+            <iconFileName id="3">page_mode_selected.png</iconFileName>
+            <iconFileName id="4">continuous_mode.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="sort">
+            <iconFileName id="1">sort.png</iconFileName>
+            <iconFileName id="2">sort_grey.png</iconFileName>
+            <iconFileName id="3">sort_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="connect">
+            <iconFileName id="1">connect.png</iconFileName>
+            <iconFileName id="2">connect_grey.png</iconFileName>
+            <iconFileName id="3">connect_selected.png</iconFileName>
+            <iconFileName id="4">connect_time.png</iconFileName>
+            <iconFileName id="5">new_content.png</iconFileName>
+            <iconFileName id="6">new_content_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="start_reading">
+            <iconFileName id="1">start_reading.png</iconFileName>
+            <iconFileName id="2">start_reading_grey.png</iconFileName>
+            <iconFileName id="3">start_reading_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="back">
+            <iconFileName id="1">back.png</iconFileName>
+            <iconFileName id="2">back_grey.png</iconFileName>
+            <iconFileName id="3">back_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="lookup">
+            <iconFileName id="1">lookup.png</iconFileName>
+            <iconFileName id="2">lookup_grey.png</iconFileName>
+            <iconFileName id="3">lookup_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="dictionary_search">
+            <iconFileName id="1">dictionary_search.png</iconFileName>
+            <iconFileName id="2">dictionary_search_grey.png</iconFileName>
+            <iconFileName id="3">dictionary_search_selected.png</iconFileName>
+        </toolbarIcon>
+
+        <toolbarIcon name="forward">
+            <iconFileName id="1">forward.png</iconFileName>
+            <iconFileName id="2">forward_grey.png</iconFileName>
+            <iconFileName id="3">forward_selected.png</iconFileName>
+        </toolbarIcon>
+
+    </toolbarIcons>
+
+</iLiadRegistry>

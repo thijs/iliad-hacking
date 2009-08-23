@@ -1,0 +1,12 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: Pango FT2
+Description: Freetype 2.0 font support for Pango
+Version: 1.8.1
+Requires: pango
+Libs: -L${libdir} -lpangoft2-1.0 
+Cflags: -I${includedir}/pango-1.0 -I/usr/local/arm/oe/arm-linux/include   -I/usr/local/arm/oe/arm-linux/include   -I/usr/local/arm/oe/arm-linux/include/freetype2 -I/usr/local/arm/oe/arm-linux/include
+

@@ -1,0 +1,350 @@
+
+#############################################
+#
+# eReader styles for GTK objects
+#
+#############################################
+
+#
+# class erGtkEntry
+#
+# Note: stylename "ergtk_entry" does not work, don't know why
+#
+style "er_gtk_entry"
+{
+    font_name = "Bitstream Vera Sans 8"
+    # No colour spec, use colours from parent class GtkEntry.
+}
+class "erGtkEntry" style "er_gtk_entry"
+
+
+#
+# class erGtkToggleButton
+#
+style "er_gtk_toggle_button_130_27"
+{
+    engine "pixmap"
+    {
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            state           = NORMAL
+            shadow          = OUT
+            file            = "Btn_130_27_transparent_blackborder.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            state           = PRELIGHT
+            shadow          = OUT
+            file            = "Btn_130_27_transparent_blackborder.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            state           = INSENSITIVE
+            shadow          = OUT
+            file            = "Btn_130_27_transparent_greyborder.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = IN
+            file            = "Btn_130_27_black.png"
+            stretch         = TRUE
+        }
+    }
+}
+class    "erGtkToggleButton"        style "er_gtk_toggle_button_130_27"
+widget "*.erGtkToggleButton_130_27" style "er_gtk_toggle_button_130_27"
+
+style "er_gtk_toggle_button_150_27"
+{
+    engine "pixmap"
+    {
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            state           = NORMAL
+            shadow          = OUT
+            file            = "Btn_150_27_transparent_blackborder.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            state           = PRELIGHT
+            shadow          = OUT
+            file            = "Btn_150_27_transparent_blackborder.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            state           = INSENSITIVE
+            shadow          = OUT
+            file            = "Btn_150_27_transparent_greyborder.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = IN
+            file            = "Btn_150_27_black.png"
+            stretch         = TRUE
+        }
+    }
+}
+widget "*.erGtkToggleButton_150_27" style "er_gtk_toggle_button_150_27"
+
+style "er_gtk_toggle_button_200_27"
+{
+    engine "pixmap"
+    {
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            state           = NORMAL
+            shadow          = OUT
+            file            = "Btn_200_27_transparent_blackborder.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            state           = PRELIGHT
+            shadow          = OUT
+            file            = "Btn_200_27_transparent_blackborder.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            state           = INSENSITIVE
+            shadow          = OUT
+            file            = "Btn_200_27_transparent_greyborder.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = IN
+            file            = "Btn_200_27_black.png"
+            stretch         = TRUE
+        }
+    }
+}
+widget "*.erGtkToggleButton_200_27" style "er_gtk_toggle_button_200_27"
+
+style "er_gtk_toggle_button_310_27"
+{
+    engine "pixmap"
+    {
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = OUT
+            file            = "Btn_310_27_transparent_blackborder.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = IN
+            file            = "Btn_310_27_black.png"
+            stretch         = TRUE
+        }
+    }
+}
+widget "*.erGtkToggleButton_310_27" style "er_gtk_toggle_button_310_27"
+
+style "er_gtk_toggle_button_640_44"
+{
+    engine "pixmap"
+    {
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = OUT
+            file            = "Btn_640_44_grey.png"
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = IN
+            file            = "Btn_640_44_black.png"
+            stretch         = TRUE
+        }
+    }
+}
+widget "*.erGtkToggleButton_640_44" style "er_gtk_toggle_button_640_44"
+
+style "er_gtk_toggle_button_label"
+{
+    font_name = "Bitstream Vera Sans bold 6.2"
+
+    fg[PRELIGHT]= "white"
+    fg[NORMAL]  = "black"
+    fg[ACTIVE]  = "white"
+    fg[INSENSITIVE] = "#666666"
+}
+widget_class "*.erGtkToggleButton.GtkLabel" style "er_gtk_toggle_button_label"
+
+
+#
+# class erGtkSelectionList
+#
+style "er_gtk_selection_list"
+{
+    bg[NORMAL] = "white"
+}
+class "erGtkSelectionList" style "er_gtk_selection_list"
+
+style "er_gtk_selection_list_title_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_27_black.png"
+}
+widget "*.erGtkSelectionList_TitleBackground" style "er_gtk_selection_list_title_background"
+
+style "er_gtk_selection_list_title_text"
+{
+    font_name = "Bitstream Vera Sans bold 7"
+    fg[NORMAL]= "white"
+}
+widget "*.erGtkSelectionList_TitleText" style "er_gtk_selection_list_title_text"
+
+style "er_gtk_selection_list_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_935_grey.png"
+}
+widget "*.erGtkSelectionList_Background" style "er_gtk_selection_list_background"
+
+style "er_gtk_selection_list_instruction"
+{
+   font_name = "Bitstream Vera Sans 7"
+   fg[NORMAL]= "black"
+}
+widget "*.erGtkSelectionList_Instruction" style "er_gtk_selection_list_instruction"
+
+style "er_gtk_selection_list_check_button"
+{
+    GtkCheckButton::indicator-size    = 29
+    GtkCheckButton::indicator-spacing =  2
+
+    font_name = "Bitstream Vera Sans 7"
+
+    engine "pixmap" {
+        image
+        {
+            function        = FOCUS
+            overlay_file    = "Transparent.png"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = FLAT_BOX
+            overlay_file    = "Transparent.png"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = BOX
+            overlay_file    = "Transparent.png"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = CHECK
+            recolorable     = TRUE
+            shadow          = OUT
+            overlay_file    = "Checklist_normal.png"
+            overlay_stretch = FALSE
+        }
+        image
+        {
+            function        = CHECK
+            recolorable     = TRUE
+            shadow          = IN
+            overlay_file    = "Checklist_selected.png"
+            overlay_stretch = FALSE
+        }
+    }
+}
+widget "*.erGtkSelectionList_CheckButton"          style "er_gtk_selection_list_check_button"
+widget "*.erGtkSelectionList_CheckButton.GtkLabel" style "er_gtk_selection_list_check_button"
+
+style "er_gtk_selection_list_radio_button"
+{
+    GtkCheckButton::indicator-size    = 29
+    GtkCheckButton::indicator-spacing =  2
+
+    font_name = "Bitstream Vera Sans 7"
+
+    engine "pixmap" {
+        image
+        {
+            function        = FOCUS
+            overlay_file    = "Transparent.png"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = FLAT_BOX
+            overlay_file    = "Transparent.png"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = BOX
+            overlay_file    = "Transparent.png"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = CHECK
+            recolorable     = TRUE
+            shadow          = OUT
+            overlay_file    = "Radiobutton_normal.png"
+            overlay_stretch = FALSE
+        }
+        image
+        {
+            function        = CHECK
+            recolorable     = TRUE
+            shadow          = IN
+            overlay_file    = "Radiobutton_selected.png"
+            overlay_stretch = FALSE
+        }
+    }
+}
+widget "*.erGtkSelectionList_RadioButton"          style "er_gtk_selection_list_radio_button"
+widget "*.erGtkSelectionList_RadioButton.GtkLabel" style "er_gtk_selection_list_radio_button"
+
+widget "*.erGtkSelectionList_TextButton" style "er_gtk_toggle_button_150_27"
+
+style "er_gtk_selection_list_continuation"
+{
+    font_name  = "Bitstream Vera Sans bold 8"
+    fg[NORMAL] = "black"
+}
+widget "*.erGtkSelectionList_Continuation" style "er_gtk_selection_list_continuation"

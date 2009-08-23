@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The elements named in  "*_t " are custom defined simple type element -->
+<!-- The elements named in uppercase are enumeration  -->
+<!-- We use attribute "type" to reference to simpleType element-->
+<!-- We use attribute "ref" to reference to complexType element-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- definition of  "iLiadRegistry" element -->
+  <xs:element name="iLiadRegistry">
+    <xs:complexType>
+      <xs:all>
+         <xs:element ref="networkProfileList"/>
+         <xs:element ref="lastConnect" minOccurs="0"/>
+         <xs:element ref="autoConnectWlan" minOccurs="0"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- definition of  "networkProfileList" element -->
+  <xs:element name="networkProfileList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="networkProfile" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="networkProfile">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="profileName"/>
+        <!-- wired/wireless  -->
+        <xs:element ref="networkType"/>
+        <xs:element ref="wlanDetails" minOccurs="0"/>
+        <xs:element ref="dialupDetails" minOccurs="0"/>
+        <!-- dhcp/static IP -->
+        <xs:element ref="useDhcp"/>
+        <xs:element ref="ipStaticDetails" minOccurs="0"/>
+        <!-- proxy on/off -->
+        <xs:element ref="useProxy"/>
+        <xs:element ref="proxyDetails" minOccurs="0"/>
+        <!-- timestamp of the last successful connection -->
+        <xs:element ref="timestamp" minOccurs="0"/>
+      </xs:all>
+      <xs:attribute name="profileID" use="required" type="tokenNotEmpty_t"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="profileName" type="xs:string"/>
+  <xs:element name="networkType" type="networkType_t" default="WIRED"/>
+  <xs:element name="useDhcp" type="xs:boolean" default="true"/>
+  <xs:element name="useProxy" type="xs:boolean" default="false"/>
+  <xs:element name="timestamp" type="xs:integer"/>
+
+  <xs:simpleType name="tokenNotEmpty_t">
+    <xs:restriction base="xs:token">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- wireless settings -->
+  <xs:simpleType name="networkType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WIRED"/>
+      <xs:enumeration value="WIRELESS"/>
+      <xs:enumeration value="DIALUP"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="wlanDetails">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="wlanSsid"/>
+        <xs:element ref="wlanEncryptionType"/>
+        <xs:element ref="wlanEncryptionKey" minOccurs="0"/>
+        <xs:element ref="wlanBroadcast" minOccurs="0"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="wlanSsid" type="tokenNotEmpty_t" default="ereader"/>
+  <xs:element name="wlanEncryptionType" type="wlanEncryptionType_t" default="ENCR_NONE"/>
+  <xs:element name="wlanEncryptionKey" type="xs:token" default=""/>
+  <xs:element name="wlanBroadcast" type="xs:boolean" default="true"/>
+
+  <xs:simpleType name="wlanEncryptionType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="ASCII_64BIT"/>
+      <xs:enumeration value="HEX_64BITS"/>
+      <xs:enumeration value="ASCII_128BITS"/>
+      <xs:enumeration value="HEX_128BITS"/>
+      <xs:enumeration value="ASCII_64BIT"/>
+      <xs:enumeration value="ENCR_NONE"/>
+      <xs:enumeration value="ENCR_WEP"/>
+      <xs:enumeration value="ENCR_WPA"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- dialup settings -->
+  <xs:element name="dialupDetails">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="dialupPhone"/>
+        <xs:element ref="dialupUser"/>
+        <xs:element ref="dialupPassword"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dialupPhone" type="xs:string" default=""/>
+  <xs:element name="dialupUser" type="xs:string" default=""/>
+  <xs:element name="dialupPassword" type="xs:string" default=""/>
+
+  <!-- static IP settings -->
+  <xs:element name="ipStaticDetails">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="ipAddress"/>
+        <xs:element ref="ipNetmask"/>
+        <xs:element ref="ipGateway"/>
+        <xs:element ref="ipNameServer"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ipAddress" type="xs:string"/>
+  <xs:element name="ipNetmask" type="xs:string"/>
+  <xs:element name="ipGateway" type="xs:string"/>
+  <xs:element name="ipNameServer" type="xs:string"/>
+
+  <!-- proxy settings -->
+  <xs:element name="proxyDetails">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="server"/>
+        <xs:element ref="port"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="server" type="xs:string" default=""/>
+  <xs:element name="port" type="xs:integer" default="8080"/>
+
+  <xs:simpleType name="wlanMode_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INFRASTRUCTURE"/>
+      <xs:enumeration value="ADHOC"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="autoConnectWlan" type="xs:boolean" default="true"/>
+
+  <!-- definition of  "lastConnect" element -->
+  <xs:element name="lastConnect">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="profileConnectedIDS"/>
+        <xs:element ref="profileConnectedPC"/>
+        <xs:element ref="manualConnectType"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+ 
+  <xs:element name="profileConnectedIDS" type="xs:integer"/>
+  <xs:element name="profileConnectedPC" type="xs:integer"/>
+  <xs:element name="manualConnectType" type="serverType_t"/>
+
+  <xs:simpleType name="serverType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IDS"/>
+      <xs:enumeration value="PC"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

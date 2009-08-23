@@ -1,0 +1,11 @@
+Package: libxsettings-client0
+Version: 0.14-r0
+Description: Version 0.14-r0 of package libxsettings-client
+Section: gpe/libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libxsettings-client-0.14
+Homepage: unknown
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Source: http://ftp.handhelds.org/pub/projects/gpe/source/xsettings-client-0.14.tar.bz2

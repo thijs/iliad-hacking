@@ -1,0 +1,11 @@
+Package: libgcrypt11
+Version: 1.2.1-r0
+Description: A general purpose cryptographic library based on the code from GnuPG
+Section: libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libgcrypt-1.2.1
+Homepage: unknown
+Depends: libgpg-error0 (>= 1.0), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Source: ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.2.1.tar.gz

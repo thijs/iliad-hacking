@@ -1,0 +1,11 @@
+Package: libglib-2.0-0
+Version: 2.6.6-r0
+Description: GLib is a general-purpose utility library, which provides many useful data types, macros, type conversions, string utilities, file utilities, a main loop abstraction, and so on. It works on many UNIX-like platforms, Windows, OS/2 and BeOS.
+Section: libs
+Priority: optional
+Maintainer: Philip Blundell <pb@handhelds.org>
+Architecture: arm
+OE: glib-2.0-2.6.6
+Homepage: unknown
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Source: ftp://ftp.gtk.org/pub/gtk/v2.6/glib-2.6.6.tar.bz2 file://glibinclude.patch;patch=1;pnum=2 file://glibconfig-sysdefs.h

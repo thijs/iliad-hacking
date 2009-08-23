@@ -1,0 +1,10 @@
+Package: xextensions-dev
+Version: 1.0.1-r0
+Description: various extension headers.
+Section: devel
+Priority: optional
+Maintainer: Greg Gilbert <greg@treke.net>
+Architecture: arm
+OE: xextensions-1.0.1
+Homepage: unknown
+Source: http://xlibs.freedesktop.org/release/xextensions-1.0.1.tar.bz2

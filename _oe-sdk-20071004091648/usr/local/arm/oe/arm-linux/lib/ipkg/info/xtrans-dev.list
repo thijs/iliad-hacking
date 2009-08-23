@@ -1,0 +1,12 @@
+/usr/lib/pkgconfig/xtrans.pc
+/usr/include/X11/Xtrans/Xtransos2.c
+/usr/include/X11/Xtrans/Xtranssock.c
+/usr/include/X11/Xtrans/Xtranslcl.c
+/usr/include/X11/Xtrans/Xtrans.h
+/usr/include/X11/Xtrans/Xtrans.c
+/usr/include/X11/Xtrans/Xtransdnet.c
+/usr/include/X11/Xtrans/Xtransint.h
+/usr/include/X11/Xtrans/Xtranstli.c
+/usr/include/X11/Xtrans/Xtransutil.c
+/usr/include/X11/Xtrans/Xtransdef.h
+/usr/include/X11/Xtrans/transport.c

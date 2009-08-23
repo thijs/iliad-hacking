@@ -1,0 +1,11 @@
+Package: libxml2-dev
+Version: 2.6.26-r2
+Description: GNOME XML Parser library
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libxml2-2.6.26
+Homepage: unknown
+Depends: libxml2
+Source: ftp://xmlsoft.org/libxml2/libxml2-2.6.26.tar.gz

@@ -1,0 +1,11 @@
+Package: libxcursor1
+Version: 1.1.2-r2
+Description: X Cursor library
+Section: x11/libs
+Priority: optional
+Maintainer: Phil Blundell <pb@handhelds.org>
+Architecture: arm
+OE: libxcursor-1.1.2
+Homepage: unknown
+Depends: libxrender1 (>= 0.8.4), libxfixes0 (>= 2.0.1), libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Source: http://xlibs.freedesktop.org/release/libXcursor-1.1.2.tar.bz2 file://autofoo.patch;patch=1

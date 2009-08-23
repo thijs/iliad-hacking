@@ -1,0 +1,11 @@
+Package: libfakekey-dev
+Version: 0.2+svn20061031-r1
+Description: libFakeKey: A simple library for converting utf8 chars into 'fake' keypresses.
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libfakekey-0.2+svn20061031
+Homepage: unknown
+Depends: libfakekey0
+Source: http://dev.irexnet.com/~matthijs/sources/libfakekey-0.2.tar.gz

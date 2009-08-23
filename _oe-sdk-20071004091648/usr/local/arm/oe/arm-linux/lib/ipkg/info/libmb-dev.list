@@ -1,0 +1,13 @@
+/usr/include/libmb/mbutil.h
+/usr/lib/libmb.la
+/usr/include/libmb/mbdotdesktop.h
+/usr/lib/libmb.so
+/usr/lib/libmb.a
+/usr/include/libmb/mbpixbuf.h
+/usr/include/libmb/mbconfig.h
+/usr/include/libmb/hash.h
+/usr/include/libmb/mbmenu.h
+/usr/include/libmb/mbtray.h
+/usr/lib/pkgconfig/libmb.pc
+/usr/include/libmb/mb.h
+/usr/include/libmb/mbexp.h

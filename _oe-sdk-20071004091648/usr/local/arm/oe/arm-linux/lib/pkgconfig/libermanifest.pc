@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: libermanifest
+Description: XML Manifest library used by eReader
+Version: 0.211
+Libs: -L${libdir} -lermanifest -L/usr/local/arm/oe/arm-linux/lib -lxml2 -lpthread -lz -lm  
+Cflags: -I${includedir} -I/usr/local/arm/oe/arm-linux/include/libxml2  

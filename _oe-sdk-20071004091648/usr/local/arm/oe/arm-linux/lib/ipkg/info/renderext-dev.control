@@ -1,0 +1,10 @@
+Package: renderext-dev
+Version: 0.0cvs20051025-r0
+Description: X Render extension headers
+Section: devel
+Priority: optional
+Maintainer: Greg Gilbert <greg@treke.net>
+Architecture: arm
+OE: renderext-0.0cvs20051025
+Homepage: unknown
+Source: cvs://anoncvs:anoncvs@pdx.freedesktop.org/cvs/xlibs;module=Render

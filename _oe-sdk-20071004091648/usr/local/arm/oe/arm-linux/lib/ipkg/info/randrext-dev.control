@@ -1,0 +1,10 @@
+Package: randrext-dev
+Version: 1.0-r0
+Description: X Resize and Rotate extension headers
+Section: devel
+Priority: optional
+Maintainer: Greg Gilbert <greg@treke.net>
+Architecture: arm
+OE: randrext-1.0
+Homepage: unknown
+Source: http://xlibs.freedesktop.org/release/randrext-1.0.tar.bz2

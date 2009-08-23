@@ -1,0 +1,11 @@
+Package: libxt6
+Version: 0.1.5-r1
+Description: X Toolkit Intrinsics
+Section: x11/libs
+Priority: optional
+Maintainer: Phil Blundell <pb@handhelds.org>
+Architecture: arm
+OE: xt-0.1.5
+Homepage: unknown
+Depends: libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libsm6 (>= 6.0.3), libice6 (>= 6.3.3), libgcc1 (>= 3.4.4)
+Source: http://xlibs.freedesktop.org/release/libXt-0.1.5.tar.bz2 file://autofoo.patch;patch=1

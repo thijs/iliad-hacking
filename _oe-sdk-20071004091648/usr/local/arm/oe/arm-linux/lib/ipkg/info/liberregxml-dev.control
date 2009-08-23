@@ -1,0 +1,11 @@
+Package: liberregxml-dev
+Version: 0.211+svn20071003-r0
+Description: eReader registry library
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: liberregxml-0.211+svn20071003
+Homepage: unknown
+Depends: liberregxml0
+Source: svn://repo.irexnet.com/software/eReader//trunk/lib/;module=erregxml;proto=https;rev=HEAD

@@ -1,0 +1,11 @@
+Package: libxft-dev
+Version: 2.1.6-r1
+Description: X FreeType library. Client-side fonts with FreeType.
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libxft-2.1.6
+Homepage: unknown
+Depends: libxft2, libfontconfig-dev
+Source: http://xlibs.freedesktop.org/release/libXft-2.1.6.tar.bz2 file://autofoo.patch;patch=1

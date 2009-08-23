@@ -1,0 +1,11 @@
+Package: pango
+Version: 1.8.1-r3
+Description: The goal of the Pango project is to provide an Open Source framework for the layout and rendering of internationalized text.
+Section: x11/libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: pango-1.8.1
+Homepage: unknown
+Depends: libxft2 (>= 2.1.6), libxrender1 (>= 0.8.4), libx11-6 (>= 6.2.1cvs20051025), libxau0 (>= 0.1.1), libfontconfig1 (>= 2.2.95), libexpat0 (>= 1.95.7), libfreetype6 (>= 2.1.10), libz1 (>= 1.2.3), libc6 (>= 2.3.2+cvs20040726), libglib-2.0-0 (>= 2.6.6), libgcc1 (>= 3.4.4)
+Source: ftp://ftp.gtk.org/pub/gtk/v2.6/pango-1.8.1.tar.bz2 file://no-tests.patch;patch=1 file://pango.modules.ereader

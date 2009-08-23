@@ -1,0 +1,701 @@
+# Korean translations for connectionmgr package.
+# Copyright (C) 2006 iRex Technologies
+# This file is distributed under the same license as the connectionmgr package.
+# Automatically generated, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: connectionmgr 0.24\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-06 14:17+0100\n"
+"PO-Revision-Date: 2006-06-23 09:13+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/background.c:116 src/background.c:148
+msgid "iLiad network profiles"
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/background.c:134
+#, fuzzy
+msgid "iLiad network connection"
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/background.c:140
+#, fuzzy
+msgid "iLiad network configuration"
+msgstr "iLiad 네트웍 프로파일 / 네트웍 설정"
+
+#: src/background.c:144
+#, fuzzy
+msgid "iLiad profile editor"
+msgstr "설정된 프로파일"
+
+#: src/connectScreenOptions.c:277
+#, fuzzy
+msgid "Connection settings"
+msgstr "서버에 연결 중"
+
+#: src/connectScreenOptions.c:284
+msgid ""
+"Select to connect to the iDS (iRex Delivery Service) or to your computer."
+msgstr ""
+
+#: src/connectScreenOptions.c:289
+msgid "iDS"
+msgstr ""
+
+#: src/connectScreenOptions.c:292
+msgid "Computer"
+msgstr ""
+
+#: src/connectScreenOptions.c:299
+msgid "Select a connection type or accept the default."
+msgstr ""
+
+#: src/connectScreenOptions.c:303 src/editScreenProfiles.c:248
+msgid "Wired"
+msgstr "유선"
+
+#: src/connectScreenOptions.c:306 src/editScreenProfiles.c:251
+msgid "Wireless"
+msgstr "무선"
+
+#: src/connectScreenOptions.c:309 src/editScreenProfiles.c:254
+msgid "Dial-up"
+msgstr ""
+
+#: src/connectScreenOptions.c:445 src/connectScreenProfiles.c:232
+#, fuzzy
+msgid "Available wired networks"
+msgstr "보안이 활성화되지 않은 네트웍"
+
+#: src/connectScreenOptions.c:448
+msgid ""
+"No wired networks found.\n"
+"Click the Wired button above to scan again."
+msgstr ""
+
+#: src/connectScreenOptions.c:454
+#, fuzzy
+msgid "Please wait while the iLiad scans for wired networks ..."
+msgstr "iLiad가 무선네트웍을 찾는 동안 기다려주십시오."
+
+#: src/connectScreenOptions.c:463 src/connectScreenProfiles.c:242
+#, fuzzy
+msgid "Available dial-up networks"
+msgstr "보안이 활성화되지 않은 네트웍"
+
+#: src/connectScreenOptions.c:466
+msgid ""
+"No dial-up networks found.\n"
+"Click the Dial-up button above to scan again."
+msgstr ""
+
+#: src/connectScreenOptions.c:472
+#, fuzzy
+msgid "Please wait while the iLiad scans for dial-up networks ..."
+msgstr "iLiad가 무선네트웍을 찾는 동안 기다려주십시오."
+
+#: src/connectScreenOptions.c:481 src/connectScreenProfiles.c:252
+#, fuzzy
+msgid "Available wireless networks"
+msgstr "무선"
+
+#: src/connectScreenOptions.c:484
+msgid ""
+"No wireless networks found.\n"
+"Click the Wireless button above to scan again."
+msgstr ""
+
+#: src/connectScreenOptions.c:490
+#, fuzzy
+msgid "Please wait while the iLiad is scanning for wireless networks ..."
+msgstr "iLiad가 무선네트웍을 찾는 동안 기다려주십시오."
+
+#: src/connectScreenProfiles.c:197
+msgid "Signal strength of network:"
+msgstr ""
+
+#: src/connectScreenProfiles.c:203
+#, fuzzy
+msgid "Setup a network profile"
+msgstr "네트웍 프로파일을 추가하시려면 '마법사'를 클릭하십시오"
+
+#: src/connectScreenProfiles.c:210
+#, fuzzy
+msgid "You can create or edit a network profile by clicking the button below."
+msgstr "네트웍 프로파일을 추가하시려면 '마법사'를 클릭하십시오"
+
+#: src/connectScreenProfiles.c:214
+msgid "Profile editor"
+msgstr ""
+
+#: src/connectScreenProfiles.c:233
+msgid ""
+"No wired profiles exist, please use the button below to create a profile."
+msgstr ""
+
+#: src/connectScreenProfiles.c:236
+msgid ""
+"You need to connect your travel hub and ethernet cable to your iLiad.\n"
+"The default profile uses DHCP and no proxy."
+msgstr ""
+
+#: src/connectScreenProfiles.c:243
+msgid ""
+"No dial-up profiles exist, please use the button below to create a profile."
+msgstr ""
+
+#: src/connectScreenProfiles.c:246
+msgid ""
+"In order to use a dial-up network, you need a CF modem.\n"
+"Bluetooth dial-up connections are not yet supported."
+msgstr ""
+
+#: src/connectScreenProfiles.c:253
+msgid ""
+"No wireless profiles exist, please use the button below to create a profile."
+msgstr ""
+
+#: src/connectScreenProfiles.c:256
+msgid ""
+"When the access point is secured with an encryption key, click on the "
+"corresponding network button to open the configuration screen.\n"
+"By clicking the 'Profile editor' button you can create a network profile for "
+"a non broadcasting (hidden) access point."
+msgstr ""
+
+#: src/connectScreenProfiles.c:279
+msgid "Accept the automatic search or select the network of your choice."
+msgstr ""
+
+#: src/connectScreenProfiles.c:398 src/widgetUtils.c:395
+msgid "Connected"
+msgstr "연결됨"
+
+#: src/connectScreenProfiles.c:403 src/widgetUtils.c:400
+msgid "Unsuccessful"
+msgstr "실패"
+
+#: src/connectScreenProfiles.c:406
+msgid "Skipped"
+msgstr ""
+
+#: src/connectScreenProfiles.c:409 src/widgetUtils.c:406
+msgid "Security key required"
+msgstr ""
+
+#: src/connectScreenProfiles.c:412 src/widgetUtils.c:409
+#, fuzzy
+msgid "Aborted"
+msgstr "중지하는 중"
+
+#: src/connectScreenProfiles.c:415 src/widgetUtils.c:412
+#, fuzzy
+msgid "Aborting..."
+msgstr "중지하는 중"
+
+#: src/connectScreenProfiles.c:419 src/widgetUtils.c:416
+#, fuzzy
+msgid "Connecting..."
+msgstr "서버에 연결 중"
+
+#: src/connectScreenProfiles.c:654
+#, fuzzy
+msgid "Open network profile..."
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/editScreenProfiles.c:238
+#, fuzzy
+msgid "Show network profiles for"
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/editScreenProfiles.c:245
+#, fuzzy
+msgid "Select the type of network profiles to list below."
+msgstr "무선네트웍의 보안 형식을 선택하십시오:"
+
+#: src/editScreenProfiles.c:260 src/editScreenProfiles.c:277
+#: src/editScreenSearch.c:168
+#, fuzzy
+msgid "Network profiles"
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/editScreenProfiles.c:267
+#, fuzzy
+msgid "Create a new network profile:"
+msgstr "네트웍 프로파일을 추가하시려면 '마법사'를 클릭하십시오"
+
+#: src/editScreenProfiles.c:270
+#, fuzzy
+msgid "Create new profile"
+msgstr "우선적 프로파일"
+
+#: src/editScreenProfiles.c:279
+msgid "Stored network profiles on your iLiad: "
+msgstr ""
+
+#: src/editScreenProfiles.c:281
+msgid "Edit"
+msgstr "수정"
+
+#: src/editScreenProfiles.c:611
+#, fuzzy, c-format
+msgid "Wired %d"
+msgstr "유선"
+
+#: src/editScreenProfiles.c:614
+#, fuzzy, c-format
+msgid "Wireless %d"
+msgstr "무선"
+
+#: src/editScreenProfiles.c:617
+#, c-format
+msgid "Dial-up %d"
+msgstr ""
+
+#: src/editScreenSearch.c:148
+#, fuzzy
+msgid "Create new wireless network"
+msgstr "무선"
+
+#: src/editScreenSearch.c:155
+msgid "Select a way to create the network."
+msgstr ""
+
+#: src/editScreenSearch.c:158
+msgid "Search"
+msgstr "검색"
+
+#: src/editScreenSearch.c:161
+msgid "Manually"
+msgstr ""
+
+#: src/editScreenSearch.c:174
+msgid ""
+"When you click on 'Search' the device will scan for networks.\n"
+"Clicking 'Manually' requires all the settings."
+msgstr ""
+
+#: src/editScreenSearch.c:192
+#, fuzzy
+msgid "Please wait while the iLiad scans for wireless networks ...."
+msgstr "iLiad가 무선네트웍을 찾는 동안 기다려주십시오."
+
+#: src/editScreenSearch.c:196
+#, fuzzy
+msgid "Aborting scan ..."
+msgstr "중지하는 중"
+
+#: src/editScreenSearch.c:199
+#, fuzzy
+msgid "No wireless networks detected."
+msgstr "무선네트웍을 찾을 수 없습니다. '찾기'를 사용하여 설정을 중지하십시오."
+
+#: src/editScreenSearch.c:202
+#, fuzzy
+msgid "Please select the network you wish to create."
+msgstr "사용하려는 네트웍을 선택하거나, '찾기'를 클릭하여 설정을 중지하십시오."
+
+#: src/editScreenOverview.c:229 src/editScreenProxy.c:153
+#: src/editScreenStatic.c:179 src/editScreenWireless.c:305
+#: src/editScreenWirelessExt.c:299 src/editScreenDialup.c:271
+#, fuzzy
+msgid "Network profile"
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/editScreenOverview.c:236
+#, fuzzy
+msgid "Select how your iLiad gets a network address."
+msgstr "3단계: 네트웍 주소를 어떻게 할당할 것인지 선택하십시오"
+
+#: src/editScreenOverview.c:239
+msgid "Automatic"
+msgstr "자동"
+
+#: src/editScreenOverview.c:242
+msgid "Static"
+msgstr ""
+
+#: src/editScreenOverview.c:249
+#, fuzzy
+msgid "Select if there is a proxy server present."
+msgstr "3단계: 프록시 서버가 있으면 선택하십시오:"
+
+#: src/editScreenOverview.c:252
+msgid "No proxy"
+msgstr "프록시 서버 없슴"
+
+#: src/editScreenOverview.c:255
+msgid "Proxy"
+msgstr "프록시 서버 있슴"
+
+#: src/editScreenOverview.c:262 src/editScreenWireless.c:345
+#: src/editScreenDialup.c:297
+#, fuzzy
+msgid "You can personalize the profile name."
+msgstr "네트웍 프로파일을 추가하시려면 '마법사'를 클릭하십시오"
+
+#: src/editScreenOverview.c:269 src/editScreenWireless.c:355
+#: src/editScreenDialup.c:306
+msgid "Select an action for this profile."
+msgstr ""
+
+#: src/editScreenOverview.c:272 src/editScreenWireless.c:358
+#: src/editScreenDialup.c:309
+msgid "Test"
+msgstr "테스트"
+
+#: src/editScreenOverview.c:275 src/editScreenWireless.c:361
+#: src/editScreenDialup.c:311
+msgid "Save"
+msgstr ""
+
+#: src/editScreenOverview.c:278 src/editScreenWireless.c:364
+#: src/editScreenDialup.c:313
+#, fuzzy
+msgid "Save & Connect"
+msgstr "연결됨"
+
+#: src/editScreenOverview.c:295
+msgid ""
+"A wireless or dial-up network requires specific settings.\n"
+"Hint: You can fill in the details for them by clicking the profile entry."
+msgstr ""
+
+#: src/editScreenOverview.c:303
+#, fuzzy
+msgid ""
+"An automatic network address requires a DHCP server to be present in your "
+"network. A static network address requires specific settings.\n"
+"Hint: If you are not sure, select 'Automatic' and 'No proxy'."
+msgstr ""
+"프록시 서버는 인터넷의 정보흐름을 통제합며 보통 기업의 네트웍에 설치됩니다. "
+"프록시 서버가 있으면 추가적 세팅이 필요합니다.\n"
+"힌트: 프록시 서버가 있는지 잘 모를 경우에는 '프록시 서버 없슴'을 선택하고 '테"
+"스트'를 클릭해서 이 프로파일을 시험해 보십시오."
+
+#: src/editScreenOverview.c:313
+#, fuzzy
+msgid ""
+"A proxy server regulates internet traffic and is usually installed in "
+"company networks, this requires additional settings.\n"
+"Hint: If you are not sure, select 'No proxy'."
+msgstr ""
+"프록시 서버는 인터넷의 정보흐름을 통제합며 보통 기업의 네트웍에 설치됩니다. "
+"프록시 서버가 있으면 추가적 세팅이 필요합니다.\n"
+"힌트: 프록시 서버가 있는지 잘 모를 경우에는 '프록시 서버 없슴'을 선택하고 '테"
+"스트'를 클릭해서 이 프로파일을 시험해 보십시오."
+
+#: src/editScreenOverview.c:322
+msgid ""
+"If you personalize the profile name, it will be easy to recognize in the "
+"iLiad's network profile list."
+msgstr ""
+
+#: src/editScreenOverview.c:329
+msgid ""
+"The profile has been saved. The iLiad is trying to connect to the server."
+msgstr ""
+
+#: src/editScreenOverview.c:335
+msgid "The profile will be saved."
+msgstr ""
+
+#: src/editScreenOverview.c:340
+msgid ""
+"The iLiad is testing your network profile and is trying to make a connection "
+"to the server."
+msgstr ""
+
+#: src/editScreenOverview.c:346
+msgid "The iLiad is aborting the test."
+msgstr ""
+
+#: src/editScreenOverview.c:351
+#, fuzzy
+msgid "The test has been aborted."
+msgstr "무선네트웍을 찾는 작업이 중지되었습니다."
+
+#: src/editScreenOverview.c:356
+#, fuzzy
+msgid ""
+"Connection to the server has been established correctly.\n"
+"Press the 'Save & Connect' button to create a connection."
+msgstr "서버와의 연결이 성공적으로 이루어졌습니다."
+
+#: src/editScreenOverview.c:364 src/editScreenOverview.c:390
+#, fuzzy
+msgid "Connection to the server can not be established correctly."
+msgstr "서버와의 연결이 성공적으로 이루어졌습니다."
+
+#: src/editScreenOverview.c:370 src/editScreenWireless.c:419
+#: src/editScreenWirelessExt.c:382 src/editScreenDialup.c:346
+msgid "The iLiad is trying to connect to the server."
+msgstr ""
+
+#: src/editScreenOverview.c:375 src/editScreenWireless.c:435
+#: src/editScreenWirelessExt.c:394 src/editScreenDialup.c:362
+msgid "The iLiad is aborting the connection."
+msgstr ""
+
+#: src/editScreenOverview.c:380 src/editScreenWireless.c:440
+#: src/editScreenWirelessExt.c:399 src/editScreenDialup.c:367
+#, fuzzy
+msgid "The connection has been aborted."
+msgstr "무선네트웍을 찾는 작업이 중지되었습니다."
+
+#: src/editScreenOverview.c:385 src/editScreenWireless.c:424
+#: src/editScreenDialup.c:351
+#, fuzzy
+msgid "Connection to the server established."
+msgstr "서버와의 연결이 성공적으로 이루어졌습니다."
+
+#: src/editScreenProxy.c:160
+#, fuzzy
+msgid "Enter the name or address of the HTTP proxy server:"
+msgstr "HTTP 프록시 서버의 이름이나 주소를 입력하십시오:"
+
+#: src/editScreenProxy.c:168
+#, fuzzy
+msgid "Enter the port number of the HTTP proxy server:"
+msgstr "HTTP 프록시 서버의 포트번호를 입력하십시오:"
+
+#: src/editScreenProxy.c:170 src/editScreenStatic.c:210
+#: src/editScreenWireless.c:315 src/editScreenWireless.c:348
+#: src/editScreenDialup.c:299
+msgid "Next"
+msgstr ""
+
+#: src/editScreenProxy.c:176
+#, fuzzy
+msgid ""
+"Do not include the protocol (e.g. http://) and proxy number (e.g. 8080) in "
+"the name or address of the HTTP proxy server.\n"
+"Hint: If you do not know the proxy settings for this network, please ask "
+"your network administrator."
+msgstr ""
+"프로토콜 (예: http://) 이나 포트번호 (예: 8080) 등은 여기에 입력하지마십시"
+"오.\n"
+"힌트: 네트웍의 프록시 세팅에 대해 잘 모르면 네트웍관리자에게 문의하십시오."
+
+#: src/editScreenProxy.c:278
+#, fuzzy, c-format
+msgid "Network profile: %s/proxy"
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/editScreenProxy.c:283
+#, fuzzy
+msgid "Network profile: proxy"
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/editScreenStatic.c:186
+#, fuzzy
+msgid "Enter the iLiad's IP address:"
+msgstr "1단계: iLiad의 IP 주소를 입력하십시오:"
+
+#: src/editScreenStatic.c:193
+#, fuzzy
+msgid "Enter the iLiad's netmask:"
+msgstr "2단계: iLiad의 netmask를 입력하십시오:"
+
+#: src/editScreenStatic.c:200
+#, fuzzy
+msgid "Enter the default gateway's IP address:"
+msgstr "3단계: default gateway의 IP주소를 입력하십시오:"
+
+#: src/editScreenStatic.c:207
+#, fuzzy
+msgid "Enter the DNS name server's IP address:"
+msgstr "4단계: 도메인네임서버(DNS)의 IP주소를 입력하십시오:"
+
+#: src/editScreenStatic.c:216
+#, fuzzy
+msgid ""
+"If you do not know the settings for this network, please ask your network "
+"administrator."
+msgstr ""
+"포트번호를 숫자로 입력하십시오 (예: 8080).\n"
+"힌트: 네트웍의 프록시 세팅에 대해 잘 모르면 네트웍관리자에게 문의하십시오."
+
+#: src/editScreenStatic.c:325
+#, fuzzy, c-format
+msgid "Network profile: %s/static"
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/editScreenStatic.c:330
+#, fuzzy
+msgid "Network profile: static"
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/editScreenWireless.c:312
+msgid "Type the network name (SSID) and click 'Next'."
+msgstr ""
+
+#: src/editScreenWireless.c:322
+#, fuzzy
+msgid "Select the security type of this wireless network."
+msgstr "무선네트웍의 보안 형식을 선택하십시오:"
+
+#: src/editScreenWireless.c:325
+msgid "Off"
+msgstr "보안비활성"
+
+#: src/editScreenWireless.c:328
+msgid "WEP"
+msgstr "WEP"
+
+#: src/editScreenWireless.c:331
+msgid "WPA"
+msgstr "WPA"
+
+#: src/editScreenWireless.c:338 src/editScreenWirelessExt.c:316
+#, fuzzy
+msgid "Enter the security key / passphrase:"
+msgstr "보안키를 입력하십시오:"
+
+#: src/editScreenWireless.c:379
+#, fuzzy
+msgid ""
+"If you do not know the network name for this access point, please ask your "
+"network administrator."
+msgstr ""
+"포트번호를 숫자로 입력하십시오 (예: 8080).\n"
+"힌트: 네트웍의 프록시 세팅에 대해 잘 모르면 네트웍관리자에게 문의하십시오."
+
+#: src/editScreenWireless.c:386
+#, fuzzy
+msgid ""
+"Click 'Off' for a non secured network or choose the security type of your "
+"network.\n"
+"Both 'WEP' and 'WPA' requires a security key."
+msgstr ""
+"보안이 활성화되지 않은 네트웍이면 '보안비활성'을 선택하십시오.\n"
+"WEP 보안 네트웍이면 'WEP'를 선택하십시오. 이 경우 추가적 세팅이 필요합니다.\n"
+"WPA 보안 네트웍은 지원되지 않습니다."
+
+#: src/editScreenWireless.c:394
+#, fuzzy
+msgid ""
+"For WEP, set your local router device to a HEX key.\n"
+"Hint: If you do not know the security key for this network, please ask your "
+"network adminitrator."
+msgstr ""
+"네트웍을 통해 전송되는 데이터를 암호화하기 위해서는 보안키가 필요합니다.\n"
+"무선라우터가 숫자 0에서 9 그리고 알파벳 a에서 f 의 조함으로 이루어진 한 16진"
+"수 보안키를 사용하도록 설정하십시오.\n"
+"힌트: 보안키를 모르면 네트웍 관리자에게 문의하십시오."
+
+#: src/editScreenWireless.c:402
+#, fuzzy
+msgid ""
+"For WPA, set your router to PSK mode with TKIP.\n"
+"Hint: If you do not know the security key for this network, please ask your "
+"network administrator."
+msgstr ""
+"네트웍을 통해 전송되는 데이터를 암호화하기 위해서는 보안키가 필요합니다.\n"
+"무선라우터가 숫자 0에서 9 그리고 알파벳 a에서 f 의 조함으로 이루어진 한 16진"
+"수 보안키를 사용하도록 설정하십시오.\n"
+"힌트: 보안키를 모르면 네트웍 관리자에게 문의하십시오."
+
+#: src/editScreenWireless.c:411 src/editScreenDialup.c:338
+msgid ""
+"If you personalize the profile name, it will be easy to recognize in the "
+"iLiad's network profile list.\n"
+"Click 'Next' for more advanced settings."
+msgstr ""
+
+#: src/editScreenWireless.c:429 src/editScreenDialup.c:356
+#, fuzzy
+msgid "Connection to server can not been established correctly."
+msgstr "서버와의 연결이 성공적으로 이루어졌습니다."
+
+#: src/editScreenWirelessExt.c:304
+#, fuzzy
+msgid "Network name (SSID):"
+msgstr "iLiad 네트웍 프로파일"
+
+#: src/editScreenWirelessExt.c:309
+msgid "Security type:"
+msgstr ""
+
+#: src/editScreenWirelessExt.c:319
+#, fuzzy
+msgid "Connect"
+msgstr "연결됨"
+
+#: src/editScreenWirelessExt.c:326
+msgid "Click the button for advanced settings."
+msgstr ""
+
+#: src/editScreenWirelessExt.c:328
+msgid "Advanced settings"
+msgstr ""
+
+#: src/editScreenWirelessExt.c:343
+#, fuzzy
+msgid ""
+"If you do not know the security key for this access point. Please ask your "
+"network administrator."
+msgstr ""
+"포트번호를 숫자로 입력하십시오 (예: 8080).\n"
+"힌트: 네트웍의 프록시 세팅에 대해 잘 모르면 네트웍관리자에게 문의하십시오."
+
+#: src/editScreenWirelessExt.c:350
+#, fuzzy
+msgid ""
+"Connection failed: Cannot connect to the access point.\n"
+"Check that the security key is correct and for WPA check that your router is "
+"set to PSK-TKIP mode. If you do not know the settings for this access point, "
+"please ask your network administrator."
+msgstr ""
+"프로토콜 (예: http://) 이나 포트번호 (예: 8080) 등은 여기에 입력하지마십시"
+"오.\n"
+"힌트: 네트웍의 프록시 세팅에 대해 잘 모르면 네트웍관리자에게 문의하십시오."
+
+#: src/editScreenWirelessExt.c:363
+#, fuzzy
+msgid ""
+"Connection failed: Cannot connect to the internet or iDS.\n"
+"Click on 'Advanced settings' to set a proxy server.\n"
+"Please ask your network administrator if you do not know the correct "
+"settings for this network."
+msgstr ""
+"프로토콜 (예: http://) 이나 포트번호 (예: 8080) 등은 여기에 입력하지마십시"
+"오.\n"
+"힌트: 네트웍의 프록시 세팅에 대해 잘 모르면 네트웍관리자에게 문의하십시오."
+
+#: src/editScreenWirelessExt.c:374
+msgid ""
+"Connection failed: Cannot connect to your computer.\n"
+"Please check the 'Settings for Computer Connection' in the iLiad Settings "
+"menu."
+msgstr ""
+
+#: src/editScreenWirelessExt.c:388
+#, fuzzy
+msgid "Connection to the server has been established."
+msgstr "서버와의 연결이 성공적으로 이루어졌습니다."
+
+#: src/editScreenDialup.c:278
+msgid "Type the phone number which you get from your ISP:"
+msgstr ""
+
+#: src/editScreenDialup.c:284
+msgid "Type your username:"
+msgstr ""
+
+#: src/editScreenDialup.c:290
+msgid "Type your password:"
+msgstr ""
+
+#: src/editScreenDialup.c:330
+msgid ""
+"If you do not know the settings for this network, please ask your Internet "
+"Service Provider for detailed information."
+msgstr ""

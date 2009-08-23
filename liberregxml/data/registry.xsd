@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The elements named in  "*_t " are custom defined simple type element -->
+<!-- The elements named in uppercase are enumeration  -->
+<!-- We use attribute "type" to reference to simpleType element-->
+<!-- We use attribute "ref" to reference to complexType element-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- definition of  "iLiadRegistry" element -->
+  <xs:element name="iLiadRegistry">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="version"/>
+        <xs:element ref="userProfile"/>
+        <xs:element ref="userSetting"/>
+        <xs:element ref="pcProfileList"/>
+        <xs:element ref="autoConnect"/>
+        <xs:element ref="categories"/>
+        <xs:element ref="usbExport"/>
+        <xs:element minOccurs="0" ref="lastReads"/>
+        <xs:element ref="applications"/>
+        <xs:element minOccurs="0" ref="extensionInfos"/>
+        <xs:element ref="startup"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- definition of  "version" element -->
+  <xs:element name="version">
+    <xs:complexType>
+      <xs:all>
+          <xs:element ref="registry"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="registry" type="version_t" default="21002"/>
+
+  <xs:simpleType name="version_t">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{4}[0-9a-zA-z]*"/>
+      <xs:minLength value="4"/>
+      <xs:maxLength value="16"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- definition of  "userProfile" element -->
+  <xs:element name="userProfile">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="name"/>
+        <xs:element ref="email"/>   
+        <xs:element ref="password"/>
+        <xs:element ref="redirectUrl"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="name" type="xs:string" default=""/>
+  <xs:element name="email" type="xs:string" default=""/>
+  <xs:element name="password" type="xs:token" default=""/>
+  <xs:element name="redirectUrl" type="xs:anyURI"
+  default="https://ids.irexnet.com:443/redirector"/>
+
+  <!-- definition of  "userSetting" element -->
+  <xs:element name="userSetting">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="language"/>
+        <xs:element ref="longKeyPressTimeout"/>
+        <xs:element ref="flipbarDirection"/>
+        <xs:element ref="sound"/>
+        <xs:element ref="keyBuffering"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="language" type="gLibLocale_t" default="en_US"/>
+  <xs:element name="longKeyPressTimeout" type="longKeyPressTimeout_t" default="1000"/>
+  <xs:element name="flipbarDirection" type="xs:boolean" default="true"/>
+
+  <xs:simpleType name="gLibLocale_t">
+    <xs:annotation>
+      <xs:documentation>Language code must be in GLib LOCALE format </xs:documentation>
+      <xs:documentation>(e.g. "en_US", "nl_NL")</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-z]{2}_[A-Z]{2}"> </xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="sound">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="enable"/>
+        <xs:element ref="volume"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="enable" type="xs:boolean" default="false"/>
+  <xs:element name="volume" type="volume_t" default="75"/>
+
+  <xs:simpleType name="volume_t">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="longKeyPressTimeout_t">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="500"/>
+      <xs:maxInclusive value="2000"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="keyBuffering">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="enable"/>
+        <xs:element ref="numberOfKeys"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="numberOfKeys" type="numberOfKeys_t" default="5"/>
+
+  <xs:simpleType name="numberOfKeys_t">
+    <xs:restriction base="xs:integer">
+      <xs:maxInclusive value="12"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- definition of  "pcProfileList" element -->
+  <xs:element name="pcProfileList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pcProfile" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="pcProfile">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="profileName"/>
+        <xs:element ref="pcName"/>
+        <xs:element ref="shareName"/>
+        <xs:element ref="workgroup"/>
+        <xs:element ref="userName"/>
+        <xs:element ref="password"/>
+      </xs:all>
+      <xs:attribute name="profileID" use="required" type="tokenNotEmpty_t"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="profileName" type="xs:string"/>
+  <xs:element name="pcName" type="xs:string" default="MyComputer"/>
+  <xs:element name="shareName" type="xs:string" default="iLiad"/>
+  <xs:element name="workgroup" type="xs:string" default="mshome"/>
+  <xs:element name="userName" type="xs:string" default=""/>
+
+  <xs:simpleType name="tokenNotEmpty_t">
+    <xs:restriction base="xs:token">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- definition of  "autoConnect" element -->
+  <xs:element name="autoConnect">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="serverType"/>
+        <xs:element ref="background"/>
+        <xs:element ref="timedIds"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="serverType" type="serverType_t" default="IDS"/>
+
+  <xs:simpleType name="serverType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IDS"/>
+      <xs:enumeration value="PC"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="background">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="interval"/>
+        <xs:element ref="enable"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="interval" type="interval_t" default="15"/>
+
+  <xs:simpleType name="interval_t">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="5"/>
+      <xs:maxInclusive value="99"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="timedIds">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="enable"/>
+        <xs:element ref="timeSet"/>
+        <xs:element ref="swUpdate"/>
+        <xs:element ref="switchOff"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="timeSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element  maxOccurs="3" name="time" type="xs:time" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+   
+  <xs:element name="swUpdate" type="xs:boolean" default="false"/>
+  <xs:element name="switchOff" type="xs:boolean" default="false"/>
+ 
+  <!-- definition of  "categories" element -->
+  <xs:element name="categories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="category"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="category">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="location"/>
+        <xs:element ref="sort"/>
+      </xs:all>
+      <xs:attribute name="type" use="required" type="category_t"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="location" type="xs:string"/>
+
+  <xs:element name="sort">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="field"/>
+        <xs:element ref="ascending"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="field" type="sortField_t" default="FSNAME"/>
+  <xs:element name="ascending" type="xs:boolean" default="true"/>
+
+  <xs:simpleType name="category_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BOOKS"/>
+      <xs:enumeration value="NEWSPAPERS"/>
+      <xs:enumeration value="DOCUMENTS"/>
+      <xs:enumeration value="NOTES"/>
+      <xs:enumeration value="MODE"/>
+      <xs:enumeration value="MAIN"/>
+      <xs:enumeration value="USB"/>
+      <xs:enumeration value="SDMMC"/>
+      <xs:enumeration value="CF"/>
+      <xs:enumeration value="SEARCHRESULT"/>
+      <xs:enumeration value="RECENTDOCUMENTS"/>
+      <xs:enumeration value="DOWNLOADHISTORY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sortField_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FSNAME"/>
+      <xs:enumeration value="EXTENSION"/>
+      <xs:enumeration value="SIZE"/>
+      <xs:enumeration value="DATE"/>
+      <xs:enumeration value="TITLE"/>
+      <xs:enumeration value="DESCRIPTION"/>
+      <xs:enumeration value="AUTHOR"/>
+      <xs:enumeration value="FILE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- definition of  "usbExport" element -->
+  <xs:element name="usbExport" type="usbExport_t" default="MAIN"/>
+  
+  <xs:simpleType name="usbExport_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MAIN"/>
+      <xs:enumeration value="USB"/>
+      <xs:enumeration value="SDMMC"/>
+      <xs:enumeration value="CF"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- definition of  "lastReads" element -->
+  <xs:element name="lastReads">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="4" maxOccurs="4" ref="lastRead"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="lastRead">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="extName"/>
+        <xs:element ref="documentPath"/>
+        <xs:element ref="manifestPath"/>
+        <xs:element ref="position"/>
+      </xs:all>
+      <xs:attribute name="type" use="required" type="category_t"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="documentPath" type="xs:string" default=""/>
+  <xs:element name="manifestPath" type="xs:string" default=""/>
+  <xs:element name="position" type="xs:string" default="0"/>
+
+  <!-- definition of  "applications" element -->
+  <xs:element name="applications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="2" maxOccurs="unbounded" ref="application"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="application">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="appCategory"/>
+        <xs:element ref="xResourceName"/>
+        <xs:element ref="ipcChannel"/>
+        <xs:element ref="appIconPath"/>
+        <xs:element ref="argMask"/>
+        <xs:element ref="execute"/>
+        <xs:element ref="supportFormat" minOccurs="0"/>
+      </xs:all>
+      <xs:attribute name="type" use="required" type="tokenNotEmpty_t"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="appCategory" type="xs:string"/>
+  <xs:element name="xResourceName" type="xs:string"/>
+  <xs:element name="ipcChannel" type="xs:integer"/>
+  <xs:element name="appIconPath" type="xs:anyURI"/>
+  <xs:element name="argMask" type="xs:string"/>
+  <xs:element name="execute" type="xs:string"/>
+
+  <xs:element name="supportFormat">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element ref="extName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="extName" type="xs:string" default=""/>
+
+  <!-- definition of  "extensionInfos" element -->
+  <xs:element name="extensionInfos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="extensionInfo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="extensionInfo">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="extName"/>
+        <xs:element ref="associateApp"/>
+        <xs:element minOccurs="0" ref="associateOrder"/>
+        <xs:element ref="extIcon"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="associateApp" type="tokenNotEmpty_t"/>
+  <xs:element name="associateOrder" type="xs:nonNegativeInteger" default="1"/>
+  <xs:element name="extIcon" type="xs:string"/>
+
+  <!-- definition of  "startup" element -->
+  <xs:element name="startup">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="behaviour"/>
+        <xs:element ref="documentPath"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="behaviour" type="behaviour_t" default="RECENT_DOCUMENTS"/>
+
+  <xs:simpleType name="behaviour_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SPECIFIC_DOCUMENT"/>
+      <xs:enumeration value="REFERENCE_MATERIALS"/>
+      <xs:enumeration value="LAST_READ_DOCUMENT"/>
+      <xs:enumeration value="RECENT_DOCUMENTS"/>
+      <xs:enumeration value="DEVICE_MANAGER"/>
+      <xs:enumeration value="NEWS_FOLDER"/>
+      <xs:enumeration value="BOOKS_FOLDER"/>
+      <xs:enumeration value="DOCS_FOLDER"/>
+      <xs:enumeration value="NOTES_FOLDER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

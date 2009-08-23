@@ -1,0 +1,11 @@
+Package: pango-dev
+Version: 1.8.1-r3
+Description: The goal of the Pango project is to provide an Open Source framework for the layout and rendering of internationalized text.
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: pango-1.8.1
+Homepage: unknown
+Depends: pango, libglib-2.0-dev
+Source: ftp://ftp.gtk.org/pub/gtk/v2.6/pango-1.8.1.tar.bz2 file://no-tests.patch;patch=1 file://pango.modules.ereader

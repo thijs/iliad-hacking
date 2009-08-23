@@ -1,0 +1,11 @@
+Package: libx11-dev
+Version: 6.2.1cvs20051025-r5
+Description: Base X libs.
+Section: devel
+Priority: optional
+Maintainer: Greg Gilbert <greg@treke.net>
+Architecture: arm
+OE: x11-6.2.1cvs20051025
+Homepage: unknown
+Depends: libx11-6
+Source: cvs://anoncvs:anoncvs@pdx.freedesktop.org/cvs/xlibs;module=X11 file://errordb-keysymdb-path-fix.patch;patch=1

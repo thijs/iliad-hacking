@@ -1,0 +1,3 @@
+/usr/lib/pkgconfig/recordext.pc
+/usr/include/X11/extensions/record.h
+/usr/include/X11/extensions/recordstr.h

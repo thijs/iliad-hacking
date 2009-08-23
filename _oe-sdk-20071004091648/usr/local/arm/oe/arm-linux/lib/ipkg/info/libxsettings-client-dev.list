@@ -1,0 +1,6 @@
+/usr/lib/pkgconfig/libxsettings-client.pc
+/usr/lib/libXsettings-client.la
+/usr/lib/libXsettings-client.a
+/usr/include/xsettings-client.h
+/usr/include/xsettings-common.h
+/usr/lib/libXsettings-client.so

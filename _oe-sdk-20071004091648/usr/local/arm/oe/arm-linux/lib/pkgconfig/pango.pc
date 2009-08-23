@@ -1,0 +1,14 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+pango_module_version=1.4.0
+
+Name: Pango
+Description: Internationalized text handling
+Version: 1.8.1
+Requires: glib-2.0,gobject-2.0,gmodule-no-export-2.0
+Libs: -L${libdir} -lpango-1.0 
+Cflags: -I${includedir}/pango-1.0
+

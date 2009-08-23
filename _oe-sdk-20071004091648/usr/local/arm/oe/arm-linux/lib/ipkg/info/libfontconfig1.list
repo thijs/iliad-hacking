@@ -1,0 +1,5 @@
+/etc/fonts/fonts.conf
+/usr/lib/libfontconfig.so.1
+/etc/fonts/fonts.dtd
+/usr/lib/libfontconfig.so.1.0.4
+/etc/fonts/local.conf

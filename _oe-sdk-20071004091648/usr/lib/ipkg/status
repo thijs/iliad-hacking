@@ -1,0 +1,14 @@
+Package: binutils-cross-sdk
+Version: 2.15.94.0.1-r1
+Depends: binutils-cross-sdk-locale*, libc6 (>= 2.3.2+cvs20040726)
+Status: install user installed
+Architecture: i686
+Installed-Time: 1191482194
+
+Package: gcc-cross-sdk
+Version: 3.4.4-r5
+Depends: gcc-cross-sdk-locale*
+Status: install user installed
+Architecture: i686
+Installed-Time: 1191482197
+

@@ -1,0 +1,11 @@
+Package: libice-dev
+Version: 6.3.3-r1
+Description: X11 ICE library
+Section: devel
+Priority: optional
+Maintainer: Phil Blundell <pb@handhelds.org>
+Architecture: arm
+OE: ice-6.3.3
+Homepage: unknown
+Depends: libice6
+Source: http://xlibs.freedesktop.org/release/libICE-6.3.3.tar.bz2 file://autofoo.patch;patch=1

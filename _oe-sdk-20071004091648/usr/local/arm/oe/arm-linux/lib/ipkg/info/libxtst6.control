@@ -1,0 +1,11 @@
+Package: libxtst6
+Version: 0.0cvs20051025-r3
+Description: X Test Extension: client side library
+Section: x11/libs
+Priority: optional
+Maintainer: Phil Blundell <pb@handhelds.org>
+Architecture: arm
+OE: xtst-0.0cvs20051025
+Homepage: unknown
+Depends: libxext6 (>= 0.0cvs20051025), libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Source: cvs://anoncvs:anoncvs@pdx.freedesktop.org/cvs/xlibs;module=Xtst

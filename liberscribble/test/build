@@ -1,0 +1,2 @@
+arm-linux-gcc -o scbTest test.c -I../inc `pkg-config --cflags glib-2.0` `pkg-config --cflags libxml-2.0` `pkg-config --libs glib-2.0` `pkg-config --libs libxml-2.0` `pkg-config --libs libscribble`
+cp scbTest /data/filesystem/ereader/

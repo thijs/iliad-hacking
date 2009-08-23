@@ -1,0 +1,57 @@
+The easiest way to get started is to install the SDK stuff from Irex. A post on
+mobileread.com helped me to get going:
+
+Thanks jharker!
+
+The relevant steps are:
+
+cd /tmp; mkdir sdk; cd sdk
+wget http://developer.irexnet.com/pub/iLiad/Toolchain/oe-sdk-20071004091648.tar.bz2
+tar xvfj oe-sdk-20071004091648.tar.bz2
+sudo mv usr/local/arm /usr/local/arm
+sudo mv usr/lib/ipkg /usr/lib/ipkg
+
+For env:
+
+################## setup_build_env.sh ####################
+
+#!/bin/bash
+# Edit these paths to point to the location of the OE SDK
+export PATH=/usr/local/arm/oe/bin:/usr/local/arm/oe/arm-linux/bin:$PATH
+export PKG_CONFIG_PATH=/usr/local/arm/oe/arm-linux/lib/pkgconfig
+
+###################33
+
+
+The Irex components have a script build_all_from_scratch.sh. These do what they
+say [:-)]. The might do more than you want… Below are the short-cuts I use
+
+********** building a lib:
+
+example: libergtk
+
+.  setup_build_env.sh
+./configure --host=arm-linux --build=i686  --prefix=/usr/local/arm/oe/arm-linux
+make
+make install
+
+This installs the library in the SDK for further use.
+
+
+************ building an app:
+
+example: contentLister
+
+.  setup_build_env.sh
+autoreconf --install --force
+./configure --host=arm-linux --build=i686  --prefix=/usr --datadir=/usr/share
+make
+
+possibly: strip -s <binary file>
+
+
+notes:
+    * no make install!
+    * for this example: with the original SDK you need to build libergtk and
+      liberregxml first
+    * after the initial build, 'make' is enough to rebuild

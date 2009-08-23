@@ -1,0 +1,5 @@
+/usr/include/X11/extensions/xcalibrate.h
+/usr/lib/libXcalibrate.so
+/usr/lib/libXcalibrate.la
+/usr/lib/libXcalibrate.a
+/usr/lib/pkgconfig/xcalibrate.pc

@@ -1,0 +1,11 @@
+Package: libexpat0
+Version: 1.95.7-r0
+Description: Jim Clarkes XML parser library.
+Section: libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: expat-1.95.7
+Homepage: http://expat.sourceforge.net/
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Source: http://heanet.dl.sourceforge.net/sourceforge/expat/expat-1.95.7.tar.gz file://autotools.patch;patch=1

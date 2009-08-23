@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en" dir="ltr">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="verify-v1" content="BhCF/SF+T+CEFJxV0RSZjuz/CVGc4kHAvDRyZhmFizA=" />
+<meta name="msvalidate.01" content="9805477B1EFCACD3134903B486AA7F31" />
+      <title>
+         Compiling for the Iliad         [HanselPedia]
+      </title>
+      <meta name="generator" content="DokuWiki snapshot?" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-08-01T09:38:56+0200" />
+<meta name="keywords" content="iliad,cross_compiling" />
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="HanselPedia" />
+<link rel="start" href="/" />
+<link rel="contents" href="/iliad/cross_compiling?do=index" title="Index" />
+<link rel="stylesheet" media="all" type="text/css" href="/lib/exe/css.php?s=all&amp;t=hansel" />
+<link rel="stylesheet" media="screen" type="text/css" href="/lib/exe/css.php?t=hansel" />
+<link rel="stylesheet" media="print" type="text/css" href="/lib/exe/css.php?s=print&amp;t=hansel" />
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?edit=0&amp;write=0" ></script>
+<script type="text/javascript" charset="utf-8" ><!--//--><![CDATA[//><!--
+plugin_statistics.init('iliad%3Across_compiling');
+//--><!]]></script>
+      <link rel="shortcut icon" href="/lib/tpl/hansel/images/favicon.ico" />
+   </head>
+
+   <body>
+      <div class="dokuwiki">
+
+                  <div id="topsection">
+            <div class="pagename">
+               <a href="/"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]">HanselPedia</a>            </div>
+            <div class="clearer"></div>
+         </div>
+         
+         <div class="bar">
+            <div class="bar-left">
+               <span class="bchead">You are here: </span><a href="/start"  title="start">Home, sweet home</a> &raquo; <a href="/iliad/start"  title="iliad:start">My Iliad (electronic book by Irex)</a> &raquo; <a href="/iliad/cross_compiling"  title="iliad:cross_compiling">Compiling for the Iliad</a>   &nbsp;
+            </div>
+            <div class="bar-right">
+               <form action="/" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" /><input type="submit" value="Search" class="button" title="Search" /><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form> &nbsp;
+            </div>
+            <div class="clearer"></div>
+         </div>
+
+         
+         <div id="wrap">
+         <div id="sidebar"><div class="innertube">
+               <div class="sidebar_box">
+
+<p>
+<a href="/start" class="wikilink1" title="start"> Home</a> 
+</p>
+
+<p>
+<a href="/web" class="wikilink1" title="web"> Web Stuff</a>
+</p>
+
+<p>
+<a href="/software" class="wikilink1" title="software"> Other Software</a>
+</p>
+
+<p>
+<a href="/iliad/start" class="wikilink1" title="iliad:start">Irex Iliad</a>
+</p>
+
+<p>
+<a href="/cool" class="wikilink1" title="cool"> Cool Stuff</a> 
+</p>
+
+<p>
+<a href="/test/start" class="wikilink1" title="test:start">Test Page</a>
+
+</p>
+
+</div>
+         </div></div>
+            <div id="page"><div class="innertube">
+                  
+
+
+<h1><a name="compiling_for_the_iliad" id="compiling_for_the_iliad">Compiling for the Iliad</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><a name="installing_the_sdk" id="installing_the_sdk">Installing the SDK</a></h2>
+<div class="level2">
+
+<p>
+The easiest way to get started is to install the <acronym title="Software Development Kit">SDK</acronym> stuff from Irex. A post on mobileread.com helped me to get going:  <a href="http://www.mobileread.com/forums/showpost.php?p=274937&amp;postcount=4" class="urlextern" title="http://www.mobileread.com/forums/showpost.php?p=274937&amp;postcount=4"  rel="nofollow">http://www.mobileread.com/forums/showpost.php?p=274937&amp;postcount=4</a>.  Thanks jharker!
+</p>
+
+<p>
+The relevant steps are:
+
+</p>
+<pre class="code bash"><span class="kw3">cd</span> <span class="sy0">/</span>tmp; <span class="kw2">mkdir</span> sdk; <span class="kw3">cd</span> sdk
+<span class="kw2">wget</span> http:<span class="sy0">//</span>developer.irexnet.com<span class="sy0">/</span>pub<span class="sy0">/</span>iLiad<span class="sy0">/</span>Toolchain<span class="sy0">/</span>oe-sdk-20071004091648.tar.bz2
+<span class="kw2">tar</span> xvfj oe-sdk-20071004091648.tar.bz2
+<span class="kw2">sudo</span> <span class="kw2">mv</span> usr<span class="sy0">/</span>local<span class="sy0">/</span>arm <span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>arm
+<span class="kw2">sudo</span> <span class="kw2">mv</span> usr<span class="sy0">/</span>lib<span class="sy0">/</span>ipkg <span class="sy0">/</span>usr<span class="sy0">/</span>lib<span class="sy0">/</span>ipkg</pre>
+</div>
+
+<h3><a name="environment" id="environment">Environment</a></h3>
+<div class="level3">
+
+<p>
+In order to find the right compiler, libs and packages you need (type it, or put in in a script).
+</p>
+
+<p>
+<strong>setup_build_env.sh:</strong>
+</p>
+<pre class="code bash"><span class="co0">#!/bin/bash</span>
+<span class="co0"># Edit these paths to point to the location of the OE SDK</span>
+<span class="kw3">export</span> <span class="re2">PATH</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>arm<span class="sy0">/</span>oe<span class="sy0">/</span>bin:<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>arm<span class="sy0">/</span>oe<span class="sy0">/</span>arm-linux<span class="sy0">/</span>bin:<span class="re1">$PATH</span>
+<span class="kw3">export</span> <span class="re2">PKG_CONFIG_PATH</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>arm<span class="sy0">/</span>oe<span class="sy0">/</span>arm-linux<span class="sy0">/</span>lib<span class="sy0">/</span>pkgconfig</pre>
+</div>
+
+<h2><a name="building_irex_software" id="building_irex_software">Building Irex software</a></h2>
+<div class="level2">
+
+<p>
+
+The Irex components have a script build_all_from_scratch.sh. These do what they say <img src="/lib/images/smileys/icon_smile.gif" class="middle" alt=":-)" />. The might do more than you want…  Below are the short-cuts I use
+</p>
+
+</div>
+
+<h3><a name="building_a_library" id="building_a_library">Building a library</a></h3>
+<div class="level3">
+
+<p>
+example: libergtk
+
+</p>
+<pre class="code bash">.  setup_build_env.sh
+.<span class="sy0">/</span>configure <span class="re5">--host</span>=arm-linux <span class="re5">--build</span>=i686  <span class="re5">--prefix</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>arm<span class="sy0">/</span>oe<span class="sy0">/</span>arm-linux
+<span class="kw2">make</span>
+<span class="kw2">make</span> <span class="kw2">install</span></pre>
+<p>
+
+This installs the library in the <acronym title="Software Development Kit">SDK</acronym> for further use.
+</p>
+
+</div>
+
+<h3><a name="building_an_application" id="building_an_application">Building an application</a></h3>
+<div class="level3">
+
+<p>
+
+example: contentLister 
+
+</p>
+<pre class="code bash">.  setup_build_env.sh
+autoreconf <span class="re5">--install</span> <span class="re5">--force</span>
+.<span class="sy0">/</span>configure <span class="re5">--host</span>=arm-linux <span class="re5">--build</span>=i686  <span class="re5">--prefix</span>=<span class="sy0">/</span>usr <span class="re5">--datadir</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>share
+<span class="kw2">make</span></pre>
+<p>
+
+notes:
+</p>
+<ul>
+<li class="level1"><div class="li"> no make install!</div>
+</li>
+<li class="level1"><div class="li"> for this example: with the original <acronym title="Software Development Kit">SDK</acronym> you need to build libergtk and liberregxml first</div>
+</li>
+<li class="level1"><div class="li"> after the initial build, &#039;make&#039; is enough to rebuild</div>
+</li>
+</ul>
+
+</div>
+
+            </div></div>
+         </div>
+
+         
+         <div class="bar" >
+            <div class="bar-left" >
+                                                <form class="button btn_login" method="get" action="/iliad/cross_compiling"><div class="no"><input type="hidden" name="do" value="login" /><input type="hidden" name="sectok" value="973c5425e45a969802853de63c300ea0" /><input type="submit" value="Login" class="button" title="Login" /></div></form>&nbsp;
+                                                               &nbsp;
+            </div>
+            <div class="bar-right" id="bar__bottomright">
+               Last modified: 2009/08/01 09:38               &nbsp;
+            </div>
+            <div class="clearer"></div>
+         </div>
+
+      </div>
+
+      <div class="no"><img src="/lib/exe/indexer.php?id=iliad%3Across_compiling&amp;1251043965" width="1" height="1" alt=""  /></div>
+   </body>
+</html>
+

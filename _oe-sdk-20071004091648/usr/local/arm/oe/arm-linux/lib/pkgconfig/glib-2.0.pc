@@ -1,0 +1,15 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+glib_genmarshal=glib-genmarshal
+gobject_query=gobject-query
+glib_mkenums=glib-mkenums
+
+Name: GLib
+Description: C Utility Library
+Version: 2.6.6
+Libs: -L${libdir} -lglib-2.0  
+Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include 
+

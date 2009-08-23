@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<iLiadRegistry>
+
+    <version>
+        <registry>21210</registry>
+    </version>
+
+    <userProfile>
+        <name/>
+        <email/>
+        <password/>
+        <redirectUrl>https://ids.irexnet.com:443/redirector</redirectUrl>
+    </userProfile>
+
+    <userSetting>
+        <language>xx_YY</language>
+        <sound>
+            <enable>false</enable>
+            <volume>75</volume>
+        </sound>
+        <longKeyPressTimeout>1000</longKeyPressTimeout>
+        <flipbarDirection>true</flipbarDirection>
+        <keyBuffering>
+            <enable>false</enable>
+            <numberOfKeys>5</numberOfKeys>
+        </keyBuffering>
+    </userSetting>
+
+    <pcProfileList>
+        <pcProfile profileID="PC_0">
+            <profileName/>
+            <pcName/>
+            <shareName>iLiad</shareName>
+            <workgroup>mshome</workgroup>
+            <userName/>
+            <password/>
+        </pcProfile>
+    </pcProfileList>
+
+    <autoConnect>
+        <serverType>IDS</serverType>
+        <background>
+            <interval>15</interval>
+            <enable>false</enable>
+        </background>
+        <timedIds>
+            <enable>false</enable>
+            <timeSet>
+                <time>13:00:00</time>
+            </timeSet>
+            <swUpdate>false</swUpdate>
+            <switchOff>false</switchOff>
+        </timedIds>
+        
+    </autoConnect>
+    
+    <categories>
+
+        <category type="BOOKS">
+            <location>/mnt/free/books</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>true</ascending>
+            </sort>
+        </category>
+
+        <category type="NEWSPAPERS">
+            <location>/mnt/free/newspapers</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>true</ascending>
+            </sort>
+        </category>
+
+        <category type="DOCUMENTS">
+            <location>/mnt/free/documents</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>true</ascending>
+            </sort>
+        </category>
+
+        <category type="NOTES">
+            <location>/mnt/free/notes</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>true</ascending>
+            </sort>
+        </category>
+
+        <category type="MAIN">
+            <location>/mnt/free</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>true</ascending>
+            </sort>
+        </category>
+
+        <category type="USB">
+            <location>/mnt/usb</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>true</ascending>
+            </sort>
+        </category>
+
+        <category type="CF">
+            <location>/mnt/cf</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>true</ascending>
+            </sort>
+        </category>
+
+        <category type="SDMMC">
+            <location>/mnt/card</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>true</ascending>
+            </sort>
+        </category>
+
+        <category type="DOWNLOADHISTORY">
+            <location>/var/downloadhistory</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>false</ascending>
+            </sort>
+        </category>
+
+        <category type="RECENTDOCUMENTS">
+            <location>/var/recentdocuments</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>false</ascending>
+            </sort>
+        </category>
+
+        <category type="SEARCHRESULT">
+            <location>/tmp/search</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>true</ascending>
+            </sort>
+        </category>
+
+        <category type="MODE">
+            <location>/var/mode</location>
+            <sort>
+                <field>FSNAME</field>
+                <ascending>true</ascending>
+            </sort>
+        </category>
+
+    </categories>
+
+    <usbExport>MAIN</usbExport>
+
+    <lastReads>
+
+        <lastRead type="BOOKS">
+            <extName/>
+            <documentPath/>
+            <manifestPath/>
+            <position/>
+        </lastRead>
+
+        <lastRead type="NEWSPAPERS">
+            <extName/>
+            <documentPath/>
+            <manifestPath/>
+            <position/>
+        </lastRead>
+
+        <lastRead type="DOCUMENTS">
+            <extName/>
+            <documentPath/>
+            <manifestPath/>
+            <position/>
+        </lastRead>
+
+        <lastRead type="NOTES">
+            <extName/>
+            <documentPath/>
+            <manifestPath/>
+            <position/>
+        </lastRead>
+
+    </lastReads>
+
+    <applications>
+
+        <application type="BROWSER">
+            <appCategory>viewer</appCategory>
+            <argMask>_MANIFEST_ _FILENAME_</argMask>
+            <execute>/usr/bin/browser</execute>
+            <supportFormat>
+                <extName>html</extName>
+                <extName>htm</extName>
+                <extName>xhtml</extName>
+            </supportFormat>
+            <xResourceName>browser</xResourceName>
+            <ipcChannel>1</ipcChannel>
+            <appIconPath>browser.png</appIconPath>
+        </application>
+
+        <application type="IPDF">
+            <appCategory>viewer</appCategory>
+            <xResourceName>ipdf</xResourceName>
+            <ipcChannel>2</ipcChannel>
+            <argMask>_FILENAME_</argMask>
+            <execute>/usr/bin/ipdf</execute>
+            <supportFormat>
+                <extName>pdf</extName>
+            </supportFormat>
+            <appIconPath/>
+        </application>
+
+        <application type="APABIMOBI">
+            <appCategory>viewer</appCategory>
+            <execute>/usr/bin/xebreader</execute>
+            <argMask>_FILENAME_</argMask>
+            <supportFormat>
+                <extName>xeb</extName>
+            </supportFormat>
+            <xResourceName>xebreader</xResourceName>
+            <ipcChannel>5</ipcChannel>
+            <appIconPath/>
+        </application>
+
+        <application type="IMAGEVIEWER">
+            <appCategory>viewer</appCategory>
+            <argMask>_MANIFEST_ _FILENAME_</argMask>
+            <execute>/usr/bin/scribble</execute>
+            <supportFormat>
+                <extName>png</extName>
+                <extName>bmp</extName>
+                <extName>jpg</extName>
+                <extName>jpeg</extName>
+            </supportFormat>
+            <xResourceName>scribble</xResourceName>
+            <ipcChannel>10</ipcChannel>
+            <appIconPath/>
+        </application>
+
+        <application type="SETUP">
+            <appCategory>setup</appCategory>
+            <execute>/usr/bin/setup</execute>
+            <argMask/>
+            <xResourceName>setup</xResourceName>
+            <ipcChannel>3</ipcChannel>
+            <appIconPath/>
+        </application>
+
+        <application type="PROFILES">
+            <appCategory>setup</appCategory>
+            <argMask>--edit-only</argMask>
+            <execute>/usr/bin/connectionMgr</execute>
+            <xResourceName>connectionMgr</xResourceName>
+            <ipcChannel>12</ipcChannel>
+            <appIconPath/>
+        </application>
+
+        <application type="EBA">
+            <appCategory>viewer</appCategory>
+            <execute>/usr/bin/eba</execute>
+            <argMask>_FILENAME_</argMask>
+            <supportFormat>
+                <extName>eba</extName>
+            </supportFormat>
+            <xResourceName>eba</xResourceName>
+            <ipcChannel>14</ipcChannel>
+            <appIconPath/>
+        </application>
+
+        <application type="MOBIPOCKET">
+            <appCategory>viewer</appCategory>
+            <execute>/home/intent/runmobi.sh</execute>
+            <argMask>_FILENAME_</argMask>
+            <xResourceName>intent</xResourceName>
+            <ipcChannel>15</ipcChannel>
+            <supportFormat>
+                <extName>prc</extName>
+                <extName>pdb</extName>
+                <extName>mobi</extName>
+                <extName>txt</extName>
+            </supportFormat>
+            <appIconPath/>
+        </application>
+
+        <application type="ARINC">
+            <appCategory>viewer</appCategory>
+            <execute>/usr/bin/ereader_mapviewer</execute>
+            <argMask/>
+            <xResourceName>ereader_mapviewer</xResourceName>
+            <ipcChannel>13</ipcChannel>
+            <supportFormat>
+                <extName>ari</extName>
+            </supportFormat>
+            <appIconPath/>
+        </application>
+
+        <application type="SLIDESHOW">
+            <appCategory>viewer</appCategory>
+            <execute>/usr/bin/scribble</execute>
+            <argMask>--slideshow _MANIFEST_ _FILENAME_</argMask>
+            <xResourceName>scribble</xResourceName>
+            <ipcChannel>10</ipcChannel>
+            <supportFormat>
+                <extName>slideshow</extName>
+            </supportFormat>
+            <appIconPath/>
+        </application>
+
+    </applications>
+
+    <extensionInfos>
+
+        <extensionInfo>
+            <associateApp>IPDF</associateApp>
+            <associateOrder>1</associateOrder>
+            <extName>pdf</extName>
+            <extIcon>/usr/share/contentlister/Icon_books.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <extName>eba</extName>
+            <associateOrder>1</associateOrder>            
+            <associateApp>EBA</associateApp>
+            <extIcon>/usr/share/contentlister/Icon_books.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <extName>xeb</extName>
+            <associateOrder>1</associateOrder>            
+            <associateApp>APABIMOBI</associateApp>
+            <extIcon>/usr/share/contentlister/Icon_books.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <associateApp>BROWSER</associateApp>
+            <associateOrder>1</associateOrder>            
+            <extName>xhtml</extName>
+            <extIcon>/usr/share/contentlister/Icon_newspapers.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <extName>html</extName>
+            <associateOrder>1</associateOrder>            
+            <associateApp>BROWSER</associateApp>
+            <extIcon>/usr/share/contentlister/Icon_newspapers.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <extName>htm</extName>
+            <associateOrder>1</associateOrder>            
+            <associateApp>BROWSER</associateApp>
+            <extIcon>/usr/share/contentlister/Icon_newspapers.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <associateApp>MOBIPOCKET</associateApp>
+            <associateOrder>1</associateOrder>
+            <extName>txt</extName>
+            <extIcon>/usr/share/contentlister/Icon_documents.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <associateApp>BROWSER</associateApp>
+            <associateOrder>10</associateOrder>
+            <extName>txt</extName>
+            <extIcon>/usr/share/contentlister/Icon_documents.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <extName>jpg</extName>
+            <associateApp>IMAGEVIEWER</associateApp>
+            <extIcon>/usr/share/contentlister/Icon_photos.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <associateApp>IMAGEVIEWER</associateApp>
+            <extName>jpeg</extName>
+            <extIcon>/usr/share/contentlister/Icon_photos.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <associateApp>IMAGEVIEWER</associateApp>
+            <extName>png</extName>
+            <extIcon>/usr/share/contentlister/Icon_notes.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <associateApp>IMAGEVIEWER</associateApp>
+            <extName>bmp</extName>
+            <extIcon>/usr/share/contentlister/Icon_notes.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <associateApp>MOBIPOCKET</associateApp>
+            <extName>mobi</extName>
+            <extIcon>/usr/share/contentlister/Icon_mobipocket.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <associateApp>MOBIPOCKET</associateApp>
+            <extName>prc</extName>
+            <extIcon>/usr/share/contentlister/Icon_mobipocket.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <associateApp>MOBIPOCKET</associateApp>
+            <extName>pdb</extName>
+            <extIcon>/usr/share/contentlister/Icon_mobipocket.png</extIcon>
+        </extensionInfo>
+
+        <extensionInfo>
+            <associateApp>SLIDESHOW</associateApp>
+            <extName>slideshow</extName>
+            <extIcon>/usr/share/contentlister/Icon_misc.png</extIcon>
+        </extensionInfo>
+    
+    </extensionInfos>
+
+    <startup>
+        <behaviour>SPECIFIC_DOCUMENT</behaviour>
+        <documentPath>/mnt/free/documents/Reference/10_Quick_Reference</documentPath>
+    </startup>
+
+</iLiadRegistry>

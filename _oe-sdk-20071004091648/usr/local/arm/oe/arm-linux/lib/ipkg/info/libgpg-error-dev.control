@@ -1,0 +1,11 @@
+Package: libgpg-error-dev
+Version: 1.0-r0
+Description: GPG-Error library
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libgpg-error-1.0
+Homepage: unknown
+Depends: libgpg-error0, libgpg-error0 (>= 1.0), libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Source: ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.0.tar.gz file://pkgconfig.patch;patch=1

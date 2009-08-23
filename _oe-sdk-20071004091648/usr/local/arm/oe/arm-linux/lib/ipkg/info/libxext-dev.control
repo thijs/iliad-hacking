@@ -1,0 +1,11 @@
+Package: libxext-dev
+Version: 0.0cvs20051025-r1
+Description: X Server Extension library
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: xext-0.0cvs20051025
+Homepage: unknown
+Depends: libxext6
+Source: cvs://anoncvs:anoncvs@pdx.freedesktop.org/cvs/xlibs;module=Xext

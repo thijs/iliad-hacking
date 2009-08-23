@@ -1,0 +1,747 @@
+Package: damageext-dev
+Version: 1.0-r1
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482197
+
+Package: fixesext-dev
+Version: 0.0cvs20051025-r0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482197
+
+Package: glibc-extra-nss
+Version: 2.3.2+cvs20040726-r18
+Depends: libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: glibc-gconv
+Version: 2.3.2+cvs20040726-r18
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: glibc-gconv-iso8859-1
+Version: 2.3.2+cvs20040726-r18
+Depends: glibc-gconv, libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: gtk+
+Version: 2.6.7-r18
+Depends: gtk+-locale*, libglib-2.0-0 (>= 2.6.6), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4), libatk-1.0-0 (>= 1.10.1), libgcrypt11 (>= 1.2.1), libgpg-error0 (>= 1.0), libxrandr2 (>= 1.0.2), libxext6 (>= 0.0cvs20051025), libxcursor1 (>= 1.1.2), libxfixes0 (>= 2.0.1), pango (>= 1.8.1), libxft2 (>= 2.1.6), libxrender1 (>= 0.8.4), libfontconfig1 (>= 2.2.95), libfreetype6 (>= 2.1.10), libz1 (>= 1.2.3), libexpat0 (>= 1.95.7), libx11-6 (>= 6.2.1cvs20051025), libxau0 (>= 0.1.1)
+Recommends: glibc-gconv-iso8859-1
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: gtk+-dev
+Version: 2.6.7-r18
+Depends: gtk+, gtk+ (>= 2.6.7), libglib-2.0-0 (>= 2.6.6), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4), libglib-2.0-dev, pango-dev, libatk-1.0-dev
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: lesstif
+Version: 0.94.4-1
+Depends: libxp (>= 0.0cvs20051025), libxt6 (>= 0.1.5), libsm6 (>= 6.0.3), libice6 (>= 6.3.3), libxext6 (>= 0.0cvs20051025), libx11-6 (>= 6.2.1cvs20051025), libxau0 (>= 0.1.1), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: lesstif-dev
+Version: 0.94.4-1
+Depends: lesstif
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: libatk-1.0-0
+Version: 1.10.1-r0
+Depends: atk-locale*, libglib-2.0-0 (>= 2.6.6), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libatk-1.0-dev
+Version: 1.10.1-r0
+Depends: libatk-1.0-0, libglib-2.0-dev
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libc6
+Version: 2.3.2+cvs20040726-r18
+Depends: glibc-locale*
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libc6-dev
+Version: 2.3.2+cvs20040726-r18
+Depends: libc6, glibc-extra-nss, libthread-db1
+Provides: libc-dev
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: libcrypto0.9.7
+Version: 0.9.7e-r1
+Depends: libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libcurl-dev
+Version: 7.14.0-r2
+Depends: libcurl3
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libcurl3
+Version: 7.14.0-r2
+Depends: libssl0.9.7 (>= 0.9.7e), libcrypto0.9.7 (>= 0.9.7e), libc6 (>= 2.3.2+cvs20040726), libz1 (>= 1.2.3), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: liberdm-dev
+Version: 0.211+svn20071003-r0
+Depends: liberdm2
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: liberdm2
+Version: 0.211+svn20071003-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: liberipc-dev
+Version: 0.211+svn20071003-r0
+Depends: liberipc0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: liberipc0
+Version: 0.211+svn20071003-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: liberlog-dev
+Version: 0.211+svn20071003-r0
+Depends: liberlog1
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: liberlog1
+Version: 0.211+svn20071003-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libermanifest-dev
+Version: 0.211+svn20071003-r0
+Depends: libermanifest0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libermanifest0
+Version: 0.211+svn20071003-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: liberregxml-dev
+Version: 0.211+svn20071003-r0
+Depends: liberregxml0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: liberregxml0
+Version: 0.211+svn20071003-r0
+Depends: libglib-2.0-0 (>= 2.6.6), libermanifest0 (>= 0.211+svn20071003), libxml2 (>= 2.6.26), libc6 (>= 2.3.2+cvs20040726), libz1 (>= 1.2.3), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: liberscribble-dev
+Version: 0.211+svn20071003-r0
+Depends: liberscribble0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: liberscribble0
+Version: 0.211+svn20071003-r0
+Depends: libglib-2.0-0 (>= 2.6.6), libermanifest0 (>= 0.211+svn20071003), libxml2 (>= 2.6.26), libc6 (>= 2.3.2+cvs20040726), libz1 (>= 1.2.3), liberdm2 (>= 0.211+svn20071003), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libexpat-dev
+Version: 1.95.7-r0
+Depends: libexpat0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libexpat0
+Version: 1.95.7-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libfakekey-dev
+Version: 0.2+svn20061031-r1
+Depends: libfakekey0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libfakekey0
+Version: 0.2+svn20061031-r1
+Depends: libxtst6 (>= 0.0cvs20051025), libxext6 (>= 0.0cvs20051025), libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libfontconfig-dev
+Version: 2.2.95-r1
+Depends: libfontconfig1
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libfontconfig1
+Version: 2.2.95-r1
+Depends: libfreetype6 (>= 2.1.10), libz1 (>= 1.2.3), libexpat0 (>= 1.95.7), libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libfreetype-dev
+Version: 2.1.10-r0
+Depends: libfreetype6
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libfreetype6
+Version: 2.1.10-r0
+Depends: libz1 (>= 1.2.3), libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libgcc1
+Version: 3.4.4-r3
+Depends: gcc-cross-locale*, libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libgcrypt-dev
+Version: 1.2.1-r0
+Depends: libgcrypt11
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libgcrypt11
+Version: 1.2.1-r0
+Depends: libgpg-error0 (>= 1.0), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libglib-2.0-0
+Version: 2.6.6-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libglib-2.0-dev
+Version: 2.6.6-r0
+Depends: libglib-2.0-0, libglib-2.0-dev
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libgpg-error-dev
+Version: 1.0-r0
+Depends: libgpg-error0, libgpg-error0 (>= 1.0), libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libgpg-error0
+Version: 1.0-r0
+Depends: libgpg-error-locale*, libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libice-dev
+Version: 6.3.3-r1
+Depends: libice6
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libice6
+Version: 6.3.3-r1
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: libidl-2-0
+Version: 0.8.6-r1
+Depends: libglib-2.0-0 (>= 2.6.6), libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482203
+
+Package: libjpeg-dev
+Version: 6b-r0
+Depends: libjpeg62
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libjpeg62
+Version: 6b-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libmb-dev
+Version: 1.7-r1
+Depends: libmb1
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libmb1
+Version: 1.7-r1
+Depends: libxext6 (>= 0.0cvs20051025), libx11-6 (>= 6.2.1cvs20051025), pango (>= 1.8.1), libglib-2.0-0 (>= 2.6.6), libc6 (>= 2.3.2+cvs20040726), libjpeg62 (>= 6b), libpng12-0 (>= 1.2.8), libz1 (>= 1.2.3), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libpng-dev
+Version: 1.2.8-r0
+Depends: libpng12-dev, libpng3
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libpng12-0
+Version: 1.2.8-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libpng12-dev
+Version: 1.2.8-r0
+Depends: libpng12-0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libpng3
+Version: 1.2.8-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libpoppler-dev
+Version: 0.5.4+svn20071003-r1
+Depends: libpoppler1
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482203
+
+Package: libpoppler1
+Version: 0.5.4+svn20071003-r1
+Depends: libfreetype6 (>= 2.1.10), libz1 (>= 1.2.3), libfontconfig1 (>= 2.2.95), libstdc++6 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libsm-dev
+Version: 6.0.3-r1
+Depends: libsm6
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libsm6
+Version: 6.0.3-r1
+Depends: libice6 (>= 6.3.3), libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: libssl0.9.7
+Version: 0.9.7e-r1
+Depends: libcrypto0.9.7 (>= 0.9.7e), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: libstdc++6
+Version: 3.4.4-r3
+Depends: libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libthread-db1
+Version: 2.3.2+cvs20040726-r18
+Depends: libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: libx11-6
+Version: 6.2.1cvs20051025-r5
+Depends: libxau0 (>= 0.1.1), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libx11-dev
+Version: 6.2.1cvs20051025-r5
+Depends: libx11-6
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxau-dev
+Version: 0.1.1-r1
+Depends: libxau0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxau0
+Version: 0.1.1-r1
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libxcalibrate-dev
+Version: 0.0cvs20051025-r0
+Depends: libxcalibrate0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libxcalibrate0
+Version: 0.0cvs20051025-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libxcursor-dev
+Version: 1.1.2-r2
+Depends: libxrender-dev
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxcursor1
+Version: 1.1.2-r2
+Depends: libxrender1 (>= 0.8.4), libxfixes0 (>= 2.0.1), libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libxdmcp-dev
+Version: 0.1.3-r1
+Depends: libxdmcp0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxdmcp0
+Version: 0.1.3-r1
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxext-dev
+Version: 0.0cvs20051025-r1
+Depends: libxext6
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxext6
+Version: 0.0cvs20051025-r1
+Depends: libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libxfixes-dev
+Version: 2.0.1-r1
+Depends: libxfixes0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxfixes0
+Version: 2.0.1-r1
+Depends: libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libxfont-dev
+Version: 1.4.2-r2
+Depends: libxfont1
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxfont1
+Version: 1.4.2-r2
+Depends: libz1 (>= 1.2.3), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxft-dev
+Version: 2.1.6-r1
+Depends: libxft2, libfontconfig-dev
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxft2
+Version: 2.1.6-r1
+Depends: libfontconfig1 (>= 2.2.95), libfreetype6 (>= 2.1.10), libz1 (>= 1.2.3), libxrender1 (>= 0.8.4), libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libxml2
+Version: 2.6.26-r2
+Depends: libc6 (>= 2.3.2+cvs20040726), libz1 (>= 1.2.3), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libxml2-dev
+Version: 2.6.26-r2
+Depends: libxml2
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libxp
+Version: 0.0cvs20051025-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: libxp-dev
+Version: 0.0cvs20051025-r0
+Depends: libxp
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libxrandr2
+Version: 1.0.2-r1
+Depends: libc6 (>= 2.3.2+cvs20040726), libx11-6 (>= 6.2.1cvs20051025), libxext6 (>= 0.0cvs20051025), libxrender1 (>= 0.8.4), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libxrender-dev
+Version: 0.8.4-r1
+Depends: libxrender1, libx11-dev
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libxrender1
+Version: 0.8.4-r1
+Depends: libc6 (>= 2.3.2+cvs20040726), libx11-6 (>= 6.2.1cvs20051025), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: libxsettings-client-dev
+Version: 0.14-r0
+Depends: libxsettings-client0, libx11-dev
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libxsettings-client0
+Version: 0.14-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libxt-dev
+Version: 0.1.5-r1
+Depends: libxt6
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libxt6
+Version: 0.1.5-r1
+Depends: libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libsm6 (>= 6.0.3), libice6 (>= 6.3.3), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482200
+
+Package: libxtst-dev
+Version: 0.0cvs20051025-r3
+Depends: libxtst6
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libxtst6
+Version: 0.0cvs20051025-r3
+Depends: libxext6 (>= 0.0cvs20051025), libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482201
+
+Package: libz-dev
+Version: 1.2.3-r0
+Depends: libz1
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: libz1
+Version: 1.2.3-r0
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: minimo
+Version: 0.0cvs20051025-r9
+Depends: libc6 (>= 2.3.2+cvs20040726), libstdc++6 (>= 3.4.4), libgcc1 (>= 3.4.4), gtk+ (>= 2.6.7), libatk-1.0-0 (>= 1.10.1), pango (>= 1.8.1), libglib-2.0-0 (>= 2.6.6), libxt6 (>= 0.1.5), libx11-6 (>= 6.2.1cvs20051025), libidl-2-0 (>= 0.8.6), libxft2 (>= 2.1.6), libfreetype6 (>= 2.1.10), libz1 (>= 1.2.3), libxrender1 (>= 0.8.4), libfontconfig1 (>= 2.2.95)
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482203
+
+Package: minimo-dev
+Version: 0.0cvs20051025-r9
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482205
+
+Package: ncurses
+Version: 5.4-r8
+Depends: libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Suggests: ncurses-terminfo
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: ncurses-dev
+Version: 5.4-r8
+Depends: ncurses
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: openssl-dev
+Version: 0.9.7e-r1
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482205
+
+Package: pango
+Version: 1.8.1-r3
+Depends: libxft2 (>= 2.1.6), libxrender1 (>= 0.8.4), libx11-6 (>= 6.2.1cvs20051025), libxau0 (>= 0.1.1), libfontconfig1 (>= 2.2.95), libexpat0 (>= 1.95.7), libfreetype6 (>= 2.1.10), libz1 (>= 1.2.3), libc6 (>= 2.3.2+cvs20040726), libglib-2.0-0 (>= 2.6.6), libgcc1 (>= 3.4.4)
+Status: install ok installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: pango-dev
+Version: 1.8.1-r3
+Depends: pango, libglib-2.0-dev
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482198
+
+Package: randrext-dev
+Version: 1.0-r0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: recordext-dev
+Version: 0.0cvs20051025-r0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: renderext-dev
+Version: 0.0cvs20051025-r0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: resourceext-dev
+Version: 1.0-r0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: xextensions-dev
+Version: 1.0.1-r0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: xproto-dev
+Version: 6.6.2+cvs20050226-r0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+
+Package: xtrans-dev
+Version: 0.1-r0
+Status: install user installed
+Architecture: arm
+Installed-Time: 1191482202
+

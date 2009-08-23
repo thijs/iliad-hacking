@@ -1,0 +1,10 @@
+Package: glibc-gconv
+Version: 2.3.2+cvs20040726-r18
+Description: GNU C Library
+Section: libs
+Priority: required
+Maintainer: Phil Blundell <pb@handhelds.org>
+Architecture: arm
+OE: glibc-2.3.2+cvs20040726
+Homepage: http://www.gnu.org/software/libc/libc.html
+Source: cvs://anoncvs@sources.redhat.com/cvs/glibc;module=libc;date=20040726 file://sedscript.patch;patch=1;pnum=1 file://arm-ioperm.patch;patch=1;pnum=0 file://makeconfig.patch;patch=1;pnum=0 file://ldd.patch;patch=1;pnum=0 file://fhs-linux-paths.patch;patch=1 file://arm-no-hwcap.patch;patch=1;pnum=0 file://arm-memcpy.patch;patch=1;pnum=0 file://arm-longlong.patch;patch=1;pnum=0 file://arm-machine-gmon.patch;patch=1;pnum=0 file://glibc-fp-byteorder.patch;patch=1 file://etc/ld.so.conf file://generate-supported.mk file://dyn-ldconfig.patch;patch=1;pnum=0

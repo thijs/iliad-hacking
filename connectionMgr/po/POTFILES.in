@@ -1,0 +1,15 @@
+# List of source files which contain translatable strings.
+src/background.c
+src/connectScreen.c
+src/connectScreenOptions.c
+src/connectScreenProfiles.c
+src/editScreen.c
+src/editScreenProfiles.c
+src/editScreenSearch.c
+src/editScreenOverview.c
+src/editScreenProxy.c
+src/editScreenStatic.c
+src/editScreenWireless.c
+src/editScreenWirelessExt.c
+src/editScreenDialup.c
+src/widgetUtils.c

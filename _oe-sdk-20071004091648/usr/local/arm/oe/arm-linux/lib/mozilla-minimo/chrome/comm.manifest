@@ -1,0 +1,5 @@
+content xbl-marquee jar:comm.jar!/content/xbl-marquee/ xpcnativewrappers=yes
+content communicator jar:comm.jar!/content/communicator/
+content communicator-platform jar:comm.jar!/content/communicator-platform/ platform
+content communicator-region jar:comm.jar!/content/communicator-region/
+content cookie jar:comm.jar!/content/cookie/ xpcnativewrappers=yes

@@ -1,0 +1,645 @@
+# Russian translations for PACKAGE package.
+# Copyright (C) 2007 iRex Technologies BV
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ersetup 0.14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-12-14 15:27+0100\n"
+"PO-Revision-Date: 2007-03-29 16:37+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/iLiadBgConnectScreen.c:448
+msgid "Wireless connection preferences"
+msgstr ""
+
+#: src/iLiadBgConnectScreen.c:450
+msgid ""
+"Select whether to automatically connect to a non-secured (open) wireless "
+"network."
+msgstr ""
+
+#: src/iLiadBgConnectScreen.c:452 src/iLiadBgConnectScreen.c:476
+#: src/iLiadPincodeScreen.c:402 src/iLiadConfigScreen.c:440
+#: src/iLiadConfigScreen.c:450 src/iLiadTimediDSScreen.c:308
+msgid "On"
+msgstr "Включить"
+
+#: src/iLiadBgConnectScreen.c:453 src/iLiadBgConnectScreen.c:477
+#: src/iLiadPincodeScreen.c:403 src/iLiadConfigScreen.c:441
+#: src/iLiadConfigScreen.c:451 src/iLiadTimediDSScreen.c:309
+msgid "Off"
+msgstr "Выключить"
+
+#: src/iLiadBgConnectScreen.c:460
+msgid "Background connect"
+msgstr "Фоновое соединение с сетью"
+
+#: src/iLiadBgConnectScreen.c:462
+msgid "Select whether to download content from the iDS or a computer."
+msgstr "Выберите источник загрузки контента - Сервер IDS или Ваш компьютер"
+
+#: src/iLiadBgConnectScreen.c:463
+msgid "iDS"
+msgstr "Сервер IDS"
+
+#: src/iLiadBgConnectScreen.c:464
+msgid "Computer"
+msgstr "Ваш компьютер"
+
+#: src/iLiadBgConnectScreen.c:471
+msgid "Automatic background connect"
+msgstr "Автоматическое фоновое соединение с сетью"
+
+#: src/iLiadBgConnectScreen.c:473
+msgid ""
+"Enabling \"Automatic background connect\" causes the iLiad to receive or "
+"send content items at a fixed interval."
+msgstr ""
+"Включение режима \"Автоматического фонового соединения\" позволяет Илиаду "
+"получать и отправлять контент в заданные промежутки времени"
+
+#: src/iLiadBgConnectScreen.c:484
+msgid "Enter the time interval for the background connect."
+msgstr ""
+"Задайте интервал времени для  автоматического фонового подключения к серверу"
+
+#: src/iLiadBgConnectScreen.c:485
+#, c-format
+msgid "minutes (min. %d, max. %d)"
+msgstr "минуты  (min. %d, max. %d)"
+
+#: src/iLiadBgConnectScreen.c:494
+msgid ""
+"During the background connection you can operate the iLiad as usual.\n"
+"\n"
+"Warning!\n"
+"Background connect will empty your battery faster."
+msgstr ""
+"Во время фонового подключения к серверу Вы можете пользоваться Илиадом, как "
+"обычно. \n"
+"\n"
+"Внимание!\n"
+"Фоновое подключение приводит к более интенсивной разрядке батареи"
+
+#: src/iLiadPincodeScreen.c:391
+msgid "PIN Code"
+msgstr "ПИН код"
+
+#: src/iLiadPincodeScreen.c:396
+msgid ""
+"The PIN code protects your reader against unauthorized use.\n"
+"The code is requested each time the reader is switched on."
+msgstr ""
+"Пин код защищает Ваш Илиад от использования посторонними лицами. \n"
+"Каждый раз при включении Илиада необходимо будет вводить код."
+
+#: src/iLiadPincodeScreen.c:410
+msgid "Select PIN code"
+msgstr "Введите ПИН код"
+
+#: src/iLiadPincodeScreen.c:414
+msgid "Please select a PIN code of 4 digits."
+msgstr "Пожалуйста выбирите  ПИН код из 4 цифр."
+
+#: src/iLiadPincodeScreen.c:419
+msgid "Please enter current PIN code"
+msgstr "Пожалуйста введите действующий  ПИН код."
+
+#: src/iLiadPincodeScreen.c:424
+msgid "Please enter new PIN code"
+msgstr "Пожалуйста, введите новый ПИН код"
+
+#: src/iLiadPincodeScreen.c:429
+msgid "Please verify new PIN code"
+msgstr "Пожалуйста подтвердите новый ПИН код."
+
+#: src/iLiadPincodeScreen.c:435
+msgid "Confirm"
+msgstr "Подтверждение"
+
+#: src/iLiadPincodeScreen.c:470
+msgid ""
+"Please create a user account at 'MyiRex' and fill in the account settings in "
+"your iLiad."
+msgstr ""
+
+#: src/iLiadPincodeScreen.c:475
+msgid ""
+"Warning!\n"
+"You can only enter the PIN code with the iLiad's stylus. Make sure that you "
+"always have the stylus available after enabling the pin code functionality."
+msgstr ""
+"Внимание!\n"
+"Вы можете ввести ПИН код только с помощью стилуса Вашего Илиада. Убедитесь, "
+"что у Вас всегда под рукой стилус после активации  процедуры ввода ПИН кода. "
+
+#: src/iLiadPincodeScreen.c:608
+msgid "Illegal characters or illegal length, pincode unchanged"
+msgstr "Запрещенные символы или длина, ПИН код не изменен"
+
+#: src/iLiadPincodeScreen.c:620
+msgid "Pincode verification failed, pincode unchanged"
+msgstr "Подтверждение ПИН кода не удалось, ПИН код не изменен."
+
+#: src/iLiadPincodeScreen.c:631 src/iLiadPincodeScreen.c:658
+msgid "Pincode updated successfully"
+msgstr "ПИН код изменен успешно"
+
+#: src/iLiadPincodeScreen.c:648
+msgid "Current pincode incorrect, pincode unchanged"
+msgstr "Существующий ПИН код введен не верно, ПИН код не изменился"
+
+#: src/iLiadConfigScreen.c:437
+msgid "Sound"
+msgstr "Звук"
+
+#: src/iLiadConfigScreen.c:439
+msgid "With this function you can enable or disable the sound of your iLiad."
+msgstr ""
+"С помощьюданной функции Вы можете включить или выключить звуки в Вашем "
+"Илиаде."
+
+#: src/iLiadConfigScreen.c:447
+msgid "Key buffering"
+msgstr "Буфер памяти клавиатуры"
+
+#: src/iLiadConfigScreen.c:449
+msgid ""
+"When you enable key buffering, the iLiad will remember the keys pressed and "
+"process them when the device is ready."
+msgstr ""
+"При активации буфера памяти клавиатуры, Илиад будет запоминать нажатые Вами "
+"клавиши и вводить их по мере готовности устройства."
+
+#: src/iLiadConfigScreen.c:457
+msgid "Keys"
+msgstr "Клавиши"
+
+#: src/iLiadConfigScreen.c:459
+msgid ""
+"With this function you can set the minimum duration for a long keypress."
+msgstr ""
+"Этой функцией Вы можете установить минимальную длительность для  "
+"продолжительного  нажатия и удержания клавиш."
+
+#: src/iLiadConfigScreen.c:460
+msgid "0.5 seconds"
+msgstr "0,5 секунды"
+
+#: src/iLiadConfigScreen.c:461
+msgid "1 second"
+msgstr "1 секунда"
+
+#: src/iLiadConfigScreen.c:462
+msgid "1.5 seconds"
+msgstr "1,5 секунды"
+
+#: src/iLiadConfigScreen.c:463
+msgid "2 seconds"
+msgstr "2 секунды"
+
+#: src/iLiadConfigScreen.c:469
+msgid "Flipbar direction"
+msgstr "Направление листания страниц"
+
+#: src/iLiadConfigScreen.c:471
+msgid ""
+"With this function you choose how to move the flipbar for advancing in a "
+"document."
+msgstr ""
+"С помощью этой функции Вы можете выбрать в каком направлении Вам удобнее "
+"будет будет перелистывать страницы документов."
+
+#: src/iLiadConfigScreen.c:472
+msgid "Left"
+msgstr "Влево"
+
+#: src/iLiadConfigScreen.c:473
+msgid "Right"
+msgstr "Вправо"
+
+#: src/iLiadConfigScreen.c:479
+msgid "Pen interface"
+msgstr "Режим карандаша"
+
+#: src/iLiadConfigScreen.c:480
+msgid "Calibration"
+msgstr "Калибровка экрана"
+
+#: src/iLiadConfigScreen.c:486
+msgid "Languages"
+msgstr "Языки"
+
+#: src/iLiadConfigScreen.c:488
+msgid "With this function you can set the language of the iLiad."
+msgstr "С помощью этой функции Вы можете выбрать язык интерфейса Илиада."
+
+#: src/iLiadDateTimeScreen.c:287
+msgid "Time Selection"
+msgstr ""
+
+#: src/iLiadDateTimeScreen.c:290
+msgid "The current time and date on your iLiad is:"
+msgstr ""
+
+#: src/iLiadDateTimeScreen.c:301
+msgid ""
+"To change the clock, select your current date and time from the list below."
+msgstr ""
+
+#. TRANSLATORS: This is a date and time format specifier, according to the strftime(3) man page.
+#. The corresponding string should be something like Monday, July 30 2007.
+#: src/iLiadDateTimeScreen.c:309 src/iLiadDateTimeScreen.c:315
+#, no-c-format
+msgid "%A, %x"
+msgstr ""
+
+#: src/iLiadDateTimeScreen.c:323
+msgid ""
+"You can set your date and time by connecting to iDS. Afterwards you can use "
+"this page to update the time for your current timezone."
+msgstr ""
+
+#. TRANSLATORS: This is a date and time format specifier, according to the strftime(3) man page.
+#. The corresponding string should be something like 13:23 Monday, July 30 2007.
+#. Keep %R unchanged.
+#: src/iLiadDateTimeScreen.c:452
+#, no-c-format
+msgid "%R %A, %x"
+msgstr "%R      %A, %x"
+
+#: src/iLiadUserScreen.c:186
+msgid "Name"
+msgstr "Имя"
+
+#: src/iLiadUserScreen.c:187
+msgid "Please enter your name"
+msgstr "Пожалуйста введите свое имя"
+
+#: src/iLiadUserScreen.c:193
+msgid "MyiRex account settings"
+msgstr ""
+
+#: src/iLiadUserScreen.c:194
+#, fuzzy
+msgid "Please enter the email address used to create your 'MyiRex' account"
+msgstr ""
+"Пожалйста введите адрес электронной почты, использованный для создания "
+"уетной записи MyiRex"
+
+#: src/iLiadUserScreen.c:195
+#, fuzzy
+msgid "Please enter your 'MyiRex' password"
+msgstr "Пожалуйста введите Ваш MyiRex пароль"
+
+#: src/iLiadUserScreen.c:202
+msgid ""
+"\n"
+"To connect to iRex Delivery Service (iDS) you need to create an account.\n"
+"Visit https://myirex.irexnet.com/ and follow the instructions."
+msgstr ""
+
+#: src/iLiadPCConnectScreen.c:334
+msgid "Proceed"
+msgstr "Обрабатывается"
+
+#: src/iLiadPCConnectScreen.c:340
+msgid "iLiad settings / Setting for computer connection "
+msgstr "Установки Илиад / Установки для соединения с компьютером"
+
+#: src/iLiadPCConnectScreen.c:346
+msgid "STEP 1: Please type the name of your computer."
+msgstr "Шаг 1: Пожалуйста введите имя Вашего компьютера"
+
+#: src/iLiadPCConnectScreen.c:351
+msgid ""
+"You can create a connection between the iLiad and your computer by entering "
+"the specifications of your PC.\n"
+"The \"full computer name\" is located at the system properties of your "
+"computer."
+msgstr ""
+"Вы можете создать соединение между Илиадом и Вашим компьютером, введя "
+"спецификацию Вашего компьютера.\n"
+"\"полное имя компьютера\" которое Вы найдете в разделе \"Система\", "
+"\"Свойства\"."
+
+#: src/iLiadPCConnectScreen.c:362
+msgid "STEP 2: Please enter the name of the \"shared\" destination folder."
+msgstr ""
+"Шаг 2: Пожалуйста введите имя закрытой \"shared\" папки для сохранения "
+"данных из Илиада  на Вашем компьютере."
+
+#: src/iLiadPCConnectScreen.c:367
+msgid ""
+"Create a destination folder on your computer. In the folder properties you "
+"can \"share this folder\"."
+msgstr ""
+"Создайте папку на Вашем компьютере для сохранения файлов из Илиада. В "
+"свойствах папки Вы можете отметить функцию \"Отменить общий доступ к этой "
+"папке\" (\"share this folder\")."
+
+#: src/iLiadPCConnectScreen.c:375
+msgid "STEP 3: Please enter the domain group / work group of your computer."
+msgstr ""
+"Шаг 3: Пожалуйста введите имя домена (рабочей группы) Вашего компьютера "
+"(domain group/work group)."
+
+#: src/iLiadPCConnectScreen.c:380
+msgid ""
+"When the computer is part of a business network, you can enter the domain "
+"group.\n"
+"In most cases you can leave this entry field blank."
+msgstr ""
+"Если Ваш компьютер входит в рабочую группу, Вы можете ввести имя рабочей "
+"группы.\n"
+"В большинстве случаев Вы можете не заполнять это поле и оставить его пустым."
+
+#: src/iLiadPCConnectScreen.c:386
+msgid "STEP 4: Please enter the username and password of your computer."
+msgstr "Шаг 4: Пожалуйста введите логин и пароль Вашего компьютера."
+
+#: src/iLiadPCConnectScreen.c:390
+msgid "User name"
+msgstr "Имя пользователя (логин)"
+
+#: src/iLiadPCConnectScreen.c:394
+msgid "Password"
+msgstr "Пароль"
+
+#: src/iLiadPCConnectScreen.c:399
+msgid ""
+"You can leave this entry field blank when you didn't create a user name and "
+"password."
+msgstr ""
+"Вы можете оставить это поле пустым, если Вы не создавали логина (имени "
+"пользователя)  и пароля."
+
+#: src/iLiadArcLocScreen.c:215
+msgid "Archive locations"
+msgstr "Расположение архива"
+
+#: src/iLiadArcLocScreen.c:218
+msgid "Newspapers"
+msgstr "Газеты"
+
+#: src/iLiadArcLocScreen.c:219
+msgid "Select a memory type for the 'NEWS' button."
+msgstr ""
+"Выберите тип памяти (место сохранения контента) для кнопки 'NEWS' (Газеты)"
+
+#: src/iLiadArcLocScreen.c:222
+msgid "Books"
+msgstr "Книги"
+
+#: src/iLiadArcLocScreen.c:223
+msgid "Select a memory type for the 'BOOKS' button."
+msgstr ""
+"Выберите тип памяти (место сохранения контента) для кнопки 'BOOKS' (Книги)"
+
+#: src/iLiadArcLocScreen.c:226
+msgid "Documents"
+msgstr "Документы"
+
+#: src/iLiadArcLocScreen.c:227
+msgid "Select a memory type for the 'DOCS' button."
+msgstr ""
+"Выберите тип памяти (место сохранения контента) для кнопки 'DOCS' (Документы)"
+
+#: src/iLiadArcLocScreen.c:230
+msgid "Notes"
+msgstr "Блокнот"
+
+#: src/iLiadArcLocScreen.c:231
+msgid "Select a memory type for the 'NOTES' button."
+msgstr ""
+"Выберите тип памяти (место сохранения контента) для кнопки 'NOTES'  (Блокнот)"
+
+#: src/iLiadArcLocScreen.c:237 src/iLiadArcLocScreen.c:254
+msgid "Internal memory"
+msgstr "Внутренняя память"
+
+#: src/iLiadArcLocScreen.c:238 src/iLiadArcLocScreen.c:255
+msgid "MMC card"
+msgstr "Карта памяти ММС (SD)"
+
+#: src/iLiadArcLocScreen.c:239 src/iLiadArcLocScreen.c:256
+msgid "USB stick"
+msgstr "USB флэш накопитель"
+
+#: src/iLiadArcLocScreen.c:240 src/iLiadArcLocScreen.c:257
+msgid "CF card"
+msgstr "Карта памяти CF (Компакт Флэш)"
+
+#: src/iLiadArcLocScreen.c:246
+msgid "USB Connection"
+msgstr ""
+
+#: src/iLiadArcLocScreen.c:250
+msgid "Export via USB"
+msgstr ""
+
+#: src/iLiadArcLocScreen.c:251
+#, fuzzy
+msgid "Select a memory type to be exported to the PC via the USB cable."
+msgstr ""
+"Выберите тип памяти (место сохранения контента) для кнопки 'DOCS' (Документы)"
+
+#: src/iLiadArcLocScreen.c:264
+msgid ""
+"\n"
+"When you select a memory type for an archive key, the iLiad will use this as "
+"storage for newly downloaded items from iDS."
+msgstr ""
+"\n"
+"Когда Вы выберете тип памяти (место сохранения) архивов, Илиад будет "
+"использовать это место для сохранения новой загруженной информации "
+"(контента) с сервера IDS."
+
+#: src/iLiadStartUpScreen.c:38
+msgid "Quick Start Guide"
+msgstr ""
+
+#: src/iLiadStartUpScreen.c:39
+msgid "Reference materials"
+msgstr ""
+
+#: src/iLiadStartUpScreen.c:40
+msgid "Device manager"
+msgstr ""
+
+#: src/iLiadStartUpScreen.c:41
+#, fuzzy
+msgid "Recent documents"
+msgstr "Документы"
+
+#: src/iLiadStartUpScreen.c:42
+msgid "Last read document"
+msgstr ""
+
+#: src/iLiadStartUpScreen.c:43
+msgid "News folder"
+msgstr ""
+
+#: src/iLiadStartUpScreen.c:44
+msgid "Books folder"
+msgstr ""
+
+#: src/iLiadStartUpScreen.c:45
+#, fuzzy
+msgid "Documents folder"
+msgstr "Документы"
+
+#: src/iLiadStartUpScreen.c:46
+msgid "Notes folder"
+msgstr ""
+
+#: src/iLiadStartUpScreen.c:281
+#, fuzzy
+msgid "Start-up Settings"
+msgstr "Установки Илиад"
+
+#: src/iLiadStartUpScreen.c:282
+msgid "Please select what to open when starting up your iLiad."
+msgstr ""
+
+#: src/iLiadStartUpScreen.c:289
+#, fuzzy
+msgid "Stylus calibration"
+msgstr "Калибровка экрана"
+
+#: src/iLiadStartUpScreen.c:290
+#, fuzzy
+msgid "With this function you can re-calibrate your stylus."
+msgstr ""
+"С помощьюданной функции Вы можете включить или выключить звуки в Вашем "
+"Илиаде."
+
+#: src/iLiadStartUpScreen.c:291
+#, fuzzy
+msgid "Start Calibration"
+msgstr "Калибровка экрана"
+
+#: src/iLiadDeviceOverview.c:226
+msgid "Device Identification"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:228
+msgid "Product type:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:229
+#, fuzzy
+msgid "Language set:"
+msgstr "Языки"
+
+#: src/iLiadDeviceOverview.c:230
+msgid "OEM code:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:231
+msgid "Country code:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:232
+msgid "PCBA revision:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:233
+msgid "EPD ID:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:234
+msgid "Product ID:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:235
+msgid "Wired MAC address:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:236
+msgid "Wireless MAC address:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:237
+msgid "Software version:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:238
+msgid "Software build number:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:239
+msgid "Kernel version:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:241
+msgid "Acknowledgements"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:244
+msgid ""
+"iRex Technologies wants to thank the following people for contributing to "
+"the iLiad software:"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:247
+#, c-format
+msgid "German translation: %s"
+msgstr ""
+
+#: src/iLiadDeviceOverview.c:250
+#, fuzzy, c-format
+msgid "Stylus calibration: %s"
+msgstr "Калибровка экрана"
+
+#: src/iLiadTimediDSScreen.c:304
+msgid "Time to connect to iDS"
+msgstr ""
+
+#: src/iLiadTimediDSScreen.c:306
+#, fuzzy
+msgid ""
+"Enabling \"time to connection\" causes the iLiad to download content from "
+"the iDS at a set time."
+msgstr ""
+"Включение режима \"Автоматического фонового соединения\" позволяет Илиаду "
+"получать и отправлять контент в заданные промежутки времени"
+
+#: src/iLiadTimediDSScreen.c:312
+msgid "Set the time"
+msgstr ""
+
+#: src/iLiadTimediDSScreen.c:313
+msgid "The iLiad will connect to iDS at the set time:"
+msgstr ""
+
+#: src/iLiadTimediDSScreen.c:318
+msgid "Connect at"
+msgstr ""
+
+#: src/iLiadTimediDSScreen.c:322
+msgid "Include software downloads while connected to iDS."
+msgstr ""
+
+#: src/iLiadTimediDSScreen.c:324
+msgid "Switch off again after waking up the device."
+msgstr ""
+
+#: src/iLiadTimediDSScreen.c:328
+msgid ""
+"When the iLiad is switched off, it will 'wake-up' to download content from "
+"the iDS."
+msgstr ""
+
+#: src/background.c:90
+msgid "iLiad Settings"
+msgstr "Установки Илиад"

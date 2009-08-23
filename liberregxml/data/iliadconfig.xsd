@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- definition of  "iLiadConfig" element -->
+  <xs:element name="iLiadConfig">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="userProfile"/>
+        <xs:element ref="userSetting"/>
+        <xs:element ref="pcProfileList"/>
+        <xs:element ref="networkProfileList"/>
+        <xs:element ref="autoConnect"/>
+        <xs:element minOccurs="0" ref="startup"/>
+        <xs:element ref="deviceDetails"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+<!-- definition of  "userProfile" element -->
+  <xs:element name="userProfile">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="name"/>
+        <xs:element ref="email"/>
+        <xs:element ref="password"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:string" default="iRex"/>
+  <xs:element name="email" type="xs:string" default="i@R.x"/>
+  <xs:element name="password" type="xs:token" default=""/>
+
+  <!-- definition of  "userSetting" element -->
+  <xs:element name="userSetting">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="language"/>
+        <xs:element ref="longKeyPressTimeout"/>
+        <xs:element ref="flipbarDirection"/>
+        <xs:element ref="sound"/>
+        <xs:element ref="keyBuffering"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="language" type="gLibLocale_t" default="en_US"/>
+  <xs:element name="longKeyPressTimeout" type="longKeyPressTimeout_t" default="1000"/>
+  <xs:element name="flipbarDirection" type="xs:boolean" default="true"/>
+  <xs:simpleType name="gLibLocale_t">
+    <xs:annotation>
+      <xs:documentation>Language code must be in GLib LOCALE format </xs:documentation>
+      <xs:documentation>(e.g. "en_US", "nl_NL")</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-z]{2}_[A-Z]{2}"> </xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="sound">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="enable"/>
+        <xs:element ref="volume"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="enable" type="xs:boolean" default="false"/>
+  <xs:element name="volume" type="volume_t" default="75"/>
+  <xs:simpleType name="volume_t">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="longKeyPressTimeout_t">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="500"/>
+      <xs:maxInclusive value="2000"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="keyBuffering">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="enable"/>
+        <xs:element ref="numberOfKeys"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="numberOfKeys" type="numberOfKeys_t" default="5"/>
+  <xs:simpleType name="numberOfKeys_t">
+    <xs:restriction base="xs:integer">
+      <xs:maxInclusive value="12"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- definition of  "pcProfileList" element -->
+  <xs:element name="pcProfileList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pcProfile" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pcProfile">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="profileName"/>
+        <xs:element ref="pcName"/>
+        <xs:element ref="shareName"/>
+        <xs:element ref="workgroup"/>
+        <xs:element ref="userName"/>
+        <xs:element ref="password"/>
+      </xs:all>
+      <xs:attribute name="profileID" use="required" type="tokenNotEmpty_t"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="profileName" type="xs:string"/>
+  <xs:element name="pcName" type="xs:string" default="MyComputer"/>
+  <xs:element name="shareName" type="xs:string" default="iLiad"/>
+  <xs:element name="workgroup" type="xs:string" default="mshome"/>
+  <xs:element name="userName" type="xs:string" default=""/>
+  <xs:simpleType name="tokenNotEmpty_t">
+    <xs:restriction base="xs:token">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- definition of  "networkProfileList" element -->
+  <xs:element name="networkProfileList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="networkProfile" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="networkProfile">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="profileName"/>
+        <!-- wired/wireless  -->
+        <xs:element ref="networkType"/>
+        <xs:element ref="wlanDetails" minOccurs="0"/>
+        <!-- dhcp/static IP -->
+        <xs:element ref="useDhcp"/>
+        <xs:element ref="ipStaticDetails" minOccurs="0"/>
+        <!-- proxy on/off -->
+        <xs:element ref="useProxy"/>
+        <xs:element ref="proxyDetails" minOccurs="0"/>
+      </xs:all>
+      <xs:attribute name="profileID" use="required" type="tokenNotEmpty_t"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="networkType" type="networkType_t" default="WIRED"/>
+  <xs:element name="useDhcp" type="xs:boolean" default="true"/>
+  <xs:element name="useProxy" type="xs:boolean" default="false"/>
+  <!-- wireless settings -->
+  <xs:simpleType name="networkType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WIRED"/>
+      <xs:enumeration value="WIRELESS"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="wlanDetails">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="wlanSsid"/>
+        <xs:element ref="wlanEncryptionType"/>
+        <xs:element ref="wlanEncryptionKey" minOccurs="0"/>
+        <xs:element ref="wlanMode"/>
+        <xs:element ref="wlanChannel"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wlanSsid" type="tokenNotEmpty_t" default="ereader"/>
+  <xs:element name="wlanEncryptionType" type="wlanEncryptionType_t" default="ENCR_NONE"/>
+  <xs:element name="wlanEncryptionKey" type="xs:token" default=""/>
+  <xs:element name="wlanMode" type="wlanMode_t" default="INFRASTRUCTURE"/>
+  <xs:element name="wlanChannel" type="xs:integer" default="6"/>
+  <xs:simpleType name="wlanEncryptionType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="ASCII_64BIT"/>
+      <xs:enumeration value="HEX_64BITS"/>
+      <xs:enumeration value="ASCII_128BITS"/>
+      <xs:enumeration value="HEX_128BITS"/>
+      <xs:enumeration value="ASCII_64BIT"/>
+      <xs:enumeration value="ENCR_NONE"/>
+      <xs:enumeration value="ENCR_WEP"/>
+      <xs:enumeration value="ENCR_WPA"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- static IP settings -->
+  <xs:element name="ipStaticDetails">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="ipAddress"/>
+        <xs:element ref="ipNetmask"/>
+        <xs:element ref="ipGateway"/>
+        <xs:element ref="ipNameServer"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ipAddress" type="xs:string"/>
+  <xs:element name="ipNetmask" type="xs:string"/>
+  <xs:element name="ipGateway" type="xs:string"/>
+  <xs:element name="ipNameServer" type="xs:string"/>
+
+  <!-- relax ipv4Address_t to accept a string for now
+
+  <xs:element name="ipAddress" type="ipv4Address_t"/>
+  <xs:element name="ipNetmask" type="ipv4Address_t"/>
+  <xs:element name="ipGateway" type="ipv4Address_t"/>
+  <xs:element name="ipNameServer" type="ipv4Address_t"/>
+
+  <xs:simpleType name="ipv4Address_t">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,3}[.][0-9]{1,3}[.][0-9]{1,3}[.][0-9]{1,3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  -->
+
+  <!-- proxy settings -->
+  <xs:element name="proxyDetails">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="server"/>
+        <xs:element ref="port"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="server" type="xs:string" default=""/>
+  <xs:element name="port" type="xs:integer" default="8080"/>
+  <xs:simpleType name="wlanMode_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INFRASTRUCTURE"/>
+      <xs:enumeration value="ADHOC"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- definition of  "autoConnect" element -->
+  <xs:element name="autoConnect">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="serverType"/>
+        <xs:element ref="background"/>
+        <xs:element ref="maintenance"/>
+        <xs:element ref="content"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="serverType" type="serverType_t" default="IDS"/>
+  <xs:simpleType name="serverType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IDS"/>
+      <xs:enumeration value="PC"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="background">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="interval"/>
+        <xs:element ref="enable"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="interval" type="interval_t" default="15"/>
+  <xs:element name="maintenance">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="interval"/>
+        <xs:element ref="enable"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="content">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="interval"/>
+        <xs:element ref="enable"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="interval_t">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="15"/>
+      <xs:maxInclusive value="99"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- definition of  "startup" element -->
+  <xs:element name="startup">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="behaviour"/>
+        <xs:element ref="documentPath"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="behaviour" type="behaviour_t" default="QUICK_START_GUIDE"/>
+  <xs:element name="documentPath" type="xs:string" default=""/>
+
+  <xs:simpleType name="behaviour_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="QUICK_START_GUIDE"/>
+      <xs:enumeration value="REFERENCE_MATERIALS"/>
+      <xs:enumeration value="LAST_READ_DOCUMENT"/>
+      <xs:enumeration value="RECENT_DOCUMENTS"/>
+      <xs:enumeration value="DEVICE_MANAGER"/>
+      <xs:enumeration value="NEWS_FOLDER"/>
+      <xs:enumeration value="BOOKS_FOLDER"/>
+      <xs:enumeration value="DOCS_FOLDER"/>
+      <xs:enumeration value="NOTES_FOLDER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- definition of  "devideDetails" element -->
+  <xs:element name="deviceDetails">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="software"/>
+        <xs:element name="macOfWired" type="macOfWired_t"/>
+        <xs:element name="macOfWireless" type="macOfWireless_t"/>
+        <xs:element name="publicKey" type="xs:string"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="macOfWired_t">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="macOfWireless_t">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}-[0-9a-fA-F]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="software">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="buildName" type="xs:string"/>
+        <xs:element name="buildNum" type="xs:string"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

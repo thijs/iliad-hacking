@@ -1,0 +1,10 @@
+Package: xproto-dev
+Version: 6.6.2+cvs20050226-r0
+Description: X protocol and ancillary headers.
+Section: devel
+Priority: optional
+Maintainer: Greg Gilbert <greg@treke.net>
+Architecture: arm
+OE: xproto-6.6.2+cvs20050226
+Homepage: unknown
+Source: cvs://anoncvs:anoncvs@pdx.freedesktop.org/cvs/xlibs;module=Xproto;date=20050226

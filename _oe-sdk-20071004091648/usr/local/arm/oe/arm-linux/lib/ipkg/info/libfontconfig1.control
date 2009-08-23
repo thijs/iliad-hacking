@@ -1,0 +1,11 @@
+Package: libfontconfig1
+Version: 2.2.95-r1
+Description: A library for configuring and customizing font access.
+Section: libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: fontconfig-2.2.95
+Homepage: unknown
+Depends: libfreetype6 (>= 2.1.10), libz1 (>= 1.2.3), libexpat0 (>= 1.95.7), libgcc1 (>= 3.4.4), libc6 (>= 2.3.2+cvs20040726)
+Source: http://pdx.freedesktop.org/fontconfig/release/fontconfig-2.2.95.tar.gz file://fc-glyphname.patch;patch=1 file://fc-lang.patch;patch=1 file://local.conf file://fonts.conf.ereader

@@ -1,0 +1,11 @@
+Package: libpng12-dev
+Version: 1.2.8-r0
+Description: PNG Library
+Section: libs
+Priority: required
+Maintainer: Chris Larson <kergoth@handhelds.org>
+Architecture: arm
+OE: libpng-1.2.8
+Homepage: http://www.libpng.org/
+Depends: libpng12-0
+Source: http://heanet.dl.sourceforge.net/sourceforge/libpng/libpng-1.2.8.tar.bz2

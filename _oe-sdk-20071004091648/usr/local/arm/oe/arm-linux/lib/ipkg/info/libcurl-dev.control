@@ -1,0 +1,11 @@
+Package: libcurl-dev
+Version: 7.14.0-r2
+Description: Command line tool and library for client-side URL transfers.
+Section: console/network
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: curl-7.14.0
+Homepage: unknown
+Depends: libcurl3
+Source: http://curl.haxx.se/download/curl-7.14.0.tar.bz2

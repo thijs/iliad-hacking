@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: Xp
+Description: X Printing library
+Version: 6.2.0
+Cflags: -I${includedir} -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include  
+Libs: -L${libdir} -lXp -L/usr/local/arm/oe/arm-linux/lib -lXext -lX11 -ldl  

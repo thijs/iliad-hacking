@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: SM
+Description: X Session Management Library
+Version: 6.0.4
+Libs: -L${libdir} -lSM -L/usr/local/arm/oe/arm-linux/lib -lICE  
+Cflags: -I${includedir} -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include  

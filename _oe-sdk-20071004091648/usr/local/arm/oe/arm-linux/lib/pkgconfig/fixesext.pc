@@ -1,0 +1,9 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: FixesExt
+Description: X Fixes extension headers
+Version: 3.0.0
+Cflags: -I${includedir} -I/usr/local/arm/oe/arm-linux/include  

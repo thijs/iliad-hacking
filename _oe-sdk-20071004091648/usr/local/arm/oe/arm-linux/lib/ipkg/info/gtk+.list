@@ -1,0 +1,15 @@
+/usr/bin/gdk-pixbuf-query-loaders
+/etc/gtk-2.0/gdk-pixbuf.loaders
+/usr/lib/libgdk_pixbuf_xlib-2.0.so.0
+/usr/bin/gtk-query-immodules-2.0
+/usr/lib/libgdk_pixbuf-2.0.so.0.600.7
+/usr/lib/libgtk-x11-2.0.so.0
+/usr/share/themes/Default/gtk-2.0/gtkrc
+/usr/lib/gtk-2.0/2.4.0/engines/libpixmap.so
+/usr/lib/libgdk_pixbuf-2.0.so.0
+/usr/lib/libgdk_pixbuf_xlib-2.0.so.0.600.7
+/usr/lib/libgdk-x11-2.0.so.0.600.7
+/usr/lib/libgdk-x11-2.0.so.0
+/usr/share/themes/Default/gtk-2.0-key/gtkrc
+/usr/lib/libgtk-x11-2.0.so.0.600.7
+/usr/share/themes/Emacs/gtk-2.0-key/gtkrc

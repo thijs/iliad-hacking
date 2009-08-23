@@ -1,0 +1,268 @@
+# English translations for contentLister package.
+# Copyright (C) 2006 THE contentLister'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the contentLister package.
+# ann <ann@host.test>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: contentLister 0.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-12-14 15:38+0100\n"
+"PO-Revision-Date: 2006-02-07 14:43+0100\n"
+"Last-Translator: ann <ann@host.test>\n"
+"Language-Team: English <en@translate.freefriends.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/control.c:1992
+msgid "Books"
+msgstr "Books"
+
+#: src/control.c:1995
+msgid "Newspapers"
+msgstr "Newspapers"
+
+#: src/control.c:1998
+msgid "Documents"
+msgstr "Documents"
+
+#: src/control.c:2001
+msgid "Notes"
+msgstr "Notes"
+
+#: src/control.c:2004
+msgid "CF"
+msgstr "CF"
+
+#: src/control.c:2007
+msgid "MMC"
+msgstr "MMC"
+
+#: src/control.c:2010
+msgid "USB"
+msgstr "USB"
+
+#: src/control.c:2013
+msgid "Internal Memory"
+msgstr "Internal Memory"
+
+#: src/control.c:2016
+msgid "Device Manager"
+msgstr "Device Manager"
+
+#: src/control.c:2019
+msgid "Download History"
+msgstr "Download History"
+
+#: src/control.c:2022
+msgid "Search Results"
+msgstr "Search Results"
+
+#: src/control.c:2025
+msgid "Recent Documents"
+msgstr "Recent Documents"
+
+#: src/control.c:2028
+msgid "Unknown"
+msgstr "Unknown"
+
+#: src/control.c:2251
+msgid "Connected to PC..."
+msgstr "Connected to PC..."
+
+#: src/control.c:2259
+msgid "MMC card"
+msgstr "MMC card"
+
+#: src/control.c:2262
+msgid "USB stick"
+msgstr "USB stick"
+
+#: src/control.c:2265
+msgid "CF card"
+msgstr "CF card"
+
+#: src/control.c:2270
+#, c-format
+msgid ""
+"Connected to PC.\n"
+"The %s storage is not available, Internal Memory is exported instead."
+msgstr ""
+"Connected to PC.\n"
+"The %s storage is not available, Internal Memory is exported instead."
+
+#: src/control.c:2278
+msgid ""
+"Your battery is almost empty, please connect the power adapter to keep "
+"working."
+msgstr ""
+"Your battery is almost empty, please connect the power adapter to keep "
+"working."
+
+#: src/control.c:2285
+msgid "The iLiad is preparing for power down."
+msgstr "The iLiad is preparing for power down."
+
+#: src/control.c:2291
+msgid ""
+"There are too many items to display. Only the first 1000 items will be "
+"listed."
+msgstr ""
+"There are too many items to display. Only the first 1000 items will be "
+"listed."
+
+#: src/control.c:2297
+msgid "Reading of content has failed due to an unknown reason."
+msgstr "Reading of content has failed due to an unknown reason."
+
+#: src/control.c:2303
+msgid "Content isn't accessible any more."
+msgstr "Content isn't accessible any more."
+
+#: src/control.c:2309
+msgid "No network configured."
+msgstr "No network configured."
+
+#: src/control.c:2315
+msgid "An unknown event occurred."
+msgstr "An unkown event occurred."
+
+#: src/control_share.c:781
+msgid "Click the 'Share' icon to add this document to your outbox."
+msgstr "Click the 'Share' icon to add this document to your outbox."
+
+#: src/erMdsXml.c:865
+msgid "Transfer mode"
+msgstr "Transfer mode"
+
+#: src/erMdsXml.c:866
+msgid "Please select how to add this document to your outbox"
+msgstr "Please select how to add this document to your outbox"
+
+#: src/erMdsXml.c:878
+msgid "Copy"
+msgstr "Copy"
+
+#: src/erMdsXml.c:884
+msgid "Move"
+msgstr "Move"
+
+#: src/lister.c:267
+msgid "Size"
+msgstr "Size"
+
+#: src/lister.c:273 src/lister.c:293
+msgid "MB"
+msgstr "MB"
+
+#: src/lister.c:278
+msgid "KB"
+msgstr "KB"
+
+#: src/lister.c:282
+msgid "Bytes"
+msgstr "Bytes"
+
+#: src/lister.c:290
+msgid "Free"
+msgstr "Free"
+
+#: src/gtkMetadataWnd.c:381
+msgid "Step 1: Please enter a name for the content"
+msgstr "Step 1: Please enter a name for the content"
+
+#: src/gtkMetadataWnd.c:384
+msgid "Step 2: Enter a description by which you can identify the content"
+msgstr "Step 2: Enter a description by which you can identify the content"
+
+#: src/gtkMetadataWnd.c:387
+msgid "Step 3: Click on the 'Tagging' icon to save your changes"
+msgstr "Step 3: Click on the 'Tagging' icon to save your changes"
+
+#: src/gtkSearchWnd.c:282
+msgid "Step 1: Please enter the search pattern"
+msgstr "Step 1: Please enter the search pattern"
+
+#: src/gtkSearchWnd.c:283
+msgid ""
+"Multiple search strings can be separated with a space.\n"
+"Search strings containing spaces should be enclosed in double quotes (\").\n"
+"Narrow your search results by clicking the 'Search' icon again."
+msgstr ""
+"Multiple search strings can be separated with a space.\n"
+"Search strings containing spaces should be enclosed in double quotes (\").\n"
+"Narrow your search results by clicking the 'Search' icon again."
+
+#: src/gtkSearchWnd.c:288
+msgid "Step 2: Please click on the 'Search' button to start your enquiry"
+msgstr "Step 2: Please click on the 'Search' button to start your enquiry"
+
+#: src/gtkSearchWnd.c:289
+msgid "Search"
+msgstr "Search"
+
+#: src/gtkPincodeScreen.c:344
+msgid "Enter your PIN code"
+msgstr "Enter your PIN code"
+
+#: src/gtkPincodeScreen.c:348
+msgid "Confirm"
+msgstr "Confirm"
+
+#: src/gtkPincodeScreen.c:353 src/gtkPincodeScreen.c:358
+msgid "Forgot your PIN code? Please visit your MyiRex account."
+msgstr "Forgot your PIN code? Please visit your MyiRex account."
+
+#: src/gtkPincodeScreen.c:754 src/gtkPincodeScreen.c:788
+msgid "PIN code is incorrect. Please try again."
+msgstr "PIN code is incorrect. Please try again."
+
+#: src/gtkSortWnd.c:415
+msgid "File name"
+msgstr "File name"
+
+#: src/gtkSortWnd.c:418
+msgid "File extension"
+msgstr "File extension"
+
+#: src/gtkSortWnd.c:421
+msgid "File size"
+msgstr "File size"
+
+#: src/gtkSortWnd.c:424
+msgid "File date"
+msgstr "File date"
+
+#: src/gtkSortWnd.c:427
+msgid "Title"
+msgstr "Title"
+
+#: src/gtkSortWnd.c:430
+msgid "Description"
+msgstr "Description"
+
+#: src/gtkSortWnd.c:440
+msgid "Step 1: Please select a sort criteria"
+msgstr "Step 1: Please select a sort criteria"
+
+#: src/gtkSortWnd.c:444
+msgid "Sort content on file system attributes"
+msgstr "Sort content on file system attributes"
+
+#: src/gtkSortWnd.c:456
+msgid "Sort content on information tags"
+msgstr "Sort content on information tags"
+
+#: src/gtkSortWnd.c:462
+msgid "Step 2: Please select ascending or descending"
+msgstr "Step 2: Please select ascending or descending"
+
+#: src/gtkSortWnd.c:466
+msgid "Selection"
+msgstr "Selection"
+
+#: src/gtkSortWnd.c:473
+msgid "Step 3: Please click on the 'Sort' icon to confirm your selection"
+msgstr "Step 3: Please click on the 'Sort' icon to confirm your selection"

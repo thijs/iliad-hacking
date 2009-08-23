@@ -1,0 +1,4 @@
+content minimo               jar:minimo.jar!/content/minimo/
+locale  minimo   en-US       jar:minimo.jar!/locale/en-US/minimo/
+locale  branding en-US       jar:minimo.jar!/branding/locale/
+skin    minimo   classic/1.0 jar:minimo.jar!/skin/classic/minimo/

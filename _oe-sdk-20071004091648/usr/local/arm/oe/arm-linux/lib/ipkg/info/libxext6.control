@@ -1,0 +1,11 @@
+Package: libxext6
+Version: 0.0cvs20051025-r1
+Description: X Server Extension library
+Section: x11/libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: xext-0.0cvs20051025
+Homepage: unknown
+Depends: libx11-6 (>= 6.2.1cvs20051025), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Source: cvs://anoncvs:anoncvs@pdx.freedesktop.org/cvs/xlibs;module=Xext

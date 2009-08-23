@@ -1,0 +1,11 @@
+Package: libatk-1.0-dev
+Version: 1.10.1-r0
+Description: An accessibility toolkit for GNOME.
+Section: devel
+Priority: optional
+Maintainer: Philip Blundell <pb@handhelds.org>
+Architecture: arm
+OE: atk-1.10.1
+Homepage: unknown
+Depends: libatk-1.0-0, libglib-2.0-dev
+Source: ftp://ftp.gtk.org/pub/gtk/v2.8/atk-1.10.1.tar.bz2

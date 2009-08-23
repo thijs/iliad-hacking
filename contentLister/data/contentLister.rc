@@ -1,0 +1,469 @@
+#
+# Theme : ContentLister
+# -------
+
+#pixmap_path "/usr/share/contentlister/"
+
+style "errorScreenText"
+{
+	font_name = "Bitstream Vera Sans 10"
+}
+
+style "listItemDescription"
+{
+	font_name = "Bitstream Vera Sans 7"
+}
+
+style "listItemSubtitle"
+{
+	# Pango font name 
+	font_name = "Bitstream Vera Sans 6"
+}
+
+style "listItemInformation"
+{
+	# Pango font name 
+	font_name = "Bitstream Vera Sans 7"
+}
+
+style "listItemTitle"
+{
+	font_name = "Bitstream Vera Sans bold 10"
+}
+
+# the header label of a contenLister page 
+style "titleItem"
+{
+	font_name = "Bitstream Vera Sans 18"
+	fg[NORMAL] = { 1.0, 1.0, 1.0}		
+}
+
+style "titleLocation"
+{
+	font_name = "Bitstream Vera Sans 7"
+	fg[NORMAL] = { 1.0, 1.0, 1.0}		
+}
+
+
+style "listerBackground"
+{
+	bg[NORMAL] = { 1.0, 1.0, 1.0}		
+}
+
+style "titleBackground"
+{
+	bg_pixmap[NORMAL] = "Titlebar_black.png"
+}
+
+style "listTextItemBackground"
+{
+	bg_pixmap[NORMAL] = "Contentbar_grey.png"
+}
+
+style "listThumbItemBackground"
+{
+	bg_pixmap[NORMAL] = "Iconbar.png"
+}
+
+style "listCursorItemBackground"
+{
+	bg[NORMAL] = { 1.0, 1.0, 1.0}	
+}
+
+style "listCursorItem"
+{
+	bg_pixmap[NORMAL] = "cursor.png"	
+}
+
+style "errorScreenBackground"
+{
+	bg[NORMAL] = { 1.0, 1.0, 1.0}	
+}
+
+style "content_wnd_container"
+{
+	bg[NORMAL] = { 1.0, 1.0, 1.0}	
+}
+
+style "content_wnd_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_345_grey.png"
+}
+
+style "content_wnd_text_bold"
+{
+   font_name = "Bitstream Vera Sans bold 7"
+   fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+style "content_wnd_text_normal"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+style "content_wnd_edit"
+{
+    font_name = "Bitstream Vera Sans 8"
+	fg[NORMAL] = { 1.0, 1.0, 1.0}	
+}
+
+style "content_wnd_text_view"
+{
+    font_name = "Bitstream Vera Sans 7"
+	fg[NORMAL] = { 1.0, 1.0, 1.0}	
+}
+
+style "search_wnd_container"
+{
+	bg[NORMAL] = { 1.0, 1.0, 1.0}	
+}
+
+style "search_wnd_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_230_grey.png"
+}
+
+style "search_wnd_text"
+{
+   font_name = "Bitstream Vera Sans 7"
+   fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+style "search_wnd_text_bold"
+{
+   font_name = "Bitstream Vera Sans bold 7"
+   fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+# 
+# sort wnd
+#
+style "sort_wnd_background"
+{
+	bg[NORMAL] = { 1.0, 1.0, 1.0}	
+}
+
+style "sort_type_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_230_grey.png"
+}
+
+style "sort_order_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "sort_finish_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_115_grey.png"
+}
+
+style "sort_wnd_text_bold"
+{
+   font_name = "Bitstream Vera Sans bold 7"
+   fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+style "sort_wnd_text_normal"
+{
+    font_name = "Bitstream Vera Sans 7"
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+
+style "sort_order_ascending_button"
+{	
+    font_name = "Bitstream Vera Sans bold 6.2"
+    fg[PRELIGHT]= {0.0, 0.0, 0.0}
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+    fg[INSENSITIVE]= {0.0, 0.0, 0.0}
+    fg[ACTIVE]= {1.0, 1.0, 1.0}
+    fg[SELECTED]= {1.0, 1.0, 1.0}
+
+    engine "pixmap" {
+        image
+        {
+            function          = FOCUS
+            file              = "transparent.png"
+            stretch           = TRUE
+        }	  
+        image 
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = IN
+            file            = "ascending_selected.png"
+            stretch         = TRUE
+        }
+        image 
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = OUT
+            file            = "ascending.png"
+            stretch         = TRUE
+        }
+    }	  
+}
+
+style "sort_order_descending_button"
+{	
+    font_name = "Bitstream Vera Sans bold 6.2"
+    fg[PRELIGHT]= {0.0, 0.0, 0.0}
+    fg[NORMAL]= {0.0, 0.0, 0.0}
+    fg[INSENSITIVE]= {0.0, 0.0, 0.0}
+    fg[ACTIVE]= {1.0, 1.0, 1.0}
+    fg[SELECTED]= {1.0, 1.0, 1.0}
+
+    engine "pixmap" {
+        image
+        {
+            function          = FOCUS
+            file              = "transparent.png"
+            stretch           = TRUE
+        }	  
+        image 
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = IN
+            file            = "descending_selected.png"
+            stretch         = TRUE
+        }
+        image 
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = OUT
+            file            = "descending.png"
+            stretch         = TRUE
+        }
+    }	  
+}
+
+#
+# PINCODE_UI
+#
+style "pincode_screen_background"
+{
+	bg_pixmap[NORMAL] = "pincode_lock_background.png"
+}
+
+style "pincode_input_background"
+{
+	bg_pixmap[NORMAL] = "pincode_background.png"
+}
+
+style "pincode_message_background"
+{
+	bg_pixmap[NORMAL] = "pincode_background.png"
+}
+
+style "pincode_keyboard_background"
+{
+	bg_pixmap[NORMAL] = "keyboard_numbers.png"
+}
+
+style "pincode_white_star"
+{
+	bg_pixmap[NORMAL] = "star_white.png"
+}
+
+style "pincode_gray_star"
+{
+	bg_pixmap[NORMAL] = "star_grey.png"
+}
+
+style "pincode_input_title_text"
+{
+	font_name = "Bitstream Vera Sans 14"
+	fg[NORMAL] = { 1.0, 1.0, 1.0}	
+}
+
+style "pincode_message_title_text"
+{
+	font_name = "Bitstream Vera Sans 12"
+	fg[NORMAL] = { 1.0, 1.0, 1.0}	
+}
+
+style "pincode_screen_info_text"
+{
+    font_name = "Bitstream Vera Sans 7"
+	fg[NORMAL] = { 1.0, 1.0, 1.0}	
+}
+
+style "pincode_confirm"
+{	
+    font_name    = "Bitstream Vera Sans bold 6.2"
+    fg[NORMAL]   = "black"
+    fg[ACTIVE]   = "white"
+    fg[SELECTED] = "white"
+
+    engine "pixmap"
+    {
+        image 
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = IN
+            file            = "Btn_100_27_selected.png"
+            stretch         = TRUE
+        }
+        image 
+        {
+            function        = BOX
+            recolorable     = TRUE
+            shadow          = OUT
+            file            = "Btn_100_27_grey.png"
+            stretch         = TRUE
+        }
+    }	  
+}
+
+#
+# distribution list wnd 
+#
+style "dist_list_wnd_background"
+{
+    bg_pixmap[NORMAL] = "Bar_666_666_grey.png"
+}
+style "dist_list_wnd_text_bold"
+{
+   font_name = "Bitstream Vera Sans bold 7"
+   fg[NORMAL]= {0.0, 0.0, 0.0}
+}
+
+# GtkSettingItem
+style "settingitemBackground"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+style "settingitemClientAreaBackground"
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0}
+}
+
+style "settingitemHeader"
+{
+    font_name = "Bitstream Vera Sans bold 7"
+    fg[NORMAL]= {1.0, 1.0, 1.0}
+}
+
+style "settingitemInfotext"
+{
+    font_name = "Bitstream Vera Sans 7"
+}
+
+style "settingitemHeaderBackground"
+{
+    bg_pixmap[NORMAL] = "Rootbar.png"
+}
+
+#
+# GtkCheckBox 
+#
+style "check_button"
+{	
+    GtkCheckButton::indicator-size = 29
+    GtkCheckButton::indicator-spacing = 2
+    
+    font_name = "Bitstream Vera Sans 6.2"
+    
+    engine "pixmap" {
+        image
+        {
+            function        = FOCUS
+            overlay_file    = "transparent.png"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = FLAT_BOX
+            overlay_file    = "transparent.png"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = BOX
+            overlay_file    = "transparent.png"
+            overlay_stretch = TRUE
+        }
+        image 
+        {
+            function        = CHECK
+            recolorable     = TRUE
+            shadow          = OUT
+            overlay_file    = "deselected.png"
+            overlay_stretch = FALSE
+        }
+        image 
+        {
+            function        = CHECK
+            recolorable     = TRUE
+            shadow          = IN
+            overlay_file    = "selected.png"
+            overlay_stretch = FALSE
+        }
+    }	  
+}
+
+widget_class "*GtkTextView*" style "content_wnd_text_view" 
+
+widget "*list_item_title" style "listItemTitle"
+widget "*list_item_subtitle" style "listItemSubtitle"
+widget "*list_item_description" style "listItemDescription"
+widget "*list_item_information" style "listItemInformation"
+widget "*title_item" style "titleItem"
+widget "*title_location" style "titleLocation"
+widget "*error_screen_text" style "errorScreenText"
+
+widget "*lister_background" style "listerBackground"
+widget "*title_background" style "titleBackground"
+widget "*listTextItem_background" style "listTextItemBackground"
+widget "*listThumbItem_background" style "listThumbItemBackground"
+widget "*error_screen_background" style "errorScreenBackground"
+widget "*listCursorItem_background" style "listCursorItemBackground"
+widget "*listCursorItem" style "listCursorItem"
+
+widget "*settingitem_background" style "settingitemBackground"
+widget "*settingitem_header" style "settingitemHeader"
+widget "*settingitem_infotext" style "settingitemInfotext"
+widget "*settingitem_headerbackground" style "settingitemHeaderBackground"
+widget "*settingitem_clientArea_background" style "settingitemClientAreaBackground"
+
+widget "*content_wnd_container" style "content_wnd_container"
+widget "*content_wnd_background" style "content_wnd_background"
+widget "*content_wnd_text_bold" style "content_wnd_text_bold"
+widget "*content_wnd_text_normal" style "content_wnd_text_normal"
+widget "*content_wnd_edit" style "content_wnd_edit"
+
+widget "*search_wnd_container" style "search_wnd_container"
+widget "*search_wnd_background" style "search_wnd_background"
+widget "*search_wnd_text" style "search_wnd_text"
+widget "*search_wnd_text_bold" style "search_wnd_text_bold"
+
+widget "*sort_wnd_background" style "sort_wnd_background"
+widget "*sort_type_background" style "sort_type_background"
+widget "*sort_order_background" style "sort_order_background"
+widget "*sort_finish_background" style "sort_finish_background"
+widget "*sort_wnd_text_bold" style "sort_wnd_text_bold"
+widget "*sort_wnd_text_normal" style "sort_wnd_text_normal"
+widget "*sort_order_ascending_button" style "sort_order_ascending_button"
+widget "*sort_order_descending_button" style "sort_order_descending_button"
+
+widget "*pincode_screen_background" style "pincode_screen_background"
+widget "*pincode_input_background" style "pincode_input_background"
+widget "*pincode_message_background" style "pincode_message_background"
+widget "*pincode_keyboard_background" style "pincode_keyboard_background"
+widget "*pincode_white_star" style "pincode_white_star"
+widget "*pincode_gray_star" style "pincode_gray_star"
+widget "*pincode_input_title_text" style "pincode_input_title_text"
+widget "*pincode_message_title_text" style "pincode_message_title_text"
+widget "*pincode_screen_info_text" style "pincode_screen_info_text"
+widget "*pincode_confirm" style "pincode_confirm"
+widget "*pincode_confirm.GtkLabel" style "pincode_confirm"
+
+widget "*dist_list_wnd_text_bold" style "dist_list_wnd_text_bold"
+widget "*dist_list_wnd_background" style "dist_list_wnd_background"

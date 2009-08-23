@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: libfakekey
+Description: X Virtual Keyboard Library
+Version: 0.2
+Libs: -L${libdir} -L/usr/local/arm/oe/arm-linux/lib -L/usr/local/arm/oe/arm-linux/lib/../local/kx/lib -lXtst -lXext -lX11 -ldl   -lfakekey
+Cflags: -I${includedir} 

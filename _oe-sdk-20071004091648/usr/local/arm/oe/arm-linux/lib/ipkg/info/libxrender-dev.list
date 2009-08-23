@@ -1,0 +1,5 @@
+/usr/lib/libXrender.so
+/usr/lib/libXrender.la
+/usr/lib/libXrender.a
+/usr/include/X11/extensions/Xrender.h
+/usr/lib/pkgconfig/xrender.pc

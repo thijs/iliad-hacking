@@ -1,0 +1,11 @@
+Package: libxau-dev
+Version: 0.1.1-r1
+Description: Authorization Protocol for X.
+Section: devel
+Priority: optional
+Maintainer: Greg Gilbert <greg@treke.net>
+Architecture: arm
+OE: xau-0.1.1
+Homepage: unknown
+Depends: libxau0
+Source: http://xlibs.freedesktop.org/release/libXau-0.1.1.tar.bz2 file://autofoo.patch;patch=1

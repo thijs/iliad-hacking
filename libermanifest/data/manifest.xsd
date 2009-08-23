@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="package">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="metadata" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="index" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="last-location" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="viewer-settings" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="Scribble" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="storage" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="application" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="directory" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="symlink" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="user-extensions" minOccurs="0" maxOccurs="1"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- metadata -->
+  <xs:element name="metadata">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="dc-metadata" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="y-metadata" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="selection-list" minOccurs="0" maxOccurs="1"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!--   dc-metadata -->
+  <xs:element name="dc-metadata">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="Title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Date" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Identifier" type="uuid" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Type" type="xs:token" minOccurs="0" maxOccurs="1"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!--   y-metadata -->
+  <xs:element name="y-metadata">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="FileSize" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="ItemSize" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="image" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="startpage" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="version" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="document-signing" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="modify-enable" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="is-template" type="xs:boolean" minOccurs="0" maxOccurs="1" default="false"/>
+        <xs:element name="sort-as-first" type="xs:boolean" minOccurs="0" maxOccurs="1"
+          default="false"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FileSize">
+    <xs:simpleType>
+      <xs:union memberTypes="xs:nonNegativeInteger empty"/>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="ItemSize">
+    <xs:simpleType>
+      <xs:union memberTypes="xs:nonNegativeInteger empty"/>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="version" default="0">
+    <xs:simpleType>
+      <xs:restriction base="xs:nonNegativeInteger">
+        <xs:maxInclusive value="0"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="document-signing">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="signed-by" type="xs:token" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="iliad-mac-address" type="mac-address" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="date" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="modify-enable">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="delete-enable" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="scribble-enable" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="tagging-enable" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+      </xs:all>
+      <xs:attribute name="default" type="xs:boolean" use="required">
+        <xs:annotation>
+          <xs:documentation>This attribute specifies the default value for child elements that are
+            not set explicitly. In other words, childs of modify-enable overrule the default
+            attribute.</xs:documentation>
+          <xs:documentation>Note that XSD schema validation does not provide this function, so the
+            application or the manifest library will have to do this.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- selection-list -->
+  <xs:element name="selection-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="selection" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="selection">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="display-as"/>
+        <xs:element name="title" type="xs:token" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="instruction" type="xs:token" minOccurs="0" maxOccurs="1" default=""/>
+        <xs:element name="min-selected" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"
+          default="1"/>
+        <xs:element name="max-selected" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1"
+          default="1"/>
+        <xs:element ref="selection-item-list"/>
+      </xs:all>
+      <xs:attribute name="id" use="required" type="token-not-empty_t">
+        <xs:annotation>
+          <xs:documentation> Special values for selection "id=":</xs:documentation>
+          <xs:documentation> id="transfer-mode" with selection-item id="copy", "move"</xs:documentation>
+          <xs:documentation> id="document-signing" with selection-item id="sign", "no-sign"
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="constant" use="optional" type="xs:boolean" default="false"/>
+      <xs:attribute name="hide" use="optional" type="xs:boolean" default="false"/>
+      <xs:attribute name="sequence" use="optional" type="xs:nonNegativeInteger" default="0"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="display-as">
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="checklist"/>
+        <xs:enumeration value="radiobutton"/>
+        <xs:enumeration value="textbutton"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="selection-item-list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="selection-item" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="selection-item">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="name" type="token-not-empty_t" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="state" type="xs:boolean" default="false" minOccurs="1" maxOccurs="1"/>
+      </xs:all>
+      <xs:attribute name="id" use="required" type="token-not-empty_t"/>
+      <xs:attribute name="sequence" use="optional" type="xs:nonNegativeInteger" default="0"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- storage -->
+  <xs:element name="storage">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="Identifier" minOccurs="1" maxOccurs="1"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Identifier">
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="CF"/>
+        <xs:enumeration value="SD"/>
+        <xs:enumeration value="USB"/>
+        <xs:enumeration value="MAIN"/>
+        <xs:enumeration value="RECENT"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <!-- application -->
+  <xs:element name="application">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="Identifier" type="uppercase_t" minOccurs="1" maxOccurs="1"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- directory -->
+  <xs:element name="directory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="content" type="token-not-empty_t" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- symlink -->
+  <xs:element name="symlink">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="token-not-empty_t">
+          <xs:attribute name="add-locale" type="xs:boolean" use="optional" default="false"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Scribble -->
+  <xs:element name="Scribble">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="ScribbleName" type="xs:token" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="LastOpenPage" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="TotalPages" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="ScribPages"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ScribPages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Page" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Page">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ImgFileName" type="xs:token" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="PageName" type="xs:token" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- index -->
+  <xs:element name="index">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pagelist" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="pagelist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="page" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="count" use="required" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="type" use="required" type="xs:token"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="page">
+    <xs:complexType>
+      <xs:attribute name="number" use="required" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="url" use="required" type="xs:token"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- last-location -->
+  <xs:element name="last-location">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="pagenumber" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="document" type="xs:token" minOccurs="0" maxOccurs="1"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- viewer-settings -->
+  <xs:element name="viewer-settings">
+    <xs:annotation>
+      <xs:documentation>Area for viewer-specific additions to the manifest file.</xs:documentation>
+      <xs:documentation>Layout defined by the viewer application.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <!-- user-extensions -->
+  <xs:element name="user-extensions">
+    <xs:annotation>
+      <xs:documentation>Area for user-specific additions to the manifest file.</xs:documentation>
+      <xs:documentation>Will be ignored by all iRex software.</xs:documentation>
+      <xs:documentation>Preferably add per issue one node with children.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <!-- generic types -->
+  <xs:simpleType name="empty">
+    <xs:restriction base="xs:string">
+      <xs:length value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="token-not-empty_t">
+    <xs:restriction base="xs:token">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="uppercase_t">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[A-Z]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="uuid">
+    <xs:annotation>
+      <xs:documentation>uuid conform RFC 1422</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(urn:uuid:){0,1}[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mac-address">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9a-fA-F]{2}-){5}[0-9a-fA-F]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:annotation>
+    <xs:documentation> Conversions from old (pre-xmlschema) manifest to xmlschema compliant
+      manifest: - Remove node package/metadata/dc-metadata/Type - Remove node
+      package/metadata/dc-metadata/Format - Remove node package/metadata/dc-metadata/Language -
+      Remove node package/metadata/dc-metadata/Identifier when empty or invalid - Modify node
+      package/metadata/dc-metadata/Date and add "T00:00:00" in case of valid date without time
+    </xs:documentation>
+  </xs:annotation>
+
+</xs:schema>

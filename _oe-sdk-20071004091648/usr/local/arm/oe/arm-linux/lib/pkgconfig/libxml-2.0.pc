@@ -1,0 +1,12 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+modules=1
+
+Name: libXML
+Version: 2.6.26
+Description: libXML library version2.
+Requires:
+Libs: -L${libdir} -lxml2 -lpthread -lz  -lm 
+Cflags: -I${includedir}/libxml2 

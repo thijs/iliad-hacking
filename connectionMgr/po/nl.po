@@ -1,0 +1,685 @@
+# Dutch translations for connectionmgr package.
+# Copyright (C) 2006 iRex Technologies
+# This file is distributed under the same license as the connectionmgr package.
+# Automatically generated, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: connectionmgr 0.24\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-06 14:17+0100\n"
+"PO-Revision-Date: 2007-12-19 14:51+0100\n"
+"Last-Translator: Alexis Riksman <alexis.riksman@irextechnologies.com>\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/background.c:116 src/background.c:148
+msgid "iLiad network profiles"
+msgstr "iLiad netwerkprofielen"
+
+#: src/background.c:134
+msgid "iLiad network connection"
+msgstr "iLiad netwerkverbinding:"
+
+#: src/background.c:140
+msgid "iLiad network configuration"
+msgstr "iLiad netwerkinstellingen:"
+
+#: src/background.c:144
+msgid "iLiad profile editor"
+msgstr "iLiad netwerkprofielen"
+
+#: src/connectScreenOptions.c:277
+msgid "Connection settings"
+msgstr "Netwerk instellingen"
+
+#: src/connectScreenOptions.c:284
+msgid ""
+"Select to connect to the iDS (iRex Delivery Service) or to your computer."
+msgstr "Kies om een verbinding te maken met iDS of de computer."
+
+#: src/connectScreenOptions.c:289
+msgid "iDS"
+msgstr "iDS"
+
+#: src/connectScreenOptions.c:292
+msgid "Computer"
+msgstr "Computer"
+
+#: src/connectScreenOptions.c:299
+msgid "Select a connection type or accept the default."
+msgstr "Selecteer een manier om verbinding te maken."
+
+#: src/connectScreenOptions.c:303 src/editScreenProfiles.c:248
+msgid "Wired"
+msgstr "Bedraad"
+
+#: src/connectScreenOptions.c:306 src/editScreenProfiles.c:251
+msgid "Wireless"
+msgstr "Draadloos"
+
+#: src/connectScreenOptions.c:309 src/editScreenProfiles.c:254
+msgid "Dial-up"
+msgstr "Inbellen"
+
+#: src/connectScreenOptions.c:445 src/connectScreenProfiles.c:232
+msgid "Available wired networks"
+msgstr "Beschikbare bedrade netwerken"
+
+#: src/connectScreenOptions.c:448
+msgid ""
+"No wired networks found.\n"
+"Click the Wired button above to scan again."
+msgstr ""
+"Geen bedrade netwerken gevonden.\n"
+"Klik op de 'Bedraad' knop hierboven om opnieuw te proberen."
+
+#: src/connectScreenOptions.c:454
+msgid "Please wait while the iLiad scans for wired networks ..."
+msgstr "De iLiad zoekt naar draadloze netwerken, een moment geduld a.u.b."
+
+#: src/connectScreenOptions.c:463 src/connectScreenProfiles.c:242
+msgid "Available dial-up networks"
+msgstr "Beschikbare inbelnetwerken"
+
+#: src/connectScreenOptions.c:466
+msgid ""
+"No dial-up networks found.\n"
+"Click the Dial-up button above to scan again."
+msgstr ""
+"Geen inbelnetwerken gevonden.\n"
+"Klik op de 'Inbellen' knop hierboven om opnieuw te proberen."
+
+#: src/connectScreenOptions.c:472
+msgid "Please wait while the iLiad scans for dial-up networks ..."
+msgstr "De iLiad zoekt naar inbelnetwerken, een moment geduld a.u.b."
+
+#: src/connectScreenOptions.c:481 src/connectScreenProfiles.c:252
+msgid "Available wireless networks"
+msgstr "Beschikbare draadloze (WiFi) netwerken"
+
+#: src/connectScreenOptions.c:484
+msgid ""
+"No wireless networks found.\n"
+"Click the Wireless button above to scan again."
+msgstr ""
+"Geen draadloze netwerken gevonden.\n"
+"Klik op de 'Draadloos' knop hierboven om opnieuw te zoeken."
+
+#: src/connectScreenOptions.c:490
+msgid "Please wait while the iLiad is scanning for wireless networks ..."
+msgstr "De iLiad zoekt naar draadloze netwerken, een moment geduld a.u.b."
+
+#: src/connectScreenProfiles.c:197
+msgid "Signal strength of network:"
+msgstr "Signaalsterkte van het netwerk:"
+
+#: src/connectScreenProfiles.c:203
+msgid "Setup a network profile"
+msgstr "Nieuw netwerkprofiel aanmaken"
+
+#: src/connectScreenProfiles.c:210
+msgid "You can create or edit a network profile by clicking the button below."
+msgstr ""
+"U kunt een nieuw profiel aanmaken door op onderstaande knop te klikken."
+
+#: src/connectScreenProfiles.c:214
+msgid "Profile editor"
+msgstr "Profielen aanpassen"
+
+#: src/connectScreenProfiles.c:233
+msgid ""
+"No wired profiles exist, please use the button below to create a profile."
+msgstr ""
+"Geen profielen voor Bedraad netwerk gevonden, gebruik onderstaande knop om "
+"een nieuw profiel te maken."
+
+#: src/connectScreenProfiles.c:236
+msgid ""
+"You need to connect your travel hub and ethernet cable to your iLiad.\n"
+"The default profile uses DHCP and no proxy."
+msgstr ""
+"De travel hub en een ethernet kabel moeten aan de iLiad gekoppeld zijn.\n"
+"Het standaard profiel gebruikt DHCP een geen proxyserver."
+
+#: src/connectScreenProfiles.c:243
+msgid ""
+"No dial-up profiles exist, please use the button below to create a profile."
+msgstr ""
+"Geen profielen voor Bedraad netwerk gevonden, gebruik onderstaande knop om "
+"een nieuw profiel te maken."
+
+#: src/connectScreenProfiles.c:246
+msgid ""
+"In order to use a dial-up network, you need a CF modem.\n"
+"Bluetooth dial-up connections are not yet supported."
+msgstr ""
+"Om een inbelnetwerk te gebruiken heeft u een CF modem nodig.\n"
+"Inbellen via Bluetooth wordt nog niet ondersteund."
+
+#: src/connectScreenProfiles.c:253
+msgid ""
+"No wireless profiles exist, please use the button below to create a profile."
+msgstr ""
+"Er zijn geen profielen voor 'Inbellen'. U kunt onderstaande knop gebruiken "
+"om een nieuw profiel aan te maken."
+
+#: src/connectScreenProfiles.c:256
+msgid ""
+"When the access point is secured with an encryption key, click on the "
+"corresponding network button to open the configuration screen.\n"
+"By clicking the 'Profile editor' button you can create a network profile for "
+"a non broadcasting (hidden) access point."
+msgstr ""
+"Als het access point beschermd is met een sleutel klikt u op het betreffende "
+"netwerk om deze in te voeren.\n"
+"Met 'Profielen aanpassen' kunt u een netwerkprofiel maken voor een verborgen "
+"access point (non-broadcasting)."
+
+#: src/connectScreenProfiles.c:279
+msgid "Accept the automatic search or select the network of your choice."
+msgstr ""
+"Wacht op een automatische verbinding, of klik op een netwerk in de lijst."
+
+#: src/connectScreenProfiles.c:398 src/widgetUtils.c:395
+msgid "Connected"
+msgstr "Verbonden"
+
+#: src/connectScreenProfiles.c:403 src/widgetUtils.c:400
+msgid "Unsuccessful"
+msgstr "Mislukt"
+
+#: src/connectScreenProfiles.c:406
+msgid "Skipped"
+msgstr "Overgeslagen"
+
+#: src/connectScreenProfiles.c:409 src/widgetUtils.c:406
+msgid "Security key required"
+msgstr "Beveiligingssleutel nodig"
+
+#: src/connectScreenProfiles.c:412 src/widgetUtils.c:409
+msgid "Aborted"
+msgstr "Afgebroken"
+
+#: src/connectScreenProfiles.c:415 src/widgetUtils.c:412
+msgid "Aborting..."
+msgstr "Afbreken..."
+
+#: src/connectScreenProfiles.c:419 src/widgetUtils.c:416
+msgid "Connecting..."
+msgstr "Verbinden..."
+
+#: src/connectScreenProfiles.c:654
+msgid "Open network profile..."
+msgstr "Extra instellingen nodig..."
+
+#: src/editScreenProfiles.c:238
+msgid "Show network profiles for"
+msgstr "Netwerkprofielen weergeven voor:"
+
+#: src/editScreenProfiles.c:245
+msgid "Select the type of network profiles to list below."
+msgstr "Selecteer een profieltype om hieronder weer te geven."
+
+#: src/editScreenProfiles.c:260 src/editScreenProfiles.c:277
+#: src/editScreenSearch.c:168
+msgid "Network profiles"
+msgstr "Netwerkprofielen"
+
+#: src/editScreenProfiles.c:267
+msgid "Create a new network profile:"
+msgstr "Maak een nieuw netwerkprofiel aan:"
+
+#: src/editScreenProfiles.c:270
+msgid "Create new profile"
+msgstr "Nieuw profiel"
+
+#: src/editScreenProfiles.c:279
+msgid "Stored network profiles on your iLiad: "
+msgstr "Opgeslagen netwerkenprofielen op de iLiad:"
+
+#: src/editScreenProfiles.c:281
+msgid "Edit"
+msgstr "Aanpassen"
+
+#: src/editScreenProfiles.c:611
+#, c-format
+msgid "Wired %d"
+msgstr "Bedraad %d"
+
+#: src/editScreenProfiles.c:614
+#, c-format
+msgid "Wireless %d"
+msgstr "Draadloos %d"
+
+#: src/editScreenProfiles.c:617
+#, c-format
+msgid "Dial-up %d"
+msgstr "Inbelnetwerk %d"
+
+#: src/editScreenSearch.c:148
+msgid "Create new wireless network"
+msgstr "Nieuw draadloos netwerk"
+
+#: src/editScreenSearch.c:155
+msgid "Select a way to create the network."
+msgstr "Selecteer een manier om een netwerk te maken."
+
+#: src/editScreenSearch.c:158
+msgid "Search"
+msgstr "Zoeken"
+
+#: src/editScreenSearch.c:161
+msgid "Manually"
+msgstr "Handmatig"
+
+#: src/editScreenSearch.c:174
+msgid ""
+"When you click on 'Search' the device will scan for networks.\n"
+"Clicking 'Manually' requires all the settings."
+msgstr ""
+"Kies 'Zoeken' om naar netwerken te zoeken.\n"
+"Bij 'Handmatig' moeten alle instellingen zelf ingevoerd worden."
+
+#: src/editScreenSearch.c:192
+msgid "Please wait while the iLiad scans for wireless networks ...."
+msgstr "De iLiad zoekt naar draadloze netwerken, een moment geduld a.u.b."
+
+#: src/editScreenSearch.c:196
+msgid "Aborting scan ..."
+msgstr "Scan wordt afgebroken..."
+
+#: src/editScreenSearch.c:199
+msgid "No wireless networks detected."
+msgstr "Geen draadloze netwerken gevonden."
+
+#: src/editScreenSearch.c:202
+msgid "Please select the network you wish to create."
+msgstr "Selecteer het netwerk waarvoor u een profiel wilt maken."
+
+#: src/editScreenOverview.c:229 src/editScreenProxy.c:153
+#: src/editScreenStatic.c:179 src/editScreenWireless.c:305
+#: src/editScreenWirelessExt.c:299 src/editScreenDialup.c:271
+msgid "Network profile"
+msgstr "Netwerkprofiel:"
+
+#: src/editScreenOverview.c:236
+msgid "Select how your iLiad gets a network address."
+msgstr "Geef aan hoe u uw iLiad een netwerk adres krijgt:"
+
+#: src/editScreenOverview.c:239
+msgid "Automatic"
+msgstr "Automatisch"
+
+#: src/editScreenOverview.c:242
+msgid "Static"
+msgstr "Statisch"
+
+#: src/editScreenOverview.c:249
+msgid "Select if there is a proxy server present."
+msgstr "Geef aan of er een proxy server aanwezig is:"
+
+#: src/editScreenOverview.c:252
+msgid "No proxy"
+msgstr "Geen proxy"
+
+#: src/editScreenOverview.c:255
+msgid "Proxy"
+msgstr "Proxy"
+
+#: src/editScreenOverview.c:262 src/editScreenWireless.c:345
+#: src/editScreenDialup.c:297
+msgid "You can personalize the profile name."
+msgstr "U kunt het profiel een eigen naam geven."
+
+#: src/editScreenOverview.c:269 src/editScreenWireless.c:355
+#: src/editScreenDialup.c:306
+msgid "Select an action for this profile."
+msgstr "Kies een actie voor dit profiel."
+
+#: src/editScreenOverview.c:272 src/editScreenWireless.c:358
+#: src/editScreenDialup.c:309
+msgid "Test"
+msgstr "Test"
+
+#: src/editScreenOverview.c:275 src/editScreenWireless.c:361
+#: src/editScreenDialup.c:311
+msgid "Save"
+msgstr "Opslaan"
+
+#: src/editScreenOverview.c:278 src/editScreenWireless.c:364
+#: src/editScreenDialup.c:313
+msgid "Save & Connect"
+msgstr "Opslaan & Verbinden"
+
+#: src/editScreenOverview.c:295
+msgid ""
+"A wireless or dial-up network requires specific settings.\n"
+"Hint: You can fill in the details for them by clicking the profile entry."
+msgstr ""
+"Voor draadloze en inbelnetwerken zijn extra instellingen nodig.\n"
+"Hint: Klik op een profiel om deze details in te vullen."
+
+#: src/editScreenOverview.c:303
+msgid ""
+"An automatic network address requires a DHCP server to be present in your "
+"network. A static network address requires specific settings.\n"
+"Hint: If you are not sure, select 'Automatic' and 'No proxy'."
+msgstr ""
+"Een automatisch netwerk adres vereist de aanwezigheid van een DHCP server in "
+"uw netwerk.\n"
+"Een statisch adres vraagt specifieke instellingen.\n"
+"Hint: als u niet zeker bent, kies dan 'Automatisch' en klik 'Test' om dit "
+"profiel te proberen."
+
+#: src/editScreenOverview.c:313
+msgid ""
+"A proxy server regulates internet traffic and is usually installed in "
+"company networks, this requires additional settings.\n"
+"Hint: If you are not sure, select 'No proxy'."
+msgstr ""
+"Een proxy server regelt het internet verkeer en is vaak geïnstalleerd in "
+"bedrijfsnetwerken, dit vraagt extra instellingen.\n"
+"Hint: als u niet zeker bent, kies dan 'Geen proxy' en klik 'Test' om dit "
+"profiel te proberen."
+
+#: src/editScreenOverview.c:322
+msgid ""
+"If you personalize the profile name, it will be easy to recognize in the "
+"iLiad's network profile list."
+msgstr ""
+"Door het profiel een eigen naam te geven is hij herkenbaar in het profielen "
+"overzicht."
+
+#: src/editScreenOverview.c:329
+msgid ""
+"The profile has been saved. The iLiad is trying to connect to the server."
+msgstr ""
+"Het profiel is opgeslagen.\n"
+"De iLiad test momenteel uw netwerkprofiel en probeert verbinding te maken "
+"met de server."
+
+#: src/editScreenOverview.c:335
+msgid "The profile will be saved."
+msgstr "Het profiel wordt opgeslagen."
+
+#: src/editScreenOverview.c:340
+msgid ""
+"The iLiad is testing your network profile and is trying to make a connection "
+"to the server."
+msgstr ""
+"De iLiad test momenteel uw netwerkprofiel\n"
+"en probeert verbinding te maken met de server."
+
+#: src/editScreenOverview.c:346
+msgid "The iLiad is aborting the test."
+msgstr "De test wordt afgebroken."
+
+#: src/editScreenOverview.c:351
+msgid "The test has been aborted."
+msgstr "De test is afgebroken."
+
+#: src/editScreenOverview.c:356
+msgid ""
+"Connection to the server has been established correctly.\n"
+"Press the 'Save & Connect' button to create a connection."
+msgstr ""
+"Verbinding met de server is tot stand gebracht.\n"
+"Klik 'Opslaan & Verbinden' om een verbinding te maken."
+
+#: src/editScreenOverview.c:364 src/editScreenOverview.c:390
+msgid "Connection to the server can not be established correctly."
+msgstr "Verbinding met de server kan niet tot stand gebracht worden."
+
+#: src/editScreenOverview.c:370 src/editScreenWireless.c:419
+#: src/editScreenWirelessExt.c:382 src/editScreenDialup.c:346
+msgid "The iLiad is trying to connect to the server."
+msgstr "De iLiad probeert verbinding te maken met de server."
+
+#: src/editScreenOverview.c:375 src/editScreenWireless.c:435
+#: src/editScreenWirelessExt.c:394 src/editScreenDialup.c:362
+msgid "The iLiad is aborting the connection."
+msgstr "De verbinding wordt afgebroken."
+
+#: src/editScreenOverview.c:380 src/editScreenWireless.c:440
+#: src/editScreenWirelessExt.c:399 src/editScreenDialup.c:367
+msgid "The connection has been aborted."
+msgstr "De verbinding is verbroken."
+
+#: src/editScreenOverview.c:385 src/editScreenWireless.c:424
+#: src/editScreenDialup.c:351
+msgid "Connection to the server established."
+msgstr "Verbinding met de server is tot stand gebracht."
+
+#: src/editScreenProxy.c:160
+msgid "Enter the name or address of the HTTP proxy server:"
+msgstr "Geef de naam of het adres van de HTTP proxy server:"
+
+#: src/editScreenProxy.c:168
+msgid "Enter the port number of the HTTP proxy server:"
+msgstr "Geef het poortnummer van de HTTP proxy server:"
+
+#: src/editScreenProxy.c:170 src/editScreenStatic.c:210
+#: src/editScreenWireless.c:315 src/editScreenWireless.c:348
+#: src/editScreenDialup.c:299
+msgid "Next"
+msgstr "Volgende"
+
+#: src/editScreenProxy.c:176
+msgid ""
+"Do not include the protocol (e.g. http://) and proxy number (e.g. 8080) in "
+"the name or address of the HTTP proxy server.\n"
+"Hint: If you do not know the proxy settings for this network, please ask "
+"your network administrator."
+msgstr ""
+"Het protocol type (bv. http://) en het poortnummer (bv. 8080) hier niet "
+"invoeren.\n"
+"Hint: als u de proxy instellingen van dit netwerk niet weet, vraag het dan "
+"aan uw netwerkbeheerder."
+
+#: src/editScreenProxy.c:278
+#, c-format
+msgid "Network profile: %s/proxy"
+msgstr "Netwerkprofiel: %s / proxy"
+
+#: src/editScreenProxy.c:283
+msgid "Network profile: proxy"
+msgstr "Netwerkprofiel: proxy"
+
+#: src/editScreenStatic.c:186
+msgid "Enter the iLiad's IP address:"
+msgstr "Geef het IP adres van de iLiad:"
+
+#: src/editScreenStatic.c:193
+msgid "Enter the iLiad's netmask:"
+msgstr "Geef het netmask van de iLiad:"
+
+#: src/editScreenStatic.c:200
+msgid "Enter the default gateway's IP address:"
+msgstr "Geef het IP adres van de standaard gateway:"
+
+#: src/editScreenStatic.c:207
+msgid "Enter the DNS name server's IP address:"
+msgstr "Geef het IP adres van de DNS nameserver:"
+
+#: src/editScreenStatic.c:216
+msgid ""
+"If you do not know the settings for this network, please ask your network "
+"administrator."
+msgstr ""
+"Als u de instellingen van dit netwerk niet weet, vraag het dan aan uw "
+"netwerkbeheerder."
+
+#: src/editScreenStatic.c:325
+#, c-format
+msgid "Network profile: %s/static"
+msgstr "Netwerkprofiel: %s / statisch"
+
+#: src/editScreenStatic.c:330
+msgid "Network profile: static"
+msgstr "Netwerkprofiel: statisch"
+
+#: src/editScreenWireless.c:312
+msgid "Type the network name (SSID) and click 'Next'."
+msgstr "Geef de naam van het netwerk (SSID) en klik 'Volgende'."
+
+#: src/editScreenWireless.c:322
+msgid "Select the security type of this wireless network."
+msgstr "Selecteer het beveiligingstype van dit draadloze netwerk:"
+
+#: src/editScreenWireless.c:325
+msgid "Off"
+msgstr "Uit"
+
+#: src/editScreenWireless.c:328
+msgid "WEP"
+msgstr "WEP"
+
+#: src/editScreenWireless.c:331
+msgid "WPA"
+msgstr "WPA"
+
+#: src/editScreenWireless.c:338 src/editScreenWirelessExt.c:316
+msgid "Enter the security key / passphrase:"
+msgstr "Geef de beveiligingssleutel van dit netwerk:"
+
+#: src/editScreenWireless.c:379
+msgid ""
+"If you do not know the network name for this access point, please ask your "
+"network administrator."
+msgstr ""
+"Als u de netwerknaam van het access point weet, vraag het dan aan uw "
+"netwerkbeheerder."
+
+#: src/editScreenWireless.c:386
+msgid ""
+"Click 'Off' for a non secured network or choose the security type of your "
+"network.\n"
+"Both 'WEP' and 'WPA' requires a security key."
+msgstr ""
+"Klik 'Geen' voor een onbeveiligd netwerk of kies het beveiligingstype van uw "
+"netwerk.\n"
+"Voor zowel 'WEP' als 'WPA' is een beveiligingssleutel benodigd."
+
+#: src/editScreenWireless.c:394
+msgid ""
+"For WEP, set your local router device to a HEX key.\n"
+"Hint: If you do not know the security key for this network, please ask your "
+"network adminitrator."
+msgstr ""
+"Voor WEP stelt u uw internet router in op een HEX sleutel.\n"
+"Hint: als u de beveiligingssleutel niet weet, vraag het dan aan uw "
+"netwerkbeheerder."
+
+#: src/editScreenWireless.c:402
+msgid ""
+"For WPA, set your router to PSK mode with TKIP.\n"
+"Hint: If you do not know the security key for this network, please ask your "
+"network administrator."
+msgstr ""
+"Voor WPA moet uw router PSK modus met TKIP gebruiken.\n"
+"Hint: als u de beveiligingssleutel niet weet, vraag het dan aan uw "
+"netwerkbeheerder."
+
+#: src/editScreenWireless.c:411 src/editScreenDialup.c:338
+msgid ""
+"If you personalize the profile name, it will be easy to recognize in the "
+"iLiad's network profile list.\n"
+"Click 'Next' for more advanced settings."
+msgstr ""
+"Door het profiel een eigen naam te geven is hij herkenbaar in het profielen "
+"overzicht.\n"
+"Kies 'Volgende' voor geavanceerder instellingen."
+
+#: src/editScreenWireless.c:429 src/editScreenDialup.c:356
+msgid "Connection to server can not been established correctly."
+msgstr "Verbinding met de server is tot stand gebracht."
+
+#: src/editScreenWirelessExt.c:304
+msgid "Network name (SSID):"
+msgstr "Netwerk naam (SSID):"
+
+#: src/editScreenWirelessExt.c:309
+msgid "Security type:"
+msgstr "Beveiligingstype:"
+
+#: src/editScreenWirelessExt.c:319
+msgid "Connect"
+msgstr "Verbinden"
+
+#: src/editScreenWirelessExt.c:326
+msgid "Click the button for advanced settings."
+msgstr "Klik op de knop voor geavanceerde instellingen."
+
+#: src/editScreenWirelessExt.c:328
+msgid "Advanced settings"
+msgstr "Geavanceerd"
+
+#: src/editScreenWirelessExt.c:343
+msgid ""
+"If you do not know the security key for this access point. Please ask your "
+"network administrator."
+msgstr ""
+"Als u de beveiligingssleutel van dit netwerk niet weet, vraag het dan aan uw "
+"netwerkbeheerder."
+
+#: src/editScreenWirelessExt.c:350
+msgid ""
+"Connection failed: Cannot connect to the access point.\n"
+"Check that the security key is correct and for WPA check that your router is "
+"set to PSK-TKIP mode. If you do not know the settings for this access point, "
+"please ask your network administrator."
+msgstr ""
+"Verbinden mislukt: kan geen verbinding maken met het access point.\n"
+"Controleer de beveiligingssleutel en voor WPA controleer dat de router is "
+"ingesteld op PSK-TKIP. Als u de instellingen voor dit netwerk niet weet, "
+"vraag het dan aan uw netwerkbeheerder."
+
+#: src/editScreenWirelessExt.c:363
+msgid ""
+"Connection failed: Cannot connect to the internet or iDS.\n"
+"Click on 'Advanced settings' to set a proxy server.\n"
+"Please ask your network administrator if you do not know the correct "
+"settings for this network."
+msgstr ""
+"Verbinden mislukt: kan geen verbinding maken met internet of iDS.\n"
+"Kies 'Geavanceerd' om een proxy server in te stellen.\n"
+"Als u de instellingen van dit netwerk niet weet, vraag het dan aan uw "
+"netwerkbeheerder."
+
+#: src/editScreenWirelessExt.c:374
+msgid ""
+"Connection failed: Cannot connect to your computer.\n"
+"Please check the 'Settings for Computer Connection' in the iLiad Settings "
+"menu."
+msgstr ""
+"Verbinden mislukt: kan geen verbinding maken met de computer.\n"
+"Controleer de 'Instelling voor verbinding met de computer' in het iLiad "
+"instellingen menu."
+
+#: src/editScreenWirelessExt.c:388
+msgid "Connection to the server has been established."
+msgstr "Verbinding met de server is tot stand gebracht."
+
+#: src/editScreenDialup.c:278
+msgid "Type the phone number which you get from your ISP:"
+msgstr "Toets het telefoonnummer dat u ontvangt van uw internet provider:"
+
+#: src/editScreenDialup.c:284
+msgid "Type your username:"
+msgstr "Toets uw gebruikersnaam:"
+
+#: src/editScreenDialup.c:290
+msgid "Type your password:"
+msgstr "Toets uw wachtwoord:"
+
+#: src/editScreenDialup.c:330
+msgid ""
+"If you do not know the settings for this network, please ask your Internet "
+"Service Provider for detailed information."
+msgstr ""
+"Als u deze instellingen niet weet, neem dan contact op met uw ISP (Internet "
+"Service Provider) voor nadere informatie."

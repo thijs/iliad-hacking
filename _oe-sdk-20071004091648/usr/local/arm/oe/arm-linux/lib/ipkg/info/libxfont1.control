@@ -1,0 +1,11 @@
+Package: libxfont1
+Version: 1.4.2-r2
+Description: X font library (used by the X server).
+Section: x11/libs
+Priority: optional
+Maintainer: Greg Gilbert <greg@treke.net>
+Architecture: arm
+OE: xfont-1.4.2
+Homepage: unknown
+Depends: libz1 (>= 1.2.3), libc6 (>= 2.3.2+cvs20040726), libgcc1 (>= 3.4.4)
+Source: http://xlibs.freedesktop.org/release/libXfont-1.4.2.tar.bz2 file://scalable.patch;patch=1 file://autofoo.patch;patch=1

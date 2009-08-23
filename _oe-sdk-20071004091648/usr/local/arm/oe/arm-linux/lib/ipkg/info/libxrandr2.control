@@ -1,0 +1,11 @@
+Package: libxrandr2
+Version: 1.0.2-r1
+Description: X Resize and Rotate extension library.
+Section: x11/libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: libxrandr-1.0.2
+Homepage: unknown
+Depends: libc6 (>= 2.3.2+cvs20040726), libx11-6 (>= 6.2.1cvs20051025), libxext6 (>= 0.0cvs20051025), libxrender1 (>= 0.8.4), libgcc1 (>= 3.4.4)
+Source: http://xlibs.freedesktop.org/release/libXrandr-1.0.2.tar.bz2 file://autofoo.patch;patch=1

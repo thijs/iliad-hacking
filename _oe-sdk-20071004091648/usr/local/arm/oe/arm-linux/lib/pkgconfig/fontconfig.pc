@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: Fontconfig
+Description: Font configuration and customization library
+Version: 2.2.95
+Libs: -L${libdir} -lfontconfig
+Cflags: -I${includedir}

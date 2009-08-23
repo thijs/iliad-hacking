@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: liberlog
+Description: Log library used by eReader
+Version: 0.211
+Libs: -L${libdir} -lerlog
+Cflags: -I${includedir}

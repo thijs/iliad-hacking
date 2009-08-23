@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: Xext
+Description: Misc X Extension Library
+Version: 6.4.3
+Libs: -L${libdir} -lXext -L/usr/local/arm/oe/arm-linux/lib -lX11 -ldl  
+Cflags: -I${includedir} -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include  

@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: Xdmcp
+Description: X Display Manager Control Protocol library
+Version: 0.1.3
+Libs: -L${libdir} -lXdmcp
+Cflags: -I${includedir}

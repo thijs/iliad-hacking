@@ -1,0 +1,15 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+xrenderlibs=-L/usr/local/arm/oe/arm-linux/lib -lXrender -lX11 -ldl  
+xrendercflags=-D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include  
+xlibs=-L/usr/local/arm/oe/arm-linux/lib -lX11 -ldl  
+xcflags=-D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include  
+
+Name: Xcursor
+Description: X Cursor Library
+Version: 1.1.2
+Requires: xrender
+Cflags: -I${includedir} ${xrendercflags} ${xcflags}
+Libs: -L${libdir} -lXcursor ${xrenderlibs} ${xlibs}

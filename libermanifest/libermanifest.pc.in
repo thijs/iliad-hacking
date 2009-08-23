@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libermanifest
+Description: XML Manifest library used by eReader
+Version: @VERSION@
+Libs: -L${libdir} -lermanifest @LIBXML_LIBS@
+Cflags: -I${includedir} @LIBXML_CFLAGS@

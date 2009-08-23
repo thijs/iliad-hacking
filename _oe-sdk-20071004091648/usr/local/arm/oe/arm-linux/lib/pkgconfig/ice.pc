@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: ICE
+Description: X Inter Client Exchange Library
+Version: 6.3.4
+Libs: -L${libdir} -lICE  
+Cflags: -I${includedir} -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include  

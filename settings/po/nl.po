@@ -1,0 +1,628 @@
+# Dutch translations for ersetup package.
+# Copyright (C) 2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the ersetup package.
+# ann <ann@host.test>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ersetup 0.14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-12-14 15:27+0100\n"
+"PO-Revision-Date: 2007-12-14 15:30+0100\n"
+"Last-Translator: \n"
+"Language-Team: Dutch <nl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/iLiadBgConnectScreen.c:448
+msgid "Wireless connection preferences"
+msgstr "Instellingen draadloze netwerken"
+
+#: src/iLiadBgConnectScreen.c:450
+msgid ""
+"Select whether to automatically connect to a non-secured (open) wireless "
+"network."
+msgstr "Automatisch verbinden met onbeveiligde (open) draadloze netwerken."
+
+#: src/iLiadBgConnectScreen.c:452 src/iLiadBgConnectScreen.c:476
+#: src/iLiadPincodeScreen.c:402 src/iLiadConfigScreen.c:440
+#: src/iLiadConfigScreen.c:450 src/iLiadTimediDSScreen.c:308
+msgid "On"
+msgstr "Aan"
+
+#: src/iLiadBgConnectScreen.c:453 src/iLiadBgConnectScreen.c:477
+#: src/iLiadPincodeScreen.c:403 src/iLiadConfigScreen.c:441
+#: src/iLiadConfigScreen.c:451 src/iLiadTimediDSScreen.c:309
+msgid "Off"
+msgstr "Uit"
+
+#: src/iLiadBgConnectScreen.c:460
+msgid "Background connect"
+msgstr "Verbinden op de achtergrond"
+
+#: src/iLiadBgConnectScreen.c:462
+msgid "Select whether to download content from the iDS or a computer."
+msgstr ""
+"Selecteer of u documenten wilt downloaden van de iDS of van een computer"
+
+#: src/iLiadBgConnectScreen.c:463
+msgid "iDS"
+msgstr "iDS"
+
+#: src/iLiadBgConnectScreen.c:464
+msgid "Computer"
+msgstr "Computer"
+
+#: src/iLiadBgConnectScreen.c:471
+msgid "Automatic background connect"
+msgstr "Automatisch verbinden op de achtergrond"
+
+#: src/iLiadBgConnectScreen.c:473
+msgid ""
+"Enabling \"Automatic background connect\" causes the iLiad to receive or "
+"send content items at a fixed interval."
+msgstr ""
+"Het aanzetten van \"Automatisch verbinden op de achtergrond\" laat de iLiad "
+"documenten ontvangen en verzenden met een vast tijdsinterval."
+
+#: src/iLiadBgConnectScreen.c:484
+msgid "Enter the time interval for the background connect."
+msgstr "Voer het tijdsinterval in voor het verbinden op de achtergrond."
+
+#: src/iLiadBgConnectScreen.c:485
+#, c-format
+msgid "minutes (min. %d, max. %d)"
+msgstr "minuten (min. %d, max. %d)"
+
+#: src/iLiadBgConnectScreen.c:494
+msgid ""
+"During the background connection you can operate the iLiad as usual.\n"
+"\n"
+"Warning!\n"
+"Background connect will empty your battery faster."
+msgstr ""
+"Tijdens de verbinding op de achtergrond kunt u de iLiad blijven gebruiken.\n"
+"\n"
+"Let op!\n"
+"Bij het verbinden op de achtergrond is uw batterij sneller leeg."
+
+#: src/iLiadPincodeScreen.c:391
+msgid "PIN Code"
+msgstr "PIN Code"
+
+#: src/iLiadPincodeScreen.c:396
+msgid ""
+"The PIN code protects your reader against unauthorized use.\n"
+"The code is requested each time the reader is switched on."
+msgstr ""
+"De PIN code beveiligt uw iLiad tegen ongeauthoriseerd gebruik.\n"
+"Deze code wordt gevraagd wanneer u de iLiad opstart."
+
+#: src/iLiadPincodeScreen.c:410
+msgid "Select PIN code"
+msgstr "PIN code wijzigen"
+
+#: src/iLiadPincodeScreen.c:414
+msgid "Please select a PIN code of 4 digits."
+msgstr "Voer een PIN code in van 4 cijfers."
+
+#: src/iLiadPincodeScreen.c:419
+msgid "Please enter current PIN code"
+msgstr "Voer de huidige PIN code in"
+
+#: src/iLiadPincodeScreen.c:424
+msgid "Please enter new PIN code"
+msgstr "Voer een nieuwe PIN code in"
+
+#: src/iLiadPincodeScreen.c:429
+msgid "Please verify new PIN code"
+msgstr "Voer nogmaals de nieuwe PIN code in"
+
+#: src/iLiadPincodeScreen.c:435
+msgid "Confirm"
+msgstr "Bevestigen"
+
+#: src/iLiadPincodeScreen.c:470
+msgid ""
+"Please create a user account at 'MyiRex' and fill in the account settings in "
+"your iLiad."
+msgstr ""
+"Maak een gebruikersaccount aan op 'MyiRex' en vul de instellingen op de "
+"iLiad in."
+
+#: src/iLiadPincodeScreen.c:475
+msgid ""
+"Warning!\n"
+"You can only enter the PIN code with the iLiad's stylus. Make sure that you "
+"always have the stylus available after enabling the pin code functionality."
+msgstr ""
+"Let op!\n"
+"Een PIN code kunt u uitsluitend invoeren met de iLiad pen. Zorg dat u altijd "
+"de pen beschikbaar heeft als de pincode functie ingeschakeld is."
+
+#: src/iLiadPincodeScreen.c:608
+msgid "Illegal characters or illegal length, pincode unchanged"
+msgstr "Ongeldige invoer of lengte, pincode niet gewijzigd"
+
+#: src/iLiadPincodeScreen.c:620
+msgid "Pincode verification failed, pincode unchanged"
+msgstr "Verschillende PIN codes ingevoerd, pincode niet gewijzigd"
+
+#: src/iLiadPincodeScreen.c:631 src/iLiadPincodeScreen.c:658
+msgid "Pincode updated successfully"
+msgstr "PIN code gewijzigd"
+
+#: src/iLiadPincodeScreen.c:648
+msgid "Current pincode incorrect, pincode unchanged"
+msgstr "De huidige pincode is ongeldig, pincode niet gewijzigd"
+
+#: src/iLiadConfigScreen.c:437
+msgid "Sound"
+msgstr "Geluid"
+
+#: src/iLiadConfigScreen.c:439
+msgid "With this function you can enable or disable the sound of your iLiad."
+msgstr "Met deze functie kunt u het geluid van uw iLiad aan- of uitzetten."
+
+#: src/iLiadConfigScreen.c:447
+msgid "Key buffering"
+msgstr "Toetsbuffering"
+
+#: src/iLiadConfigScreen.c:449
+msgid ""
+"When you enable key buffering, the iLiad will remember the keys pressed and "
+"process them when the device is ready."
+msgstr ""
+"Wanneer u de toetsbuffering aanzet, worden de toetsaanslagen opgeslagen en "
+"verwerkt wanneer het apparaat klaar is."
+
+#: src/iLiadConfigScreen.c:457
+msgid "Keys"
+msgstr "Knoppen"
+
+#: src/iLiadConfigScreen.c:459
+msgid ""
+"With this function you can set the minimum duration for a long keypress."
+msgstr ""
+"Stel de tijd in die geassocieerd moet worden met het lang op een knop "
+"drukken."
+
+#: src/iLiadConfigScreen.c:460
+msgid "0.5 seconds"
+msgstr "0.5 seconden"
+
+#: src/iLiadConfigScreen.c:461
+msgid "1 second"
+msgstr "1 seconde"
+
+#: src/iLiadConfigScreen.c:462
+msgid "1.5 seconds"
+msgstr "1.5 seconden"
+
+#: src/iLiadConfigScreen.c:463
+msgid "2 seconds"
+msgstr "2 seconden"
+
+#: src/iLiadConfigScreen.c:469
+msgid "Flipbar direction"
+msgstr "Flipbar richting"
+
+#: src/iLiadConfigScreen.c:471
+msgid ""
+"With this function you choose how to move the flipbar for advancing in a "
+"document."
+msgstr "Stel in hoe u de flipbar beweegt om verder te gaan in een document."
+
+#: src/iLiadConfigScreen.c:472
+msgid "Left"
+msgstr "Links"
+
+#: src/iLiadConfigScreen.c:473
+msgid "Right"
+msgstr "Rechts"
+
+#: src/iLiadConfigScreen.c:479
+msgid "Pen interface"
+msgstr "Pen"
+
+#: src/iLiadConfigScreen.c:480
+msgid "Calibration"
+msgstr "Calibratie"
+
+#: src/iLiadConfigScreen.c:486
+msgid "Languages"
+msgstr "Talen"
+
+#: src/iLiadConfigScreen.c:488
+msgid "With this function you can set the language of the iLiad."
+msgstr "Met deze functie kiest u de taal van de iLiad."
+
+#: src/iLiadDateTimeScreen.c:287
+msgid "Time Selection"
+msgstr "Tijdzone aanpassen"
+
+#: src/iLiadDateTimeScreen.c:290
+msgid "The current time and date on your iLiad is:"
+msgstr "De huidige datum en tijd op uw iLiad is:"
+
+#: src/iLiadDateTimeScreen.c:301
+msgid ""
+"To change the clock, select your current date and time from the list below."
+msgstr ""
+"Kies uw huidige dag en tijd uit onderstaande lijst om de klok aan te passen."
+
+#. TRANSLATORS: This is a date and time format specifier, according to the strftime(3) man page.
+#. The corresponding string should be something like Monday, July 30 2007.
+#: src/iLiadDateTimeScreen.c:309 src/iLiadDateTimeScreen.c:315
+#, no-c-format
+msgid "%A, %x"
+msgstr "%A %d %B %Y"
+
+#: src/iLiadDateTimeScreen.c:323
+msgid ""
+"You can set your date and time by connecting to iDS. Afterwards you can use "
+"this page to update the time for your current timezone."
+msgstr ""
+"De datum en tijd worden gezet door verbinding te maken met iDS. Naderhand "
+"kan deze pagina gebruikt worden om de tijd aan te passen voor uw tijdzone."
+
+#. TRANSLATORS: This is a date and time format specifier, according to the strftime(3) man page.
+#. The corresponding string should be something like 13:23 Monday, July 30 2007.
+#. Keep %R unchanged.
+#: src/iLiadDateTimeScreen.c:452
+#, no-c-format
+msgid "%R %A, %x"
+msgstr "%R      %A %d %B %Y"
+
+#: src/iLiadUserScreen.c:186
+msgid "Name"
+msgstr "Naam"
+
+#: src/iLiadUserScreen.c:187
+msgid "Please enter your name"
+msgstr "Voer hier uw naam in"
+
+#: src/iLiadUserScreen.c:193
+msgid "MyiRex account settings"
+msgstr "MyiRex account instellingen"
+
+#: src/iLiadUserScreen.c:194
+msgid "Please enter the email address used to create your 'MyiRex' account"
+msgstr "Voer hier het voor uw 'MyiRex' account geregistreerde emailadres in"
+
+#: src/iLiadUserScreen.c:195
+msgid "Please enter your 'MyiRex' password"
+msgstr "Voer hier uw 'MyiRex' wachtwoord in"
+
+#: src/iLiadUserScreen.c:202
+msgid ""
+"\n"
+"To connect to iRex Delivery Service (iDS) you need to create an account.\n"
+"Visit https://myirex.irexnet.com/ and follow the instructions."
+msgstr ""
+"\n"
+"Om verbinding te maken met de iRex Delivery Service (iDS) moet een account "
+"aangemaakt worden.\n"
+"Bezoek de website https://myirex.irexnet.com/ en volg de instructies."
+
+#: src/iLiadPCConnectScreen.c:334
+msgid "Proceed"
+msgstr "Doorgaan"
+
+#: src/iLiadPCConnectScreen.c:340
+msgid "iLiad settings / Setting for computer connection "
+msgstr "Instelling voor verbinding met de computer"
+
+#: src/iLiadPCConnectScreen.c:346
+msgid "STEP 1: Please type the name of your computer."
+msgstr "Stap 1: Voer hier de naam van uw computer in."
+
+#: src/iLiadPCConnectScreen.c:351
+msgid ""
+"You can create a connection between the iLiad and your computer by entering "
+"the specifications of your PC.\n"
+"The \"full computer name\" is located at the system properties of your "
+"computer."
+msgstr ""
+"Om een verbinding tussen de iLiad en uw computer op te zetten moet u hier de "
+"gegevens van uw PC invoeren.\n"
+"De \"volledige computernaam\" kunt u in de systeemeigenschappen van uw "
+"computer vinden."
+
+#: src/iLiadPCConnectScreen.c:362
+msgid "STEP 2: Please enter the name of the \"shared\" destination folder."
+msgstr "Stap 2: Voer hier de naam in van de \"gedeelde\" map op uw PC."
+
+#: src/iLiadPCConnectScreen.c:367
+msgid ""
+"Create a destination folder on your computer. In the folder properties you "
+"can \"share this folder\"."
+msgstr ""
+"U moet op uw PC een map aanmaken. In de map eigenschappen kunt u \"deze map "
+"delen\"."
+
+#: src/iLiadPCConnectScreen.c:375
+msgid "STEP 3: Please enter the domain group / work group of your computer."
+msgstr "Stap 3: Voer hier het domein of de werkgroep van uw computer in."
+
+#: src/iLiadPCConnectScreen.c:380
+msgid ""
+"When the computer is part of a business network, you can enter the domain "
+"group.\n"
+"In most cases you can leave this entry field blank."
+msgstr ""
+"Als de computer onderdeel is van een bedrijfsnetwerk, kunt u hier het domein "
+"of de werkgroep invullen.\n"
+"In andere gevallen kunt u dit veld leeglaten."
+
+#: src/iLiadPCConnectScreen.c:386
+msgid "STEP 4: Please enter the username and password of your computer."
+msgstr ""
+"Stap 4: Voer hier de gebruikersnaam en het wachtwoord voor uw computer in."
+
+#: src/iLiadPCConnectScreen.c:390
+msgid "User name"
+msgstr "Gebruikersnaam"
+
+#: src/iLiadPCConnectScreen.c:394
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: src/iLiadPCConnectScreen.c:399
+msgid ""
+"You can leave this entry field blank when you didn't create a user name and "
+"password."
+msgstr ""
+"Als u geen gebruikersnaam of wachtwoord ingesteld heeft, kunt u dit veld "
+"leeglaten."
+
+#: src/iLiadArcLocScreen.c:215
+msgid "Archive locations"
+msgstr "Archief locaties"
+
+#: src/iLiadArcLocScreen.c:218
+msgid "Newspapers"
+msgstr "Kranten"
+
+#: src/iLiadArcLocScreen.c:219
+msgid "Select a memory type for the 'NEWS' button."
+msgstr "Kies het geheugentype waar de knop 'NEWS' naar wijst."
+
+#: src/iLiadArcLocScreen.c:222
+msgid "Books"
+msgstr "Boeken"
+
+#: src/iLiadArcLocScreen.c:223
+msgid "Select a memory type for the 'BOOKS' button."
+msgstr "Kies het geheugentype waar de knop 'BOOKS' naar wijst."
+
+#: src/iLiadArcLocScreen.c:226
+msgid "Documents"
+msgstr "Documenten"
+
+#: src/iLiadArcLocScreen.c:227
+msgid "Select a memory type for the 'DOCS' button."
+msgstr "Kies het geheugentype waar de knop 'DOCS' naar wijst."
+
+#: src/iLiadArcLocScreen.c:230
+msgid "Notes"
+msgstr "Notities"
+
+#: src/iLiadArcLocScreen.c:231
+msgid "Select a memory type for the 'NOTES' button."
+msgstr "Kies het geheugentype waar de knop 'NOTES' naar wijst."
+
+#: src/iLiadArcLocScreen.c:237 src/iLiadArcLocScreen.c:254
+msgid "Internal memory"
+msgstr "Intern geheugen"
+
+#: src/iLiadArcLocScreen.c:238 src/iLiadArcLocScreen.c:255
+msgid "MMC card"
+msgstr "MMC kaart"
+
+#: src/iLiadArcLocScreen.c:239 src/iLiadArcLocScreen.c:256
+msgid "USB stick"
+msgstr "USB stick"
+
+#: src/iLiadArcLocScreen.c:240 src/iLiadArcLocScreen.c:257
+msgid "CF card"
+msgstr "CF kaart"
+
+#: src/iLiadArcLocScreen.c:246
+msgid "USB Connection"
+msgstr "USB verbinding"
+
+#: src/iLiadArcLocScreen.c:250
+msgid "Export via USB"
+msgstr "Exporteren via USB"
+
+#: src/iLiadArcLocScreen.c:251
+msgid "Select a memory type to be exported to the PC via the USB cable."
+msgstr ""
+"Kies het geheugentype dat naar de PC geëxporteerd wordt via de USB kabel."
+
+#: src/iLiadArcLocScreen.c:264
+msgid ""
+"\n"
+"When you select a memory type for an archive key, the iLiad will use this as "
+"storage for newly downloaded items from iDS."
+msgstr ""
+"\n"
+"Als u een geheugentype kiest voor een archiefknop, dan gebruikt de iLiad "
+"deze locatie voor nieuwe downloads van de iDS."
+
+#: src/iLiadStartUpScreen.c:38
+msgid "Quick Start Guide"
+msgstr "Korte uitleg van de iLiad"
+
+#: src/iLiadStartUpScreen.c:39
+msgid "Reference materials"
+msgstr "Naslagwerken"
+
+#: src/iLiadStartUpScreen.c:40
+msgid "Device manager"
+msgstr "Apparaatbeheer"
+
+#: src/iLiadStartUpScreen.c:41
+msgid "Recent documents"
+msgstr "Recente documenten"
+
+#: src/iLiadStartUpScreen.c:42
+msgid "Last read document"
+msgstr "Laatst gelezen document"
+
+#: src/iLiadStartUpScreen.c:43
+msgid "News folder"
+msgstr "Map kranten"
+
+#: src/iLiadStartUpScreen.c:44
+msgid "Books folder"
+msgstr "Map boeken"
+
+#: src/iLiadStartUpScreen.c:45
+msgid "Documents folder"
+msgstr "Map documenten"
+
+#: src/iLiadStartUpScreen.c:46
+msgid "Notes folder"
+msgstr "Map notities"
+
+#: src/iLiadStartUpScreen.c:281
+msgid "Start-up Settings"
+msgstr "Instellingen voor het opstarten"
+
+#: src/iLiadStartUpScreen.c:282
+msgid "Please select what to open when starting up your iLiad."
+msgstr "Kies wat te openen als de iLiad opstart:"
+
+#: src/iLiadStartUpScreen.c:289
+msgid "Stylus calibration"
+msgstr "Calibratie"
+
+#: src/iLiadStartUpScreen.c:290
+msgid "With this function you can re-calibrate your stylus."
+msgstr "Met deze functie kunt u uw pen calibreren."
+
+#: src/iLiadStartUpScreen.c:291
+msgid "Start Calibration"
+msgstr "Calibratie"
+
+#: src/iLiadDeviceOverview.c:226
+msgid "Device Identification"
+msgstr "Apparaat identificatie"
+
+#: src/iLiadDeviceOverview.c:228
+msgid "Product type:"
+msgstr "Produkt type:"
+
+#: src/iLiadDeviceOverview.c:229
+msgid "Language set:"
+msgstr "Taal set:"
+
+#: src/iLiadDeviceOverview.c:230
+msgid "OEM code:"
+msgstr "OEM code:"
+
+#: src/iLiadDeviceOverview.c:231
+msgid "Country code:"
+msgstr "Landcode:"
+
+#: src/iLiadDeviceOverview.c:232
+msgid "PCBA revision:"
+msgstr "PCBA revisie:"
+
+#: src/iLiadDeviceOverview.c:233
+msgid "EPD ID:"
+msgstr "EPD ID:"
+
+#: src/iLiadDeviceOverview.c:234
+msgid "Product ID:"
+msgstr "Produkt identificatie:"
+
+#: src/iLiadDeviceOverview.c:235
+msgid "Wired MAC address:"
+msgstr "MAC adres bedraad netwerk:"
+
+#: src/iLiadDeviceOverview.c:236
+msgid "Wireless MAC address:"
+msgstr "MAC adres WiFi adapter:"
+
+#: src/iLiadDeviceOverview.c:237
+msgid "Software version:"
+msgstr "Software versie:"
+
+#: src/iLiadDeviceOverview.c:238
+msgid "Software build number:"
+msgstr "Software build nummer:"
+
+#: src/iLiadDeviceOverview.c:239
+msgid "Kernel version:"
+msgstr "Kernel versie:"
+
+#: src/iLiadDeviceOverview.c:241
+msgid "Acknowledgements"
+msgstr "Dankwoord"
+
+#: src/iLiadDeviceOverview.c:244
+msgid ""
+"iRex Technologies wants to thank the following people for contributing to "
+"the iLiad software:"
+msgstr ""
+"iRex Technologies wil de volgende personen bedanken voor hun bijdrage aan de "
+"software van de iLiad:"
+
+#: src/iLiadDeviceOverview.c:247
+#, c-format
+msgid "German translation: %s"
+msgstr "Duitse vertaling: %s"
+
+#: src/iLiadDeviceOverview.c:250
+#, c-format
+msgid "Stylus calibration: %s"
+msgstr "Pen calibratie: %s"
+
+#: src/iLiadTimediDSScreen.c:304
+msgid "Time to connect to iDS"
+msgstr "Geplande iDS connectie"
+
+#: src/iLiadTimediDSScreen.c:306
+msgid ""
+"Enabling \"time to connection\" causes the iLiad to download content from "
+"the iDS at a set time."
+msgstr ""
+"Het aanzetten van \"Geplande iDS connectie\" laat de iLiad op een vaste tijd "
+"bestanden downloaden van iDS."
+
+#: src/iLiadTimediDSScreen.c:312
+msgid "Set the time"
+msgstr "Stel de tijd in"
+
+#: src/iLiadTimediDSScreen.c:313
+msgid "The iLiad will connect to iDS at the set time:"
+msgstr "De iLiad zoekt op de ingestelde tijd verbinding met iDS:"
+
+#: src/iLiadTimediDSScreen.c:318
+msgid "Connect at"
+msgstr "Verbinden om"
+
+#: src/iLiadTimediDSScreen.c:322
+msgid "Include software downloads while connected to iDS."
+msgstr "Software downloads toestaan tijdens iDS verbinding"
+
+#: src/iLiadTimediDSScreen.c:324
+msgid "Switch off again after waking up the device."
+msgstr "Zet de iLiad weer uit nadat hij wakker is geworden"
+
+#: src/iLiadTimediDSScreen.c:328
+msgid ""
+"When the iLiad is switched off, it will 'wake-up' to download content from "
+"the iDS."
+msgstr ""
+"Als de iLiad uit staat, zal hij 'wakker worden' om bestanden te downloaden "
+"van iDS."
+
+#: src/background.c:90
+msgid "iLiad Settings"
+msgstr "iLiad instellingen"

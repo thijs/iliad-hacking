@@ -1,0 +1,11 @@
+Package: liberlog-dev
+Version: 0.211+svn20071003-r0
+Description: eReader logging library
+Section: devel
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: liberlog-0.211+svn20071003
+Homepage: unknown
+Depends: liberlog1
+Source: svn://repo.irexnet.com/software/eReader//trunk/lib/;module=erlog;proto=https;rev=HEAD

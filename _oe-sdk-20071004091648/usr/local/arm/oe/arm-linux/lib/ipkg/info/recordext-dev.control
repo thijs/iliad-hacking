@@ -1,0 +1,10 @@
+Package: recordext-dev
+Version: 0.0cvs20051025-r0
+Description: XRecord extension protocol bits
+Section: devel
+Priority: optional
+Maintainer: Phil Blundell <pb@handhelds.org>
+Architecture: arm
+OE: recordext-0.0cvs20051025
+Homepage: unknown
+Source: cvs://anoncvs:anoncvs@pdx.freedesktop.org/cvs/xlibs;module=RecordExt

@@ -1,0 +1,11 @@
+Package: libcrypto0.9.7
+Version: 0.9.7e-r1
+Description: Secure Socket Layer (SSL) binary and related cryptographic tools.
+Section: libs
+Priority: optional
+Maintainer: OpenEmbedded Team <oe@handhelds.org>
+Architecture: arm
+OE: openssl-0.9.7e
+Homepage: http://www.openssl.org/
+Depends: libc6 (>= 2.3.2+cvs20040726)
+Source: http://www.openssl.org/source/openssl-0.9.7e.tar.gz file://debian.patch;patch=1 file://armeb.patch;patch=1

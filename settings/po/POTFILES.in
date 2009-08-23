@@ -1,0 +1,14 @@
+# language specific source files
+src/gtkPincodeEntry.c
+src/iLiadBgConnectScreen.c
+src/iLiadPincodeScreen.c
+src/iLiadConfigScreen.c
+src/iLiadDateTimeScreen.c
+src/iLiadUserScreen.c
+src/iLiadPCConnectScreen.c
+src/iLiadArcLocScreen.c
+src/iLiadStartUpScreen.c
+src/iLiadDeviceOverview.c
+src/iLiadTimediDSScreen.c
+src/background.c
+src/main.c

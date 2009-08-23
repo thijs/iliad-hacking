@@ -1,0 +1,5 @@
+/usr/lib/liberlog.la
+/usr/lib/liberlog.so
+/usr/lib/liberlog.a
+/usr/include/liberlog/erlog.h
+/usr/lib/pkgconfig/liberlog.pc

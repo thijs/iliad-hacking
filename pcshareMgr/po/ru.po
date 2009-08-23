@@ -1,0 +1,89 @@
+# Russian translations for PACKAGE package.
+# Copyright (C) 2007 iRex Technologies
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pcsharemgr 0.24\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-07 14:17+0100\n"
+"PO-Revision-Date: 2007-05-21 18:14+0800\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/sharethread.c:102
+msgid "Connecting to PC share..."
+msgstr "Подключение к компьютеру..."
+
+#: src/sharethread.c:109 src/sharethread.c:122
+msgid "Cannot find download history location"
+msgstr "Невозможно найти местоположение истории скачиваний"
+
+#: src/sharethread.c:133
+msgid "Cannot find the shared folder on the PC"
+msgstr "Невозможно найти разделяемую папку на компьютере"
+
+#: src/sharethread.c:168
+msgid "--- Transfer Complete ---"
+msgstr "--- Передача завершена ---"
+
+#: src/sharethread.c:172
+msgid "--- Nothing to Transfer ---"
+msgstr "--- Ничего нет для передачи ---"
+
+#: src/sharethread.c:183
+#, fuzzy, c-format
+msgid ""
+"There were errors during the transfer of %d items. Please make sure the "
+"destination location on your iLiad has enough free space and the PC share "
+"has both read and write permissions."
+msgstr ""
+"Произошла ошибка при передаче %d файлов. Убедитесь в наличии свободного "
+"места на Илиад и в наличии разрешения на чтение и запись в разделяемой папке "
+"компьютера."
+
+#: src/sharethread.c:348
+#, c-format
+msgid ""
+"Unable to upload files to PC: cannot create inbox folder.\n"
+"File upload has been cancelled."
+msgstr ""
+"Невозможно закачать файл на компьютер: невозможно создать папку inbox.\n"
+"Закачка файлов отменена."
+
+#: src/sharethread.c:360
+#, c-format
+msgid ""
+"Unable to upload files to PC: cannot create temporary inbox folder.\n"
+"File upload has been cancelled."
+msgstr ""
+"Невозможно закачать файл на компьютер: невозможно создать временную папку "
+"inbox.\n"
+"Закачка файлов прекращена."
+
+#: src/sharethread.c:392
+msgid "Uploading to PC:"
+msgstr "Закачка на компьютер:"
+
+#: src/sharethread.c:429
+#, c-format
+msgid ""
+"Error while uploading %s to PC. File upload has been cancelled.\n"
+"Error: %s (%d)"
+msgstr ""
+"Ошибка при закачивании %s на компьютер. Закачка файла прекращена.\n"
+"Error: %s (%d)"
+
+#: src/sharethread.c:639 src/sharethread.c:676
+msgid "Downloading from PC:"
+msgstr "Скачивание с компютера:"
+
+#: src/view.c:187
+msgid "Please click here to confirm."
+msgstr "Нажмите тут для подтверждения."

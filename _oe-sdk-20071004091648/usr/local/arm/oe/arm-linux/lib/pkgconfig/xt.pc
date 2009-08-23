@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: Xt
+Description: X Toolkit Library
+Version: 0.1.5
+Cflags: -I${includedir} -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include   -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include  
+Libs: -L${libdir} -lXt -L/usr/local/arm/oe/arm-linux/lib -lX11 -ldl   -L/usr/local/arm/oe/arm-linux/lib -lSM -lICE  

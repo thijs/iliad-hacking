@@ -1,0 +1,10 @@
+prefix=/usr/local/arm/oe/arm-linux
+exec_prefix=/usr/local/arm/oe/arm-linux
+libdir=/usr/local/arm/oe/arm-linux/lib
+includedir=/usr/local/arm/oe/arm-linux/include
+
+Name: libmb
+Description: Utility Library used by Matchbox utilities.
+Version: 1.7
+Libs: -L${libdir} -lmb -L/usr/local/arm/oe/arm-linux/lib -lXext -lX11 -ldl   -L/usr/local/arm/oe/arm-linux/lib -lpangoxft-1.0 -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -ldl -lglib-2.0   -ljpeg -L/usr/local/arm/oe/arm-linux/lib/../lib -lpng12 -lz -lm   -lXsettings-client
+Cflags: -I${includedir} -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include   -D_XOPEN_SOURCE=500 -I/usr/local/arm/oe/arm-linux/include/pango-1.0 -I/usr/local/arm/oe/arm-linux/include/glib-2.0 -I/usr/local/arm/oe/arm-linux/lib/glib-2.0/include -I/usr/local/arm/oe/arm-linux/include -I/usr/local/arm/oe/arm-linux/include/freetype2   -I/usr/local/arm/oe/arm-linux/lib/../include/libpng12   

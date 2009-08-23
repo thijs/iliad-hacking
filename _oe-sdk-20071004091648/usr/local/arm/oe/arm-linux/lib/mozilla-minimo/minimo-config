@@ -1,0 +1,142 @@
+#!/bin/sh
+
+prefix=/usr
+exec_prefix=/usr
+exec_prefix_set=no
+
+usage()
+{
+	cat <<EOF
+Usage: $0 [OPTIONS] [LIBRARIES]
+Options:
+	[--prefix[=DIR]]
+	[--exec-prefix[=DIR]]
+	[--version]
+	[--defines]
+	[--libs] [libraries]
+	[--cflags] [components]
+        [--idlflags]
+Components:
+    *
+Libraries:
+    xpcom
+    nspr
+    js
+    jsj
+    gfx
+EOF
+	exit $1
+}
+
+if test $# -eq 0; then
+	usage 1 1>&2
+fi
+
+while test $# -gt 0; do
+  case "$1" in
+  -*=*) optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'` ;;
+  *) optarg= ;;
+  esac
+
+  case $1 in
+    --prefix=*)
+      prefix=$optarg
+      if test $exec_prefix_set = no ; then
+        exec_prefix=$optarg
+      fi
+      ;;
+    --prefix)
+      echo_prefix=yes
+      ;;
+    --exec-prefix=*)
+      exec_prefix=$optarg
+      exec_prefix_set=yes
+      ;;
+    --exec-prefix)
+      echo_exec_prefix=yes
+      ;;
+    --version)
+      echo 0.009
+      exit 0
+      ;;
+    --cflags)
+      if test "/usr/include/minimo-0.009" != /usr/include ; then
+        includes="-I/usr/include/minimo-0.009"
+      fi
+      echo_cflags=yes
+      ;;
+    --defines)
+      echo_defines=yes
+      ;;
+    --libs)
+      echo_libs=yes
+      ;;
+    --idlflags)
+      echo_idlflags=yes
+      ;;
+    xpcom|js|nspr|gfx|jsj)
+      echo_components="$echo_components $1"
+      echo_libraries="$echo_libraries $1"
+      ;;
+    xpconnect)
+      echo_components="$echo_components $1"
+      ;;
+    "")
+      usage 1 1>&2
+      ;;
+    *)
+      echo_components="$echo_components $1"
+      ;;
+  esac
+  shift
+done
+
+if test "$echo_prefix" = "yes"; then
+	echo $prefix
+fi
+if test "$echo_exec_prefix" = "yes"; then
+	echo $exec_prefix
+fi
+
+if test "$echo_defines" = "yes"; then
+    echo -DCROSS_COMPILE=1 -DMOZILLA_VERSION=\"1.9a1\" -DMOZILLA_VERSION_U=1.9a1 -DD_INO=d_ino -DSTDC_HEADERS=1 -DHAVE_ST_BLKSIZE=1 -DHAVE_SIGINFO_T=1 -DHAVE_INT16_T=1 -DHAVE_INT32_T=1 -DHAVE_INT64_T=1 -DHAVE_UNAME_DOMAINNAME_FIELD=1 -DHAVE_VISIBILITY_HIDDEN_ATTRIBUTE=1 -DHAVE_VISIBILITY_PRAGMA=1 -DHAVE_DIRENT_H=1 -DHAVE_GETOPT_H=1 -DHAVE_SYS_BITYPES_H=1 -DHAVE_MEMORY_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GNU_LIBC_VERSION_H=1 -DHAVE_NL_TYPES_H=1 -DHAVE_MALLOC_H=1 -DHAVE_X11_XKBLIB_H=1 -DHAVE_SYS_STATVFS_H=1 -DHAVE_SYS_STATFS_H=1 -DHAVE_MMINTRIN_H=1 -DHAVE_SYS_CDEFS_H=1 -DHAVE_LIBM=1 -DHAVE_LIBDL=1 -DFUNCPROTO=15 -DHAVE_XSHM=1 -D_REENTRANT=1 -DHAVE_RANDOM=1 -DHAVE_STRERROR=1 -DHAVE_LCHOWN=1 -DHAVE_FCHMOD=1 -DHAVE_SNPRINTF=1 -DHAVE_MEMMOVE=1 -DHAVE_RINT=1 -DHAVE_STAT64=1 -DHAVE_LSTAT64=1 -DHAVE_FLOCKFILE=1 -DHAVE_LOCALTIME_R=1 -DHAVE_STRTOK_R=1 -DHAVE_RES_NINIT=1 -DHAVE_GNU_GET_LIBC_VERSION=1 -DHAVE_LANGINFO_CODESET=1 -DVA_COPY=__va_copy -DHAVE_VA_COPY=1 -DHAVE_I18N_LC_MESSAGES=1 -DMOZ_DEFAULT_TOOLKIT=\"gtk2\" -DMOZ_WIDGET_GTK2=1 -DMOZ_ENABLE_XREMOTE=1 -DMOZ_X11=1 -DMINIMO=1 -DMOZ_BUILD_APP=minimo -DMOZ_XUL_APP=1 -DMOZ_DISTRIBUTION_ID=\"org.mozilla\" -DMOZ_ENABLE_XFT=1 -DIBMBIDI=1 -DMOZ_JSLOADER=1 -DMOZ_USE_NATIVE_UCONV=1 -DMOZ_NO_XPCOM_OBSOLETE=1 -DMOZ_UPDATE_CHANNEL=default -DNS_DISABLE_LOGGING=1 -DHAVE___CXA_DEMANGLE=1 -DMOZ_USER_DIR=\".mozilla\" -DMOZ_XUL=1 -DMOZ_DLL_SUFFIX=\".so\" -DXP_UNIX=1 -DUNIX_ASYNC_DNS=1 -DJS_THREADSAFE=1 -DMOZILLA_LOCALE_VERSION=\"1.9a1\" -DMOZILLA_REGION_VERSION=\"1.9a1\" -DMOZILLA_SKIN_VERSION=\"1.8\" 
+fi
+
+if test "$echo_cflags" = "yes"; then
+    nspr_cflags="-I/usr/include/minimo-0.009/nspr"
+    for n in $echo_components; do
+	component_includes="$component_includes -I/usr/include/minimo-0.009/$n"
+    done
+    echo $component_includes $includes $nspr_cflags
+fi
+
+if test "$echo_idlflags" = "yes"; then
+    echo "-I/usr/share/idl/minimo-0.009"
+fi
+
+_nspr_libs="-L/usr/lib/minimo-0.009 -lplds4 -lplc4 -lnspr4 -L/data/workareas/matthijs/svn/openembedded/build/tmp/staging/arm-linux/lib -lpthread -ldl"
+_xpcom_libs="-lxpcom $_nspr_libs"
+_js_libs="-ljs"
+
+if test "$echo_libs" = "yes"; then
+    for l in $echo_libraries; do
+	case "$l" in
+	gfx) 
+	    libs="$libs -lgkgfx $_xpcom_libs"
+	    ;;
+	xpcom)
+	    libs="$libs $_xpcom_libs"
+	    ;;
+	nspr)
+	    libs="$libs $_nspr_libs"
+	    ;;
+	js)
+	    libs="$libs $_js_libs"
+	    ;;
+	jsj)
+	    libs="$libs -ljsj $_js_libs $_xpcom_libs"
+	    ;;
+        esac
+    done
+    echo -L/usr/lib/minimo-0.009 $libs
+fi
