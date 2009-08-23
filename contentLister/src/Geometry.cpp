@@ -18,6 +18,8 @@ Geometry::Geometry() {
   itemHspacing = 4;	// Horizontal spacing within item
   pageItems    = 12;
 
+  showInfo    = 0;
+
   recalc();
 }
 

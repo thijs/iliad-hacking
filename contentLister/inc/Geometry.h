@@ -36,5 +36,7 @@ struct Geometry {
 
   int pageItems;		// max items on one page
 
+  int showInfo;			// show info or not
+
 };
 #endif

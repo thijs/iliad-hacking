@@ -298,6 +298,31 @@ static void parse_arguments(int argc, char **argv)
       }
     }
 
+    {
+      // try to read show_info from /mnt/settings/newLister_showInfo
+      // For now: just read one line, and try to make a number from it.
+      FILE *f;
+      if ((f=fopen("/mnt/settings/newLister_showInfo", "r"))) {
+         int show_info;
+         if (fscanf(f, "%d", &show_info) == 1) {
+           if (show_info) {
+             _G.showInfo = TRUE;
+           }
+	   else {
+             _G.showInfo = FALSE;
+	   }
+         }
+         fclose(f);
+      }
+      else {
+         // try to create the file if it does not exist
+         if ((f=fopen("/mnt/settings/newLister_showInfo", "w"))) {
+           fprintf(f,"%d\n", _G.showInfo);
+           fclose(f);
+         }
+      }
+    }
+
     // parse contentLister options
     for (i = 1 ; i < argc ; i++) {
         if (strcmp(argv[i], "--help") == 0) {

@@ -151,7 +151,7 @@ static void gtk_content_list_item_init(GtkContentListItem * list_item) {
     gtk_container_add(GTK_CONTAINER(list_item->textbox), alignment);
 
   // file bar layout
-  if (_G.pageItems <= 8) {
+  if ((_G.pageItems <= 8) || (_G.showInfo)) {
     list_item->table = gtk_table_new (6, 6, TRUE);
     gtk_widget_set_size_request(GTK_WIDGET(list_item->table), _G.text.w, (-1));
     gtk_table_set_col_spacings((GtkTable *)list_item->table, 10);
