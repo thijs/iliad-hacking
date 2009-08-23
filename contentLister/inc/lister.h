@@ -46,7 +46,7 @@ extern  "C"
 #define NO_FOCUSSED_ITEM       (-1)
 
 // only used to allocate data structures => layout uses fixed sizes => fixed # items on a page
-#define MAX_ITEMS_ON_ONE_PAGE	6
+#define MAX_ITEMS_ON_ONE_PAGE	24
 
 // string size limitations for the list item text
 #define LS_MAX_TITLE_SIZE       256

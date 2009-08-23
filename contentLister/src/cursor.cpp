@@ -55,6 +55,15 @@
 #include "cursor.h"
 #include "lister.h"
 
+#include "Geometry.h"
+
+// Dirty trick... 
+// The cursor is drawn by using a predifined brush that
+// is designed for 6 items on a page. We use a fixed 
+// small rectangle instead for all layouts...
+const int H=WHITE_CURSOR_SIZE_Y;	// fixed size
+const int W=WHITE_CURSOR_SIZE_Y;
+const int CURSOR_START=WHITE_CURSOR_X+12;   // skip rounded part
 
 // local data
 static struct display_update_info updateinfo;
@@ -101,18 +110,18 @@ int cursor_init(ContentLister* theContentLister)
     }
 
     // determine X coordinate
-    g_cursor_x_pos     = CURSOR_X;
-    g_cursor_x_pos_alt = g_cursor_x_pos - BLACK_CURSOR_SIZE_Y;
-    if (g_cursor_x_pos_alt < BLACK_CURSOR_SIZE_Y + 3)
+    g_cursor_x_pos     = _G.cursor.x;
+    g_cursor_x_pos_alt = g_cursor_x_pos - W;
+    if (g_cursor_x_pos_alt < W + 3)
     {
-        g_cursor_x_pos_alt = BLACK_CURSOR_SIZE_Y + 3;
+        g_cursor_x_pos_alt = W + 3;
     }
     g_cursor_x_pos_blink = g_cursor_x_pos;
 
     // determine Y coordinate
-    for (i = 0 ; i < MAX_ITEMS_ON_ONE_PAGE ; i++)
+    for (i = 0 ; i < _G.pageItems ; i++)
     {
-        cursor_info[i].y_pos = CURSOR_START_Y + i * CURSOR_STEP;
+        cursor_info[i].y_pos = _G.cursor.y + i * _G.cursorStep;
         cursor_info[i].state = e_cursor_hide;
     }
 
@@ -136,7 +145,7 @@ int cursor_set_state(const int pos, const cursor_state_t new_state)
         return 0;  // 0 = ok
     }
     CL_CURSORPRINTF("entry: pos [%d] new_state [%d]", pos, new_state);
-    g_return_val_if_fail((pos >= 0  &&  pos < MAX_ITEMS_ON_ONE_PAGE), -1);
+    g_return_val_if_fail((pos >= 0  &&  pos < _G.pageItems), -1);
 
     int                    rc;
     struct brush_draw_info drawinfo;
@@ -148,12 +157,12 @@ int cursor_set_state(const int pos, const cursor_state_t new_state)
         gtk_content_list_item_show_cursor(GTK_CONTENT_LIST_ITEM(listItem), FALSE);
 
         // remove cursor (i.e. paint white)
-        drawinfo.sourcex  = WHITE_CURSOR_X;
+        drawinfo.sourcex  = CURSOR_START;
         drawinfo.sourcey  = WHITE_CURSOR_Y;
-        drawinfo.sizex    = WHITE_CURSOR_SIZE_X;
-        drawinfo.sizey    = WHITE_CURSOR_SIZE_Y;
+        drawinfo.sizex    = H;
+        drawinfo.sizey    = W;
         drawinfo.destx    = cursor_info[pos].y_pos;
-        drawinfo.desty    = SCREEN_WIDTH - ((old_state == e_cursor_blink) ? g_cursor_x_pos_blink : g_cursor_x_pos);
+        drawinfo.desty    = _G.screen.w - ((old_state == e_cursor_blink) ? g_cursor_x_pos_blink : g_cursor_x_pos);
         drawinfo.brushlsb = WHITE;
     }
     else
@@ -161,12 +170,12 @@ int cursor_set_state(const int pos, const cursor_state_t new_state)
         gtk_content_list_item_show_cursor(GTK_CONTENT_LIST_ITEM(listItem), TRUE);
 
         // show cursor (black)
-        drawinfo.sourcex  = BLACK_CURSOR_X;
+        drawinfo.sourcex  = CURSOR_START;
         drawinfo.sourcey  = BLACK_CURSOR_Y;
-        drawinfo.sizex    = BLACK_CURSOR_SIZE_X;
-        drawinfo.sizey    = BLACK_CURSOR_SIZE_Y;
+        drawinfo.sizex    = H;
+        drawinfo.sizey    = W;
         drawinfo.destx    = cursor_info[pos].y_pos;
-        drawinfo.desty    = SCREEN_WIDTH - ((new_state == e_cursor_blink) ? g_cursor_x_pos_blink : g_cursor_x_pos);
+        drawinfo.desty    = _G.screen.w - ((new_state == e_cursor_blink) ? g_cursor_x_pos_blink : g_cursor_x_pos);
         drawinfo.brushlsb = BLACK;
     }
     cursor_info[pos].state = new_state;
@@ -241,12 +250,12 @@ void cursor_hide_all(void)
     g_cursor_x_pos_blink  = g_cursor_x_pos;
 
     // hide all cursors (i.e. paint white)
-    drawinfo.sourcex  = WHITE_CURSOR_X;
+    drawinfo.sourcex  = CURSOR_START;
     drawinfo.sourcey  = WHITE_CURSOR_Y;
-    drawinfo.sizex    = WHITE_CURSOR_SIZE_X;
-    drawinfo.sizey    = WHITE_CURSOR_SIZE_Y;
+    drawinfo.sizex    = H;
+    drawinfo.sizey    = W;
     drawinfo.brushlsb = WHITE;
-    for (pos = 0 ; pos < MAX_ITEMS_ON_ONE_PAGE ; pos++)
+    for (pos = 0 ; pos < _G.pageItems ; pos++)
     {
         drawinfo.destx = cursor_info[pos].y_pos;
 
@@ -257,7 +266,7 @@ void cursor_hide_all(void)
         gtk_content_list_item_show_cursor(GTK_CONTENT_LIST_ITEM(listItem), FALSE);
 
         // write the brush/drawing for standard location to framebuffer (in-memory)
-        drawinfo.desty = SCREEN_WIDTH - g_cursor_x_pos;
+        drawinfo.desty = _G.screen.w - g_cursor_x_pos;
         if (display_update_get_level() < NO_DISPLAY_UPDATE_LEVEL)
         {
             CL_CURSORPRINTF("FBIO_DRAW_BRUSH location %dx%d color %d", drawinfo.desty, drawinfo.destx, drawinfo.brushlsb);
@@ -269,7 +278,7 @@ void cursor_hide_all(void)
         }
         
         // write the brush/drawing for alternative location to framebuffer (in-memory)
-        drawinfo.desty = SCREEN_WIDTH - g_cursor_x_pos_alt;
+        drawinfo.desty = _G.screen.w - g_cursor_x_pos_alt;
         if (display_update_get_level() < NO_DISPLAY_UPDATE_LEVEL)
         {
             CL_CURSORPRINTF("FBIO_DRAW_BRUSH location %dx%d color %d", drawinfo.desty, drawinfo.destx, drawinfo.brushlsb);
@@ -331,13 +340,13 @@ static gboolean cursor_blink(gpointer user_data)
     }
 
     // hide old cursors (i.e. paint white)
-    drawinfo.sourcex  = WHITE_CURSOR_X;
+    drawinfo.sourcex  = CURSOR_START;
     drawinfo.sourcey  = WHITE_CURSOR_Y;
-    drawinfo.sizex    = WHITE_CURSOR_SIZE_X;
-    drawinfo.sizey    = WHITE_CURSOR_SIZE_Y;
-    drawinfo.desty    = SCREEN_WIDTH - g_cursor_x_pos_blink;
+    drawinfo.sizex    = H;
+    drawinfo.sizey    = W;
+    drawinfo.desty    = _G.screen.w - g_cursor_x_pos_blink;
     drawinfo.brushlsb = WHITE;
-    for (pos = 0 ; pos < MAX_ITEMS_ON_ONE_PAGE ; pos++)
+    for (pos = 0 ; pos < _G.pageItems ; pos++)
     {
         if (cursor_info[pos].state == e_cursor_blink)
         {
@@ -367,13 +376,13 @@ static gboolean cursor_blink(gpointer user_data)
     }
 
     // show new cursors (black)
-    drawinfo.sourcex  = BLACK_CURSOR_X;
+    drawinfo.sourcex  = CURSOR_START;
     drawinfo.sourcey  = BLACK_CURSOR_Y;
-    drawinfo.sizex    = BLACK_CURSOR_SIZE_X;
-    drawinfo.sizey    = BLACK_CURSOR_SIZE_Y;
-    drawinfo.desty    = SCREEN_WIDTH - g_cursor_x_pos_blink;
+    drawinfo.sizex    = H;
+    drawinfo.sizey    = W;
+    drawinfo.desty    = _G.screen.w - g_cursor_x_pos_blink;
     drawinfo.brushlsb = BLACK;
-    for (pos = 0 ; pos < MAX_ITEMS_ON_ONE_PAGE ; pos++)
+    for (pos = 0 ; pos < _G.pageItems ; pos++)
     {
         if (cursor_info[pos].state == e_cursor_blink)
         {

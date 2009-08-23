@@ -1,12 +1,13 @@
-bin_PROGRAMS = contentLister
+bin_PROGRAMS = newLister
 
 ## noinst_PROGRAMS = testContentScan testStack testMetadataStoreManager
 
-contentLister_SOURCES = main.c \
-			gtkContentListItem.c \
-			lister.c \
-			control.c \
-			control_share.c \
+newLister_SOURCES = main.cpp \
+	Geometry.cpp \
+			gtkContentListItem.cpp \
+			lister.cpp\
+			control.cpp\
+			control_share.cpp\
 			metadataStoreManager.c \
 			displayUpdate.c \
 			button.c \
@@ -14,13 +15,13 @@ contentLister_SOURCES = main.c \
 			viewer.c \
 			erbusy.c \
 			erMdsFs.c \
-			cursor.c \
+			cursor.cpp \
 			gtkErrorScreen.c \
 			erMdsXml.c \
 			stack.c \
 			erMSDisk.c \
 			history.c \
-			icons.c \
+			icons.cpp \
 			pagebar.c \
 			languages.c \
 			erConnect.c \

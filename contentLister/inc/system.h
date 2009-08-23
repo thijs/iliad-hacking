@@ -28,6 +28,14 @@
  * Copyright (C) 2006-2008 iRex Technologies
  *
  */
+
+#ifndef __EREADER_SYSTEM_H__
+#define __EREADER_SYSTEM_H__
+
+#ifdef __cplusplus
+extern  "C" {
+#endif  /* __cplusplus */
+
 #define PINCODE_MIN_LENGTH       4
 #define PINCODE_MAX_LENGTH       9// 0x0FFFFFFF = 268435455
 
@@ -60,3 +68,8 @@ const char* get_sysset_macAddress(void);
 // Delete file-system item: file, symlink or directory
 gboolean delete_fsitem(const gchar* path);
 
+#ifdef __cplusplus
+}
+#endif  /* __cplusplus */
+
+#endif /* __EREADER_SYSTEM_H__ */

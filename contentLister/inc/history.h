@@ -37,7 +37,7 @@ extern  "C"
 #endif  /* __cplusplus */
 
     
-#define MAX_RECENT_ITEMS     6          // max. number of items in recent-documents list
+#define MAX_RECENT_ITEMS     12          // max. number of items in recent-documents list
 #define MAX_DOWNLOAD_ITEMS   12         // max. number of items in download-history
 
 

@@ -31,6 +31,11 @@
 #ifndef __EREADER_TOOLBAR_H__
 #define __EREADER_TOOLBAR_H__
 
+#ifdef __cplusplus
+extern  "C" {
+#endif  /* __cplusplus */
+
+
 //
 // Init toolbar (open communication channel and enable/set the correct icons)
 void toolbar_init(void);
@@ -58,6 +63,9 @@ gboolean toolbar_is_trashcan_selected(void);
 gboolean toolbar_is_locked_selected(void);
 gboolean toolbar_is_tagging_selected(void);
 gboolean toolbar_is_search_selected(void);
+#ifdef __cplusplus
+}
+#endif  /* __cplusplus */
 
 #endif //__EREADER_TOOLBAR_H__
 

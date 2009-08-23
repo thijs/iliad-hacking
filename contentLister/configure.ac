@@ -1,7 +1,7 @@
 dnl ----- Process this file with autoconf to produce a configure script -----
 
 AC_INIT(contentLister, 0.212)
-AC_CONFIG_SRCDIR(src/main.c)
+AC_CONFIG_SRCDIR(src/main.cpp)
 AC_PREREQ(2.57)
 
 dnl ---- Language support -------------------------------------------------
@@ -14,6 +14,7 @@ AC_SUBST(localedir)
 
 dnl ----- Checks for programs ---------------------------------------------
 AC_PROG_CC
+AC_PROG_CXX
 AC_STDC_HEADERS
 AC_PROG_INSTALL
 

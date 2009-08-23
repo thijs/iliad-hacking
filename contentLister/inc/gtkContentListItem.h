@@ -40,9 +40,9 @@
 
 #define HBOX_TEXT_THUMB_SPACING     5
 #define HBOX_TEXT_TEXT_SPACING      4
-#define HBOX_TEXT_BORDER            15
+#define HBOX_TEXT_BORDER            11
 #define VBOX_TEXT_TEXT_SPACING      2
-#define VBOX_TEXT_BORDER            11
+#define VBOX_TEXT_BORDER            7
 
 #define THUMB_BOX_MIN_WIDTH         91
 #define TEXT_BOX_MIN_WIDTH          570

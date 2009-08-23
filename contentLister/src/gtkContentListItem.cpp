@@ -40,6 +40,8 @@
 // some size values 
 #include "lister.h"
 
+#include "Geometry.h"
+
 #define MAX_CHARACTERS  52  // max characters per line
 
 // internally used routines
@@ -48,7 +50,7 @@ static void gtk_content_list_item_init(GtkContentListItem * list_item);
 static int  get_string_lines(const gchar * string);
 
 // creates a new GtkContentListItem widget 
-GtkWidget *gtk_content_list_item_new(index)
+GtkWidget *gtk_content_list_item_new(int index)
 {
     GtkContentListItem *listItem;
 
@@ -79,7 +81,7 @@ GType gtk_content_list_item_get_type(void)
             (GInstanceInitFunc) gtk_content_list_item_init,
         };
 
-        content_list_item_type = g_type_register_static(GTK_TYPE_HBOX, "ListItem", &content_list_item_info, 0);
+        content_list_item_type = g_type_register_static(GTK_TYPE_HBOX, "ListItem", &content_list_item_info, GTypeFlags(0));
     }
     return content_list_item_type;
 }
@@ -107,17 +109,22 @@ static void gtk_content_list_item_class_init(GtkContentListItemClass * klass)
 //       |                 |-- list_item->information (GtkLabel)
 //       |-- list_item->pixmap = NULL
 // 
-static void gtk_content_list_item_init(GtkContentListItem * list_item)
-{
+
+// NewLister:
+//   1=8 items:	  full info
+//   9-12 items:  title + one extra line (subtitle or description
+//   13+ items:	  ony title
+
+static void gtk_content_list_item_init(GtkContentListItem * list_item) {
     GtkWidget   *alignment;
 
     // not homogenous => no expand of the widgets added to the box - CONTENT_HBOX_SPACE pixels spacing
     gtk_box_set_homogeneous(GTK_BOX(list_item), FALSE);
-    gtk_box_set_spacing(GTK_BOX(list_item), HBOX_TEXT_THUMB_SPACING);
+    gtk_box_set_spacing(GTK_BOX(list_item), _G.itemHspacing);
 
     list_item->cursorspace = gtk_event_box_new();
     gtk_widget_set_name(GTK_WIDGET(list_item->cursorspace), "listCursorItem_background");
-    gtk_widget_set_size_request(GTK_WIDGET(list_item->cursorspace), CURSOR_BOX_MIN_WIDTH, LISTER_ITEM_HEIGHT);
+    gtk_widget_set_size_request(GTK_WIDGET(list_item->cursorspace), _G.cursor.w, _G.cursor.h);
     gtk_box_pack_start(GTK_BOX(list_item), list_item->cursorspace, FALSE, FALSE, 0);
     list_item->cursorbox = gtk_event_box_new();
     gtk_widget_set_name(GTK_WIDGET(list_item->cursorbox), "listCursorItem");
@@ -125,12 +132,12 @@ static void gtk_content_list_item_init(GtkContentListItem * list_item)
 
     list_item->thumbbox = gtk_event_box_new();
     gtk_widget_set_name(GTK_WIDGET(list_item->thumbbox), "listThumbItem_background");
-    gtk_widget_set_size_request(GTK_WIDGET(list_item->thumbbox), THUMB_BOX_MIN_WIDTH, LISTER_ITEM_HEIGHT);
+    gtk_widget_set_size_request(GTK_WIDGET(list_item->thumbbox), _G.icon.w, _G.icon.h);
     gtk_box_pack_start(GTK_BOX(list_item), list_item->thumbbox, FALSE, FALSE, 0);
 
     list_item->textbox = gtk_event_box_new();
     gtk_widget_set_name(GTK_WIDGET(list_item->textbox), "listTextItem_background");
-    gtk_widget_set_size_request(GTK_WIDGET(list_item->textbox), TEXT_BOX_MIN_WIDTH, LISTER_ITEM_HEIGHT);
+    gtk_widget_set_size_request(GTK_WIDGET(list_item->textbox), _G.text.w, _G.text.h);
     gtk_box_pack_start(GTK_BOX(list_item), list_item->textbox, FALSE, FALSE, 0);
 
     list_item->image = gtk_image_new();
@@ -139,41 +146,30 @@ static void gtk_content_list_item_init(GtkContentListItem * list_item)
 
     // content string data 
     alignment = gtk_alignment_new(0.0, 0.0, 0.0, 0.0);
-    gtk_widget_set_size_request(GTK_WIDGET(alignment), TEXT_BOX_MIN_WIDTH, LISTER_ITEM_HEIGHT);
+    gtk_widget_set_size_request(GTK_WIDGET(alignment), _G.text.w, _G.text.h);
     gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), VBOX_TEXT_BORDER, VBOX_TEXT_BORDER, HBOX_TEXT_BORDER, HBOX_TEXT_BORDER);
     gtk_container_add(GTK_CONTAINER(list_item->textbox), alignment);
 
-    // file bar layout
-    // table 6x6
+  // file bar layout
+  if (_G.pageItems <= 8) {
     list_item->table = gtk_table_new (6, 6, TRUE);
-    // list_item->vbox = gtk_vbox_new(FALSE, VBOX_TEXT_TEXT_SPACING);
-    // gtk_widget_set_size_request(GTK_WIDGET(list_item->vbox), TEXT_BOX_MIN_WIDTH, (-1));
-    // gtk_container_add(GTK_CONTAINER(alignment), list_item->vbox);
-    gtk_widget_set_size_request(GTK_WIDGET(list_item->table), TEXT_BOX_MIN_WIDTH, (-1));
+    gtk_widget_set_size_request(GTK_WIDGET(list_item->table), _G.text.w, (-1));
     gtk_table_set_col_spacings((GtkTable *)list_item->table, 10);
     gtk_container_add(GTK_CONTAINER(alignment), list_item->table);
-    
 
     list_item->title = gtk_label_new("");
     gtk_misc_set_alignment(GTK_MISC(list_item->title), 0.0, 0.0);
-    //gtk_label_set_ellipsize(GTK_LABEL(list_item->title), PANGO_ELLIPSIZE_END);
-    //gtk_label_set_justify(GTK_LABEL(list_item->title), GTK_JUSTIFY_LEFT);
     gtk_widget_set_name(GTK_WIDGET(list_item->title), "list_item_title");
-    // gtk_box_pack_start(GTK_BOX(list_item->vbox), list_item->title, FALSE, FALSE, 0);
     gtk_table_attach_defaults(GTK_TABLE(list_item->table), list_item->title, 0, 6, 0, 2);
 
     list_item->subtitle = gtk_label_new("");
     gtk_misc_set_alignment(GTK_MISC(list_item->subtitle), 0.0, 0.0);
-    //gtk_label_set_ellipsize(GTK_LABEL(list_item->title), PANGO_ELLIPSIZE_END);
-    //gtk_label_set_justify(GTK_LABEL(list_item->subtitle), GTK_JUSTIFY_LEFT);
     gtk_widget_set_name(GTK_WIDGET(list_item->subtitle), "list_item_subtitle");
-    // gtk_box_pack_start(GTK_BOX(list_item->vbox), list_item->subtitle, FALSE, FALSE, 0);
     gtk_table_attach_defaults(GTK_TABLE(list_item->table), list_item->subtitle, 0, 6, 2, 3 );    
 
     list_item->description = gtk_label_new("");
     gtk_widget_set_name(GTK_WIDGET(list_item->description), "list_item_description");
     gtk_misc_set_alignment(GTK_MISC(list_item->description), 0.0, 0.0);
-    //gtk_label_set_ellipsize(GTK_LABEL(list_item->description), PANGO_ELLIPSIZE_END);
     gtk_widget_set_size_request(GTK_WIDGET(list_item->description), TEXT_BOX_MIN_WIDTH * 4 / 5, -1 );
     gtk_label_set_single_line_mode(GTK_LABEL(list_item->description), FALSE);
     gtk_label_set_line_wrap(GTK_LABEL(list_item->description), TRUE);
@@ -181,17 +177,42 @@ static void gtk_content_list_item_init(GtkContentListItem * list_item)
     
     list_item->information = gtk_label_new("");
     gtk_misc_set_alignment(GTK_MISC(list_item->information), 0.0, 0.0);
-    //gtk_label_set_ellipsize(GTK_LABEL(list_item->information), PANGO_ELLIPSIZE_END);
-    //gtk_label_set_justify(GTK_LABEL(list_item->information), GTK_JUSTIFY_LEFT);
     gtk_widget_set_name(GTK_WIDGET(list_item->information), "list_item_information");
-    // gtk_box_pack_start(GTK_BOX(list_item->vbox), list_item->subtitle, FALSE, FALSE, 0);
     gtk_table_attach_defaults(GTK_TABLE(list_item->table), list_item->information, 5, 6, 3, 6);    
+  }
+  else {
+    list_item->vbox = gtk_vbox_new(FALSE, VBOX_TEXT_TEXT_SPACING);
+    gtk_widget_set_size_request(GTK_WIDGET(list_item->vbox), TEXT_BOX_MIN_WIDTH, (-1));
+    gtk_container_add(GTK_CONTAINER(alignment), list_item->vbox);
+
+    list_item->title = gtk_label_new("");
+    gtk_misc_set_alignment(GTK_MISC(list_item->title), 0.0, 0.0);
+    gtk_label_set_ellipsize(GTK_LABEL(list_item->title), PANGO_ELLIPSIZE_END);
+    gtk_label_set_justify(GTK_LABEL(list_item->title), GTK_JUSTIFY_LEFT);
+    gtk_widget_set_name(GTK_WIDGET(list_item->title), "list_item_title");
+    gtk_box_pack_start(GTK_BOX(list_item->vbox), list_item->title, FALSE, FALSE, 0);
+
+    if (_G.pageItems <= 12) {
+      list_item->subtitle = gtk_label_new("");
+      gtk_misc_set_alignment(GTK_MISC(list_item->subtitle), 0.0, 0.0);
+      gtk_label_set_ellipsize(GTK_LABEL(list_item->title), PANGO_ELLIPSIZE_END);
+      gtk_label_set_justify(GTK_LABEL(list_item->subtitle), GTK_JUSTIFY_LEFT);
+      gtk_widget_set_name(GTK_WIDGET(list_item->subtitle), "list_item_subtitle");
+      gtk_box_pack_start(GTK_BOX(list_item->vbox), list_item->subtitle, FALSE, FALSE, 0);
+    }
+    else {
+      gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), VBOX_TEXT_BORDER/2, VBOX_TEXT_BORDER/2, HBOX_TEXT_BORDER/2, HBOX_TEXT_BORDER/2);
+      list_item->subtitle = 0;
+    }
+
+    list_item->description = 0;
+    list_item->information = 0;
+  }
 
     gtk_widget_show_all(GTK_WIDGET(list_item));
 }
 
-void gtk_content_list_item_set_title(GtkContentListItem * item, const gchar * text)
-{
+void gtk_content_list_item_set_title(GtkContentListItem * item, const gchar * text) {
     g_return_if_fail(IS_GTK_CONTENT_LIST_ITEM(item));
     g_return_if_fail(text != NULL);
 
@@ -200,128 +221,114 @@ void gtk_content_list_item_set_title(GtkContentListItem * item, const gchar * te
     gtk_label_set_text(GTK_LABEL(item->title), text);
 }
 
-void gtk_content_list_item_set_subtitle(GtkContentListItem * item, const gchar * text)
-{
+void gtk_content_list_item_set_subtitle(GtkContentListItem * item, const gchar * text) {
     g_return_if_fail(IS_GTK_CONTENT_LIST_ITEM(item));
     g_return_if_fail(text != NULL);
+    if (item->subtitle == NULL) return;
 
     CL_LOGPRINTF("text %s", text);
 
     gtk_label_set_text(GTK_LABEL(item->subtitle), text);
 }
 
-void gtk_content_list_item_set_description(GtkContentListItem * item, const gchar * text)
-{
+void gtk_content_list_item_set_description(GtkContentListItem * item, const gchar * text) {
     g_return_if_fail(IS_GTK_CONTENT_LIST_ITEM(item));
     g_return_if_fail(text != NULL);
+    if (item->description == NULL) {
+      // if no description widget: store it in subtitle
+      if (strlen(text)) gtk_content_list_item_set_subtitle(item, text);
+      return;
+    }
     CL_LOGPRINTF("text %s", text);
     
     // check length
-    if (strlen(text) >= 2 * MAX_CHARACTERS || get_string_lines(text) >= 2)
-    {
+    if (strlen(text) >= 2 * MAX_CHARACTERS || get_string_lines(text) >= 2) {
         // can not handle multi lines, TODO
         gtk_label_set_ellipsize(GTK_LABEL(item->description), PANGO_ELLIPSIZE_END);
     }
-    else
-    {
+    else {
         gtk_label_set_ellipsize(GTK_LABEL(item->description), PANGO_ELLIPSIZE_NONE);
     }
     gtk_label_set_text(GTK_LABEL(item->description), text);
 }
 
-void gtk_content_list_item_set_information(GtkContentListItem * item, const gchar * text)
-{
+void gtk_content_list_item_set_information(GtkContentListItem * item, const gchar * text) {
     g_return_if_fail(IS_GTK_CONTENT_LIST_ITEM(item));
     g_return_if_fail(text != NULL);
+    if (item->information == NULL) return;
     CL_LOGPRINTF("text %s", text);
     gtk_label_set_text(GTK_LABEL(item->information), text);
 }
 
-void gtk_content_list_item_set_thumb(GtkContentListItem * item, const char *iconURL)
-{
+void gtk_content_list_item_set_thumb(GtkContentListItem * item, const char *iconURL) {
     GdkPixbuf *pixbuf = NULL;
     
     g_return_if_fail(IS_GTK_CONTENT_LIST_ITEM(item));
     g_return_if_fail(NULL != iconURL);
 
     pixbuf = icons_load(iconURL);
-    if (pixbuf)
-    {
+    if (pixbuf) {
         // free the old one 
-        if (item->pixmap)
-        {
+        if (item->pixmap) {
             icons_unload(item->pixmap);
             item->pixmap = NULL;
         }
         // set the new one
         item->pixmap = pixbuf;
-
         gtk_image_set_from_pixbuf(GTK_IMAGE(item->image), pixbuf);
-       
         gtk_widget_show(GTK_WIDGET(item->image));
     }
-    else
-    {
+    else {
         gtk_widget_hide(GTK_WIDGET(item->image));
     }
     return;
 }
 
-void gtk_content_list_item_set_icon_thumb(GtkContentListItem * item, unsigned int iconID)
-{
+void gtk_content_list_item_set_icon_thumb(GtkContentListItem * item, unsigned int iconID) {
     GdkPixbuf *pixbuf;
 
     g_return_if_fail(IS_GTK_CONTENT_LIST_ITEM(item));
 
     pixbuf = icons_get(iconID);
 
-    if (pixbuf)
-    {
+    if (pixbuf) {
         gtk_image_set_from_pixbuf(GTK_IMAGE(item->image), pixbuf);
         gtk_widget_show(GTK_WIDGET(item->image));
     }
-    else
-    {
+    else {
         gtk_widget_hide(GTK_WIDGET(item->image));
     }
     return;
 }
 
-void gtk_content_list_item_hide_thumb(GtkContentListItem * item)
-{
+void gtk_content_list_item_hide_thumb(GtkContentListItem * item) {
     g_return_if_fail(IS_GTK_CONTENT_LIST_ITEM(item));
     gtk_widget_hide(GTK_WIDGET(item->image));
 }
 
-void gtk_content_list_item_show_cursor(GtkContentListItem * item, gboolean show)
-{
+void gtk_content_list_item_show_cursor(GtkContentListItem * item, gboolean show) {
     g_return_if_fail(IS_GTK_CONTENT_LIST_ITEM(item));
 
     CL_CURSORPRINTF("entry %s", (show == TRUE) ? "TRUE" : "FALSE");
 
-    if (show)
-    {
+    if (show) {
         gtk_widget_show(item->cursorbox);
     }
-    else
-    {
+    else {
         gtk_widget_hide(item->cursorbox);
     }
 }
 
-int  get_string_lines(const gchar * string)
-{
+int  get_string_lines(const gchar * string) {
     int count = 0;
-    if (NULL == string)
-    {
+    if (NULL == string) {
         return count;
     }
    
     while(string && *string != 0)
     {
         string = strchr(string, '\n');
-        if (string)
-        { 
+        if (string) { 
             ++count; ++string; continue;
         }
         return count;

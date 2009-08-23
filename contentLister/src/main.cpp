@@ -31,6 +31,8 @@
 
 // config.h is generated based on the directives placed in the configure.ac 
 // file and user input supplied to the configure script
+extern "C" {
+
 #include <config.h>
 
 #include <gtk/gtk.h>
@@ -52,7 +54,12 @@
 #include <liberlog/erlog.h>
 #endif /* ENABLE_LOGGING */
 
+}; // end of extern "C"
 
+#include "Geometry.h"
+
+
+extern "C" {
 static startup_behaviour_t  g_startup_behaviour = behaviourUndefined_t;
 
 static  struct
@@ -199,6 +206,39 @@ void prepare_registry_write( void)
     }
 }
 
+// report startup location
+startup_behaviour_t main_get_startup_behaviour(void) {
+    return g_startup_behaviour;
+}
+
+// write modified registry: write + unlock
+void do_registry_write(void) {
+    gboolean       b;
+
+    // verify write lock
+    g_assert(lock_write == erRegGetLockState());
+    // save registry
+    b = erRegStore();
+    if (b == FALSE) {
+        CL_ERRORPRINTF("erRegStore fails with return code [%d]", b);
+    }
+    // release lock
+    erRegUnlock();
+}
+
+
+/*
+* Terminate the main loop.
+*/
+static void on_destroy(GtkWidget * widget, gpointer data) {
+    ContentLister *theContentLister = (ContentLister *) data;
+    CL_WARNPRINTF("entry");
+    ctrlDestroy(theContentLister);
+    gtk_main_quit();
+}
+
+}; // end of extern "C"
+
 // print usage text and quit
 static void usage(const char *argv_0)
 {
@@ -211,6 +251,8 @@ static void usage(const char *argv_0)
                         "options:\n"
                         "    --help\n"
                         "        Print help text and quit\n"
+                        "    --items <4-20>\n"
+                        "        Set number of items on one page\n"
                         "    --location <location>\n"
                         "        Start contentLister in <location>\n"
                         "\n"
@@ -234,83 +276,71 @@ static void parse_arguments(int argc, char **argv)
     int  j;
     gboolean found = FALSE;
 
+    { 
+      // try to read nr of items on a page from /mnt/settings/newLister
+      // For now: just read one line, and try to make a number from it. 
+      FILE *f;
+      if ((f=fopen("/mnt/settings/newLister", "r"))) {
+         int items;
+         if (fscanf(f, "%d", &items) == 1) {
+           if (items>=4 && items <=20) {
+             _G.pageItems = items;
+           }
+         }
+         fclose(f);
+      }
+      else {
+         // try to create the file if it does not exist
+         if ((f=fopen("/mnt/settings/newLister", "w"))) {
+           fprintf(f,"%d\n", _G.pageItems);
+           fclose(f);
+         }
+      }
+    }
+
     // parse contentLister options
-    for (i = 1 ; i < argc ; i++)
-    {
-        if (strcmp(argv[i], "--help") == 0)
-        {
+    for (i = 1 ; i < argc ; i++) {
+        if (strcmp(argv[i], "--help") == 0) {
             usage(argv[0]);
         }
-        else if(strcmp(argv[i], "--location") == 0)
-        {
+        else if(strcmp(argv[i], "--items") == 0) {
             i++;
-            if (i >= argc)
-            {
+            if (i >= argc) {
                 usage(argv[0]);
             }
-            else
-            {
+            else {
+                int items = 6;
+                items = atoi(argv[i]);
+                if (items <4)  items =  4;
+                if (items >20) items = 20;
+                _G.pageItems = items;
+                i++;
+            }
+        }
+        else if(strcmp(argv[i], "--location") == 0) {
+            i++;
+            if (i >= argc) {
+                usage(argv[0]);
+            }
+            else {
                 // get startup location (behaviour)
-                for (j = 0 ; g_startup_locations[j].argv ; j++)
-                {
-                    if (strcmp(argv[i],  g_startup_locations[j].argv) == 0)
-                    {
+                for (j = 0 ; g_startup_locations[j].argv ; j++) {
+                    if (strcmp(argv[i],  g_startup_locations[j].argv) == 0) {
                         g_startup_behaviour = g_startup_locations[j].behaviour;
                         found = TRUE;
                     }
                 }
-                if (!found)
-                {
+                if (!found) {
                     // invalid location specified
                     usage(argv[0]);
                 }
+                i++;
             }
         }
     }
 }
 
-// report startup location
-startup_behaviour_t main_get_startup_behaviour(void)
-{
-    return g_startup_behaviour;
-}
-
-// write modified registry: write + unlock
-void do_registry_write(void)
-{
-    gboolean       b;
-    
-    // verify write lock
-    g_assert(lock_write == erRegGetLockState());
-    
-    // save registry
-    b = erRegStore();
-    if (b == FALSE)
-    {
-        CL_ERRORPRINTF("erRegStore fails with return code [%d]", b);
-    }
-
-    // release lock
-    erRegUnlock();
-}
-
-
-/*
-* Terminate the main loop.
-*/
-static void on_destroy(GtkWidget * widget, gpointer data)
-{
-    ContentLister *theContentLister = (ContentLister *) data;
-
-    CL_WARNPRINTF("entry");
-
-    ctrlDestroy(theContentLister);
-
-    gtk_main_quit();
-}
-
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     GtkWidget *window;
     ContentLister *theContentLister;
 
@@ -322,14 +352,13 @@ int main(int argc, char *argv[])
     gdk_threads_enter();
 
     // open the RC file associate with this program
-    gtk_rc_parse(DATA_DIR "/contentLister.rc");
-    CL_LOGPRINTF("rc file %s", DATA_DIR "/contentLister.rc");
+    gtk_rc_parse(DATA_DIR "/newLister.rc");
+    CL_LOGPRINTF("rc file %s", DATA_DIR "/newLister.rc");
 
     gtk_init(&argc, &argv);
 
     gchar** files = gtk_rc_get_default_files();
-    while( *files )
-    {
+    while( *files ) {
         CL_WARNPRINTF("gtk_rc_get_default_files [%s]", *files);
         files++;
     }
@@ -350,11 +379,14 @@ int main(int argc, char *argv[])
     click_init();
 
     // create the main, top level, window 
+    
+    _G.recalc();	// calc gui geometry settings
+
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), PACKAGE " " VERSION);
     gtk_window_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
     gtk_container_set_border_width(GTK_CONTAINER(window), 0);
-    gtk_widget_set_size_request(GTK_WIDGET(window), SCREEN_WIDTH, SCREEN_HEIGHT - TOOLBAR_HEIGHT - PAGEBAR_HEIGHT);
+    gtk_widget_set_size_request(GTK_WIDGET(window), _G.top.w, _G.top.h);
     gtk_window_set_modal(GTK_WINDOW(window), TRUE);
     gtk_window_set_resizable(GTK_WINDOW(window), FALSE);
 

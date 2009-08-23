@@ -23,6 +23,10 @@
 #ifndef __ILIAD_SIGN_H__
 #define __ILIAD_SIGN_H__
 
+#ifdef __cplusplus
+extern  "C" {
+#endif  /* __cplusplus */
+
 /* These are the possible return values of the functions below */
 #define ERR_SUCCESS                        (0)
 #define ERR_INVALID_PARAMETERS             (1)
@@ -49,5 +53,9 @@ int iliad_create_signature(char * input_filename, char * signature_filename);
  * signature_filename. This uses the iLiad public key.
  */
 int iliad_verify_signature(char * input_filename, char * signature_filename);
+
+#ifdef __cplusplus
+}
+#endif  /* __cplusplus */
 
 #endif

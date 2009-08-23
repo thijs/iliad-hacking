@@ -32,7 +32,9 @@
 // config.h is generated based on the directives placed in the configure.ac 
 // file and user input supplied to the configure script
 
+#ifndef _GNU_SOURCE
 #define _GNU_SOURCE
+#endif
 
 #include <config.h>
 
@@ -67,6 +69,7 @@
 #include "toolbar.h"
 #include "pagebar.h"
 #include "languages.h"
+#include "Geometry.h"
 
 // local types
 typedef enum
@@ -131,7 +134,7 @@ static gboolean ctrl_send_to_outbox(const gchar* szSourcename, const gboolean bD
         szFilename++;
 
         // create outbox if needed
-        szTargetname = alloca( strlen(device) + 1 + strlen(OUTBOX_NAME) + 1 + strlen(szFilename) + 3 + 1 );
+        szTargetname = (gchar *)alloca( strlen(device) + 1 + strlen(OUTBOX_NAME) + 1 + strlen(szFilename) + 3 + 1 );
         g_assert(szTargetname != NULL);
         sprintf(szTargetname, "%s/" OUTBOX_NAME, device);
         (void)mkdir(szTargetname, 0755);
@@ -175,12 +178,12 @@ static gboolean ctrl_send_to_outbox(const gchar* szSourcename, const gboolean bD
                 argv[argc++] = "cp";
                 argv[argc++] = "-r";
                 //
-                cp = alloca( strlen(szSourcename) + 1 );
+                cp = (gchar *)alloca( strlen(szSourcename) + 1 );
                 g_assert(cp != NULL);
                 strcpy( cp, szSourcename);
                 argv[argc++] = cp;
                 //
-                cp = alloca( strlen(szTargetname) + 1 );
+                cp = (gchar *)alloca( strlen(szTargetname) + 1 );
                 g_assert(cp != NULL);
                 strcpy( cp, szTargetname);
                 argv[argc++] = cp;
@@ -225,7 +228,7 @@ void ctrl_listItem_share(const int* index_tbl, ContentLister* theContentLister)
     erbusy_blink();
 
     // update the stored index value
-    mdsSetIndex(theContentLister->currentContentType, index + ((theContentLister->currentPage - 1) * MAX_ITEMS_ON_ONE_PAGE));
+    mdsSetIndex(theContentLister->currentContentType, index + ((theContentLister->currentPage - 1) * _G.pageItems));
 
     // remember which item we are sharing
     g_item_to_be_shared.index            = index;
@@ -289,7 +292,7 @@ void ctrl_doc_share_now(ContentLister* theContentLister)
         else
         {
             // determine containername
-            szContainerName = alloca( strlen(theItem->szManifest) + 1 );
+            szContainerName = (gchar *)alloca( strlen(theItem->szManifest) + 1 );
             g_assert(szContainerName != NULL);
             strcpy(szContainerName, theItem->szManifest);
             cp = strrchr(szContainerName, '/');
@@ -338,7 +341,7 @@ static gchar* ctrl_sign_container(const char* szSourceContainer)
 
     // get current date-time string
     n = 19 + 1;
-    szDateTime = alloca(n);
+    szDateTime = (gchar *)alloca(n);
     g_assert(szDateTime != NULL);
     t_time  = time(NULL);
     tm_time = localtime( &t_time );
@@ -363,7 +366,7 @@ static gchar* ctrl_sign_container(const char* szSourceContainer)
     szSourceName++;
     //     target container name
     n = strlen(szSourceContainer) + 1 + 8 + strlen(szDateTime) + 1;
-    szTargetContainer = alloca(n);
+    szTargetContainer = (gchar *)alloca(n);
     g_assert(szTargetContainer != NULL);
     strcpy(szTargetContainer, szSourceContainer);
     cp= strrchr(szTargetContainer, '/');
@@ -376,12 +379,12 @@ static gchar* ctrl_sign_container(const char* szSourceContainer)
     }
     //     target tarfile name
     n = strlen(szTargetContainer) + 1 + strlen(szSourceName) + strlen(TARFILE_EXTENSION) + 1;
-    szTargetTarfile = alloca(n);
+    szTargetTarfile = (gchar *)alloca(n);
     g_assert(szTargetTarfile != NULL);
     snprintf(szTargetTarfile, n, "%s/%s%s", szTargetContainer, szSourceName, TARFILE_EXTENSION);
     //     target signature filename
     n = strlen(szTargetContainer) + 1 + strlen(szSourceName) + strlen(SIGNATURE_EXTENSION) + 1;
-    szTargetSignature = alloca(n);
+    szTargetSignature = (gchar *)alloca(n);
     g_assert(szTargetSignature != NULL);
     snprintf(szTargetSignature, n, "%s/%s%s", szTargetContainer, szSourceName, SIGNATURE_EXTENSION);
 
@@ -394,7 +397,7 @@ static gchar* ctrl_sign_container(const char* szSourceContainer)
         argv[argc++] = "rm";
         argv[argc++] = "-rf";
         //
-        cp = alloca( strlen(szTargetContainer) + 1 );
+        cp = (gchar *)alloca( strlen(szTargetContainer) + 1 );
         g_assert(cp != NULL);
         strcpy(cp, szTargetContainer);
         argv[argc++] = cp;
@@ -419,12 +422,12 @@ static gchar* ctrl_sign_container(const char* szSourceContainer)
     }
     //     remember source manifest filename
     ccp = ermXmlGetFileName(&manifest);
-    szSourceManifest = alloca( strlen(ccp) + 1 );
+    szSourceManifest = (gchar *)alloca( strlen(ccp) + 1 );
     g_assert(szSourceManifest != NULL);
     strcpy(szSourceManifest, ccp);
     //     save original manifest file
     n = strlen(szSourceManifest) + 4 + 1;
-    szSourceManifestOld = alloca(n);
+    szSourceManifestOld = (gchar *)alloca(n);
     g_assert(szSourceManifestOld != NULL);
     snprintf(szSourceManifestOld, n, "%s.old", szSourceManifest);
     rc = ermXmlSaveAs(&manifest, szSourceManifestOld);
@@ -501,12 +504,12 @@ static gchar* ctrl_sign_container(const char* szSourceContainer)
     argv[argc++] = "tar";
     argv[argc++] = "-czf";
     //
-    cp = alloca( strlen(szTargetTarfile) + 1 );
+    cp = (gchar *)alloca( strlen(szTargetTarfile) + 1 );
     g_assert(cp != NULL);
     strcpy(cp, szTargetTarfile);
     argv[argc++] = cp;
     //
-    cp = alloca( strlen(szSourceName) + 1 );
+    cp = (gchar *)alloca( strlen(szSourceName) + 1 );
     g_assert(cp != NULL);
     strcpy(cp, szSourceName);
     argv[argc++] = cp;
@@ -549,12 +552,12 @@ static gchar* ctrl_sign_container(const char* szSourceContainer)
     argc = 0;
     argv[argc++] = "cp";
     //
-    cp = alloca( strlen(szSourceManifest) + 1 );
+    cp = (gchar *)alloca( strlen(szSourceManifest) + 1 );
     g_assert(cp != NULL);
     strcpy( cp, szSourceManifest);
     argv[argc++] = cp;
     //
-    cp = alloca( strlen(szTargetContainer) + 1 );
+    cp = (gchar *)alloca( strlen(szTargetContainer) + 1 );
     g_assert(cp != NULL);
     strcpy( cp, szTargetContainer);
     argv[argc++] = cp;
@@ -622,7 +625,7 @@ static void ctrl_sign_pincode_ok()
     erbusy_blink();
 
     // determine containername
-    szContainer = alloca( strlen(theItem->szManifest) + 1 );
+    szContainer = (gchar *)alloca( strlen(theItem->szManifest) + 1 );
     g_assert(szContainer != NULL);
     strcpy(szContainer, theItem->szManifest);
     cp = strrchr(szContainer, '/');
@@ -645,7 +648,7 @@ static void ctrl_sign_pincode_ok()
             argv[argc++] = "rm";
             argv[argc++] = "-rf";
             //
-            cp = alloca( strlen(szContainer) + 1 );
+            cp = (gchar *)alloca( strlen(szContainer) + 1 );
             g_assert(cp != NULL);
             strcpy(cp, szContainer);
             argv[argc++] = cp;
@@ -752,19 +755,19 @@ static gboolean ctrl_show_sel_list_wnd(int itemIndex, ContentLister* theContentL
 
             // build table with item names
             item_num = selection->num_items;
-            item_tbl = alloca((item_num + 1) * sizeof(gchar*));
+            item_tbl = (const gchar **)alloca((item_num + 1) * sizeof(gchar*));
             item     = selection->items;
             for (item_idx = 0 ; item_idx < item_num ; item_idx++, item++)
             {
-                item_tbl[item_idx] = item->name;
+                item_tbl[item_idx] = (const gchar *)item->name;
             }
             item_tbl[item_idx] = NULL;
 
             // add this selection to screen layout
-            sel_group = dist_list_wnd_add_list( selection->display_as,
-                                                selection->title,
-                                                selection->instruction,
-                                                item_tbl );
+            sel_group = dist_list_wnd_add_list( (const gchar *)selection->display_as,
+                                                (const gchar *)selection->title,
+                                                (const gchar *)selection->instruction,
+                                                               item_tbl );
             g_selection_groups[sel_idx] = sel_group;
 
             // set buttons state
@@ -794,7 +797,7 @@ static gboolean ctrl_show_sel_list_wnd(int itemIndex, ContentLister* theContentL
         }
     }
 
-    item_tbl    = alloca(sizeof(gchar*));
+    item_tbl    = (const gchar**) alloca(sizeof(gchar*));
     item_tbl[0] = NULL;
     sel_group = dist_list_wnd_add_list("default", "", _("Click the 'Share' icon to add this document to your outbox."), item_tbl);
     ergtk_selection_list_show_titlebar(ERGTK_SELECTION_LIST(sel_group), FALSE);
@@ -802,7 +805,7 @@ static gboolean ctrl_show_sel_list_wnd(int itemIndex, ContentLister* theContentL
     dist_list_wnd_goto_page(1);
 
     // hide not-selected lister items, then show distribution list screen
-    for (i = 0 ; i < MAX_ITEMS_ON_ONE_PAGE ; i++)
+    for (i = 0 ; i < _G.pageItems ; i++)
     {
         if (i != itemIndex)
         {
@@ -850,8 +853,8 @@ void ctrl_hide_sel_list_wnd(ContentLister* theContentLister, gboolean bSave)
                 // update XML item states from button states
                 if (selection->constant == FALSE  &&  sel_group)
                 {
-                    button_ids    = alloca(item_num * sizeof(gint)    );
-                    button_states = alloca(item_num * sizeof(gboolean));
+                    button_ids    = (gint *)alloca(item_num * sizeof(gint)    );
+                    button_states = (gboolean *)alloca(item_num * sizeof(gboolean));
                     g_assert(button_ids    != NULL);
                     g_assert(button_states != NULL);
                     ergtk_selection_group_get_selected_buttons(ERGTK_SELECTION_GROUP(sel_group), button_ids, item_num);

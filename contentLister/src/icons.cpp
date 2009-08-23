@@ -36,81 +36,83 @@
 #include "erMdsContent.h"
 #include "icons.h"
 
+#include "Geometry.h"
 
 static GdkPixbuf *g_icons[ICON_COUNT];
 
 
 void icons_init()
 {
+    int W=_G.icon.w-11; int H=_G.icon.h-11;
     GError *error = NULL;
 
-    g_icons[clFolderIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_folder.png", &error);
+    g_icons[clFolderIcon] = icons_load(DATA_DIR "/Icon_folder.png");
     if (NULL == g_icons[clFolderIcon])
     {
         CL_ERRORPRINTF("clFolderIcon - error %s", error->message);
     }
 
-    g_icons[clUnknownIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_unknown.png", &error);
+    g_icons[clUnknownIcon] = icons_load(DATA_DIR "/Icon_unknown.png");
     if (NULL == g_icons[clUnknownIcon])
     {
         CL_ERRORPRINTF("clUnknownIcon - error %s", error->message);
     }
 
-    g_icons[clBookIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_books.png", &error);
+    g_icons[clBookIcon] = icons_load(DATA_DIR "/Icon_books.png");
     if (NULL == g_icons[clBookIcon])
     {
         CL_ERRORPRINTF("clBookIcon - error %s", error->message);
     }
 
-    g_icons[clDocumentIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_documents.png", &error);
+    g_icons[clDocumentIcon] = icons_load(DATA_DIR "/Icon_documents.png");
     if (NULL == g_icons[clDocumentIcon])
     {
         CL_ERRORPRINTF("clDocumentIcon - error %s", error->message);
     }
 
-    g_icons[clMagazineIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_magazines.png", &error);
+    g_icons[clMagazineIcon] = icons_load(DATA_DIR "/Icon_magazines.png");
     if (NULL == g_icons[clMagazineIcon])
     {
         CL_ERRORPRINTF("clMagazineIcon - error %s", error->message);
     }
 
-    g_icons[clMiscIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_misc.png", &error);
+    g_icons[clMiscIcon] = icons_load(DATA_DIR "/Icon_misc.png");
     if (NULL == g_icons[clMiscIcon])
     {
         CL_ERRORPRINTF("clMiscIcon - error %s", error->message);
     }
 
-    g_icons[clMp3Icon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_mp3.png", &error);
+    g_icons[clMp3Icon] = icons_load(DATA_DIR "/Icon_mp3.png");
     if (NULL == g_icons[clMp3Icon])
     {
         CL_ERRORPRINTF("clMp3Icon - error %s", error->message);
     }
 
-    g_icons[clNewspaperIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_newspapers.png", &error);
+    g_icons[clNewspaperIcon] = icons_load(DATA_DIR "/Icon_newspapers.png");
     if (NULL == g_icons[clNewspaperIcon])
     {
         CL_ERRORPRINTF("clNewspaperIcon - error %s", error->message);
     }
 
-    g_icons[clNoteIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_notes.png", &error);
+    g_icons[clNoteIcon] = icons_load(DATA_DIR "/Icon_notes.png");
     if (NULL == g_icons[clNoteIcon])
     {
         CL_ERRORPRINTF("clNoteIcon - error %s", error->message);
     }
 
-    g_icons[clPhotoIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_photos.png", &error);
+    g_icons[clPhotoIcon] = icons_load(DATA_DIR "/Icon_photos.png");
     if (NULL == g_icons[clPhotoIcon])
     {
         CL_ERRORPRINTF("clPhotoIcon - error %s", error->message);
     }
 
-    g_icons[clReviewIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_reviews.png", &error);
+    g_icons[clReviewIcon] = icons_load(DATA_DIR "/Icon_reviews.png");
     if (NULL == g_icons[clReviewIcon])
     {
         CL_ERRORPRINTF("clReviewIcon - error %s", error->message);
     }
 
-    g_icons[clOutboxIcon] = gdk_pixbuf_new_from_file(DATA_DIR "/Icon_outbox.png", &error);
+    g_icons[clOutboxIcon] = icons_load(DATA_DIR "/Icon_outbox.png");
     if (NULL == g_icons[clReviewIcon])
     {
         CL_ERRORPRINTF("clReviewIcon - error %s", error->message);
@@ -156,7 +158,8 @@ GdkPixbuf *icons_load(const char *location)
 
     if (location)
     {
-        image = gdk_pixbuf_new_from_file_at_size(location, LOADED_ICON_MAX_WIDTH, LOADED_ICON_MAX_HEIGHT, &error);
+        int W=_G.icon.w-11; int H=_G.icon.h-11;
+        image = gdk_pixbuf_new_from_file_at_size(location, W, H, &error);
 
         if (NULL == image)
         {

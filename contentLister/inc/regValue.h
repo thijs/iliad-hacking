@@ -32,6 +32,10 @@
 #ifndef __CL_REGVALUE__H__
 #define __CL_REGVALUE__H__
 
+#ifdef __cplusplus
+extern  "C" {
+#endif  /* __cplusplus */
+
 #include <liberregxml/erregapi.h>
 
 // program arguments
@@ -46,5 +50,8 @@ void do_registry_write(void);
 // startup behaviour from command-line (in main.c)
 startup_behaviour_t main_get_startup_behaviour(void);
 
+#ifdef __cplusplus
+}
+#endif  /* __cplusplus */
 
 #endif  //__CL_REGVALUE__H__

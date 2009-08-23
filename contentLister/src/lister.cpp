@@ -43,6 +43,8 @@
 #include <libermanifest/ermanifest.h>
 #include <liberdm/display.h>
 
+#include "Geometry.h"
+
 #include "contentListerLog.h"
 #include "gtkContentListItem.h"
 #include "erConnect.h"
@@ -82,7 +84,7 @@ lsLister_t *lsInit(GtkWidget * topLevelWidget, gpointer data)
     //     topLevelWidget
     //       |-- listVBox
     //             |
-    listVBox = gtk_vbox_new(FALSE, LIST_ITEM_SPACING);
+    listVBox = gtk_vbox_new(FALSE, _G.itemSpacing);
     gtk_container_add(GTK_CONTAINER(topLevelWidget), listVBox);
     gtk_widget_show(listVBox);
     //             |
@@ -90,12 +92,12 @@ lsLister_t *lsInit(GtkWidget * topLevelWidget, gpointer data)
     //             |     |-- titleBackground
     //             |           |
     alignment = gtk_alignment_new(0, 0, 0, 0);
-    gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), 0, 0, LISTER_BOX_BORDER, 0);
+    gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), 0, 0, _G.listerBorder, 0);
     gtk_box_pack_start(GTK_BOX(listVBox), alignment, FALSE, FALSE, 0);
     gtk_widget_show(alignment);
     //
     titleBackground = gtk_event_box_new();
-    gtk_widget_set_size_request(GTK_WIDGET(titleBackground), TITLE_MIN_WIDTH, TITLE_MIN_HEIGHT);
+    gtk_widget_set_size_request(GTK_WIDGET(titleBackground), _G.title.w, _G.title.h);
     gtk_widget_set_name(GTK_WIDGET(titleBackground), "title_background");
     gtk_container_add(GTK_CONTAINER(alignment), titleBackground);
     g_signal_connect(G_OBJECT(titleBackground), "expose-event", G_CALLBACK(ls_lister_expose_event), NULL);
@@ -106,7 +108,7 @@ lsLister_t *lsInit(GtkWidget * topLevelWidget, gpointer data)
     //             |                 |-- g_lister.titleLocation (GtkLabel)
     //             |
     titleContainer = gtk_hbox_new(FALSE, 10);
-    gtk_widget_set_size_request(GTK_WIDGET(titleContainer), TITLE_MIN_WIDTH, TITLE_MIN_HEIGHT);    
+    gtk_widget_set_size_request(GTK_WIDGET(titleContainer), _G.title.w, _G.title.h);    
     gtk_container_add(GTK_CONTAINER(titleBackground), titleContainer);
     gtk_widget_show(titleContainer);
     //
@@ -127,7 +129,7 @@ lsLister_t *lsInit(GtkWidget * topLevelWidget, gpointer data)
     //             |--   ...
     //             |-- g_lister.listItems[..] (GtkContentListItem)
     //
-    for (index = 0; index < MAX_ITEMS_ON_ONE_PAGE; index++)
+    for (index = 0; index < _G.pageItems; index++)
     {
         listItem = gtk_content_list_item_new(index);
         gtk_content_list_item_show_cursor(GTK_CONTENT_LIST_ITEM(listItem), FALSE);
@@ -143,7 +145,7 @@ lsLister_t *lsInit(GtkWidget * topLevelWidget, gpointer data)
 GtkWidget * lsGetListerItem(lsLister_t * lister, int index)
 {
     g_assert(lister != NULL);
-    g_assert(index >= 0  &&  index < MAX_ITEMS_ON_ONE_PAGE);
+    g_assert(index >= 0  &&  index < _G.pageItems);
 
     return lister->listItems[index];
 }
@@ -180,7 +182,7 @@ void lsUpdatePage(lsLister_t * lister, clDisplayItem_t * items,
 
 
     // update and display used lister items, hide the others
-    for (index = 0 ; index < MAX_ITEMS_ON_ONE_PAGE ; index++)
+    for (index = 0 ; index < _G.pageItems ; index++)
     {
         listerItem = lister->listItems[index];
 

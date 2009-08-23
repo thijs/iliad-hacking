@@ -34,7 +34,9 @@
 // configure.ac 
 // file and user input supplied to the configure script
 
+#ifndef _GNU_SOURCE
 #define _GNU_SOURCE
+#endif
 
 #include <config.h>
 #include <stdio.h>
@@ -60,6 +62,7 @@
 #include <liberipc/eripctoolbar.h>
 #include <libermanifest/ermanifest.h>
 
+#include "Geometry.h"
 #include "contentListerLog.h"
 #include "erConnect.h"
 #include "erMSDisk.h"
@@ -326,7 +329,7 @@ gboolean on_idle_connect_start_background(gpointer p)
 
     g_assert(p);
 
-    e_ctrl_connect_reason_t connReason = (e_ctrl_connect_reason_t)p;
+    e_ctrl_connect_reason_t connReason = (e_ctrl_connect_reason_t)(int)p;
 
     const gchar* uaOnTop = pm_getUaOnTop();
 
@@ -447,7 +450,7 @@ void ctrl_set_connect_icon()
         }
         else if (g_new_content_acknowledged)
         {
-            toolbar_setIconState(iconID_connect, g_background_connect_enable ? iconState_IDconnect_time : iconState_normal);
+            toolbar_setIconState(iconID_connect, g_background_connect_enable ? (e_iconState_t)iconState_IDconnect_time : iconState_normal);
             g_new_content_received = FALSE;
         }
         else
@@ -457,7 +460,7 @@ void ctrl_set_connect_icon()
     }
     else
     {
-        toolbar_setIconState(iconID_connect, g_background_connect_enable ? iconState_IDconnect_time : iconState_normal);
+        toolbar_setIconState(iconID_connect, g_background_connect_enable ? (e_iconState_t)iconState_IDconnect_time : iconState_normal);
     }
 }
 
@@ -513,7 +516,7 @@ static void ctrl_listItem_focus_no_redraw(int index, gpointer data)
     if (index >= 0)
     {
         mdsSetIndex( theContentLister->currentContentType, 
-                     (MAX_ITEMS_ON_ONE_PAGE * (theContentLister->currentPage - 1)) + index );
+                     (_G.pageItems * (theContentLister->currentPage - 1)) + index );
     }
 }
 
@@ -563,7 +566,7 @@ static void ctrl_listItem_delete(const int* index_tbl, ContentLister* theContent
             else
             {
                 // update the stored index value
-                itemIndex = MAX_ITEMS_ON_ONE_PAGE * (theContentLister->currentPage - 1) + index;
+                itemIndex = _G.pageItems * (theContentLister->currentPage - 1) + index;
                 mdsSetIndex(theContentLister->currentContentType, itemIndex);
                 switch (theItem->fit)
                 {
@@ -582,7 +585,7 @@ static void ctrl_listItem_delete(const int* index_tbl, ContentLister* theContent
                     case mdsFitContainer:
                     case mdsFitManifestDirectory:
                         CL_WARNPRINTF("-- deleting container [%s]", theItem->szManifest);
-                        dir = alloca( strlen(theItem->szManifest) + 1 );
+                        dir = (char *)alloca( strlen(theItem->szManifest) + 1 );
                         g_assert(dir != NULL);
                         strcpy(dir, theItem->szManifest);
                         cp = strrchr(dir, '/');
@@ -916,7 +919,7 @@ static int ctrl_scan_content(ContentLister * theContentLister, ctrlScanType_e sc
 {
     int totalItemCount;
     int result = ERMDS_CONTENT_SCAN_FAILED;
-    int req_cnt = MAX_ITEMS_ON_ONE_PAGE;
+    int req_cnt = _G.pageItems;
     int itemIndex = 0;
     int startindex;
 
@@ -983,12 +986,12 @@ static int ctrl_scan_content(ContentLister * theContentLister, ctrlScanType_e sc
 
         if (totalItemCount > 0)
         {
-            theContentLister->pagecount = (totalItemCount + (MAX_ITEMS_ON_ONE_PAGE - 1)) / MAX_ITEMS_ON_ONE_PAGE;
-            theContentLister->currentPage = (itemIndex / MAX_ITEMS_ON_ONE_PAGE) + 1;
-            theContentLister->currentFocus = itemIndex % MAX_ITEMS_ON_ONE_PAGE;
+            theContentLister->pagecount = (totalItemCount + (_G.pageItems - 1)) / _G.pageItems;
+            theContentLister->currentPage = (itemIndex / _G.pageItems) + 1;
+            theContentLister->currentFocus = itemIndex % _G.pageItems;
             CL_CURSORPRINTF("page %d focus %d", theContentLister->currentPage, theContentLister->currentFocus);
 
-            startindex = MAX_ITEMS_ON_ONE_PAGE * (theContentLister->currentPage - 1);
+            startindex = _G.pageItems * (theContentLister->currentPage - 1);
             mdsSetPageContent(theContentLister->items, startindex, &req_cnt);
             theContentLister->itemCount = req_cnt;
 
@@ -1058,7 +1061,7 @@ unsigned int ctrl_get_item_index(ContentLister * theContentLister)
         pageIndex = 0;
     }
 
-    itemIndex = (pageIndex * MAX_ITEMS_ON_ONE_PAGE);
+    itemIndex = (pageIndex * _G.pageItems);
     if (itemIndex >= 0)
     {
         itemIndex += theContentLister->currentFocus;
@@ -1093,10 +1096,10 @@ static void ctrl_init_screen_layout(GtkWidget * topLevelWindow, ContentLister * 
     //
     GtkWidget* alignment = gtk_alignment_new(0.0, 0.0, 0.0, 0.0);
     gtk_widget_show(alignment);
-    gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), LISTER_BOX_BORDER, 0, 0, 0);
+    gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), _G.listerBorder, 0, 0, 0);
     gtk_container_add(GTK_CONTAINER(theContentLister->listerScreen), alignment);
     // 
-    GtkWidget *vbox = gtk_vbox_new(FALSE, LIST_ITEM_SPACING);
+    GtkWidget *vbox = gtk_vbox_new(FALSE, _G.itemSpacing);
     gtk_container_add(GTK_CONTAINER(alignment), vbox);
     gtk_widget_show(vbox);
     //             |                 |-- theContentLister->listerArea (event box)
@@ -1111,7 +1114,7 @@ static void ctrl_init_screen_layout(GtkWidget * topLevelWindow, ContentLister * 
     //             |                       |-- vbox
     //             |                             |
     alignment = gtk_alignment_new(0.0, 0.0, 0.0, 0.0);
-    gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), 0, 0, LISTER_BOX_BORDER, 0);
+    gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), 0, 0, _G.listerBorder, 0);
     gtk_box_pack_start(GTK_BOX(vbox), alignment, FALSE, FALSE, 0);
     gtk_widget_show(alignment);
     // 
@@ -1409,7 +1412,7 @@ static guint ctrl_listerArea_keypress(GtkWidget * widget, GdkEventKey * event, C
                 CL_CONTROLPRINTF("jumping to focused item %d", theContentLister->currentFocus);
 
                 // find the item that has the focus
-                if (theContentLister->currentFocus >= 0 && theContentLister->currentFocus < MAX_ITEMS_ON_ONE_PAGE)
+                if (theContentLister->currentFocus >= 0 && theContentLister->currentFocus < _G.pageItems)
                 {
                     ctrl_listItem_clicked(theContentLister->currentFocus, theContentLister);
                 }
@@ -1536,7 +1539,7 @@ void ctrl_goto_page(int pagenumber)
     CL_SCREENPRINTF("entry: pagenum [%d]", pagenumber);
 
     int startindex;
-    int req_cnt = MAX_ITEMS_ON_ONE_PAGE;
+    int req_cnt = _G.pageItems;
     ContentLister *theContentLister = gContentLister;
 
     if (   getListerState() == STATE_MISC
@@ -1548,7 +1551,7 @@ void ctrl_goto_page(int pagenumber)
              && (pagenumber <= theContentLister->pagecount))
     {
         theContentLister->currentPage = pagenumber;
-        startindex = MAX_ITEMS_ON_ONE_PAGE * (pagenumber - 1);
+        startindex = _G.pageItems * (pagenumber - 1);
 
         ctrl_select_stop(TRUE);
 
@@ -1574,7 +1577,7 @@ int ctrl_goto_item(const gchar * szFilename)
     CL_SCREENPRINTF("entry: filename [%s]", szFilename);
 
     int startindex;
-    int req_cnt = MAX_ITEMS_ON_ONE_PAGE;
+    int req_cnt = _G.pageItems;
     ContentLister *theContentLister = gContentLister;
 
     // find index for specified file
@@ -1585,13 +1588,13 @@ int ctrl_goto_item(const gchar * szFilename)
         index = 0;
     }
     // display and select the specified file
-    int pagenumber = (index / MAX_ITEMS_ON_ONE_PAGE) + 1;
-    int pageindex = index % MAX_ITEMS_ON_ONE_PAGE;
+    int pagenumber = (index / _G.pageItems) + 1;
+    int pageindex = index % _G.pageItems;
     if ((pagenumber > 0) && (pagenumber <= theContentLister->pagecount))
     {
         // select the correct page
         theContentLister->currentPage = pagenumber;
-        startindex = MAX_ITEMS_ON_ONE_PAGE * (pagenumber - 1);
+        startindex = _G.pageItems * (pagenumber - 1);
 
         // retrieve new page content
         mdsSetPageContent(theContentLister->items, startindex, &req_cnt);
@@ -2437,7 +2440,7 @@ static void ctrl_select_stop(gboolean restore_toolbar)
         {
             // if nothing selected show cursor on first item
             selected = FALSE;
-            for (i = 0 ; !selected && i < MAX_ITEMS_ON_ONE_PAGE; i++)
+            for (i = 0 ; !selected && i < _G.pageItems; i++)
             {
                 if (g_select.item_selected[i])
                 {
@@ -2504,7 +2507,7 @@ static gboolean ctrl_on_select_timer(gpointer data)
             {
                 // report the currently selected item(s)
                 ip = item_idx;
-                for (i = MAX_ITEMS_ON_ONE_PAGE - 1 ; i >= 0 ; i--)
+                for (i = _G.pageItems - 1 ; i >= 0 ; i--)
                 {
                     if (g_select.item_selected[i])
                     {
@@ -2578,7 +2581,7 @@ void ctrl_select_listitem(int iconID, gboolean confirm_with_icon, on_item_select
     
     // de-select contentlister items
     ctrl_listItem_focus(-1, gContentLister);
-    for (i = 0 ; i < MAX_ITEMS_ON_ONE_PAGE; i++)
+    for (i = 0 ; i < _G.pageItems; i++)
     {
         g_select.item_selected[i] = FALSE;
     }
@@ -2957,7 +2960,7 @@ static void ctrl_listItem_edit(const int* index_tbl, ContentLister* theContentLi
     // hide not-selected lister items, then show edit screen
     int i;
     GtkWidget *listItem;
-    for (i = 0; i < MAX_ITEMS_ON_ONE_PAGE; i++)
+    for (i = 0; i < _G.pageItems; i++)
     {
         if (i != index)
         {
@@ -3019,7 +3022,7 @@ static gboolean ctrl_show_search_wnd(gpointer data)
     // hide lister items, then show edit screen
     int i;
     GtkWidget *listItem;
-    for (i = 0; i < MAX_ITEMS_ON_ONE_PAGE; i++)
+    for (i = 0; i < _G.pageItems; i++)
     {
         listItem = lsGetListerItem(gContentLister->lister, i);
         gtk_widget_hide(listItem);
@@ -3939,7 +3942,7 @@ static gboolean ctrl_show_sort_wnd(gpointer data)
     // hide lister items, then show edit screen
     int i;
     GtkWidget *listItem;
-    for (i = 0; i < MAX_ITEMS_ON_ONE_PAGE; i++)
+    for (i = 0; i < _G.pageItems; i++)
     {
         listItem = lsGetListerItem(gContentLister->lister, i);
         gtk_widget_hide(listItem);
