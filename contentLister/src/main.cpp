@@ -283,7 +283,7 @@ static void parse_arguments(int argc, char **argv)
       if ((f=fopen("/mnt/settings/newLister", "r"))) {
          int items;
          if (fscanf(f, "%d", &items) == 1) {
-           if (items>=4 && items <=20) {
+           if (items>=4 && items <=24) {
              _G.pageItems = items;
            }
          }
@@ -337,7 +337,7 @@ static void parse_arguments(int argc, char **argv)
                 int items = 6;
                 items = atoi(argv[i]);
                 if (items <4)  items =  4;
-                if (items >20) items = 20;
+                if (items >24) items = 24;
                 _G.pageItems = items;
                 i++;
             }
