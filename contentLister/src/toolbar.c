@@ -54,6 +54,10 @@ static gboolean g_search_selected      = FALSE;
 static gboolean g_sort_selected        = FALSE;
 static gboolean g_share_selected       = FALSE;
 
+static gboolean g_rate_aaa_selected    = FALSE;
+static gboolean g_rate_aa_selected     = FALSE;
+static gboolean g_rate_a_selected      = FALSE;
+
 static gint     g_lock_screen_state = iconState_normal;
 static gint     g_connect_state     = iconState_grey;
 
@@ -67,7 +71,7 @@ void toolbar_init()
     int returnValue;
 
     CL_TBPRINTF("entry");
-    
+
     // create/init the channel to communicate with the toolbar service
     returnValue = erIpcStartClient(ER_TOOLBAR_CHANNEL, &toolbarChannel);
 
@@ -86,10 +90,10 @@ void toolbar_restore()
 
     // freeze toolbar layout
     tbDisableUpdate(toolbarChannel, ER_CONTENT_LISTER_UA_ID);
-    
+
     // clear toolbar, set system icons
     toolbar_clear_internal();
-    
+
     // set application-specific icons
     //
     //     disable search icon
@@ -99,11 +103,24 @@ void toolbar_restore()
      //     disable sort icon
     tbAppendPlatformIcon(  toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_sort, ccClToolbarIcon);
     tbSetStatePlatformIcon(toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_sort, iconState_grey );
-    g_sort_selected = FALSE;  
+    g_sort_selected = FALSE;
 
     //     disable share icon
     tbAppendPlatformIcon(  toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_share, ccClToolbarIcon);
     tbSetStatePlatformIcon(toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_share, iconState_grey );
+
+     //     disable rate A++ icon
+    tbAppendPlatformIcon(  toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_rate_aaa, ccClToolbarIcon);
+    tbSetStatePlatformIcon(toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_rate_aaa, iconState_grey );
+    g_rate_aaa_selected = FALSE;
+     //     disable rate A+ icon
+    tbAppendPlatformIcon(  toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_rate_aa, ccClToolbarIcon);
+    tbSetStatePlatformIcon(toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_rate_aa, iconState_grey );
+    g_rate_aa_selected = FALSE;
+     //     disable rate A icon
+    tbAppendPlatformIcon(  toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_rate_a, ccClToolbarIcon);
+    tbSetStatePlatformIcon(toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_rate_a, iconState_grey );
+    g_rate_a_selected = FALSE;
 
     // redraw toolbar now
     tbEnableUpdate(toolbarChannel, ER_CONTENT_LISTER_UA_ID);
@@ -138,7 +155,7 @@ static void toolbar_clear_internal()
     tbAppendPlatformIcon(  toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_locked, ccClToolbarIcon);
     tbSetStatePlatformIcon(toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_locked, g_locked_selected ? iconState_selected : iconState_normal);
     //
-    //     disable keyboard icon    
+    //     disable keyboard icon
     tbAppendPlatformIcon(  toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_keyboard, ccClToolbarIcon);
     tbSetStatePlatformIcon(toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID_keyboard, iconState_grey );
     //
@@ -154,7 +171,7 @@ void toolbar_clear()
 
     // freeze toolbar layout
     tbDisableUpdate(toolbarChannel, ER_CONTENT_LISTER_UA_ID);
-    
+
     // clear the toolbar
     toolbar_clear_internal();
 
@@ -182,7 +199,7 @@ void toolbar_enableUpdate()
 void toolbar_setIconState(int iconID, int iconState)
 {
     CL_TBPRINTF("entry: iconID [%d] iconState [%d]", iconID, iconState);
-    
+
     tbSetStatePlatformIcon(toolbarChannel, ER_CONTENT_LISTER_UA_ID, iconID, iconState);
     switch (iconID)
     {
@@ -199,17 +216,28 @@ void toolbar_setIconState(int iconID, int iconState)
             g_locked_selected = (iconState == iconState_selected);
             break;
         case iconID_tagging:
-            g_tagging_selected = (iconState == iconState_selected);     
+            g_tagging_selected = (iconState == iconState_selected);
             break;
         case iconID_search:
             g_search_selected = (iconState == iconState_selected);
-            break;            
+            break;
         case iconID_sort:
             g_sort_selected = (iconState == iconState_selected);
-            break;            
+            break;
         case iconID_share:
             g_share_selected = (iconState == iconState_selected);
-            break;            
+            break;
+
+        case iconID_rate_a:
+            g_rate_a_selected = (iconState == iconState_selected);
+            break;
+        case iconID_rate_aa:
+            g_rate_aa_selected = (iconState == iconState_selected);
+            break;
+        case iconID_rate_aaa:
+            g_rate_aaa_selected = (iconState == iconState_selected);
+            break;
+
         default:
             /* ignore */ ;
     }
@@ -263,4 +291,23 @@ gboolean toolbar_is_share_selected()
 {
     CL_TBPRINTF("return [%d]", g_share_selected);
     return g_share_selected;
+}
+
+
+gboolean toolbar_is_rate_a_selected()
+{
+    CL_TBPRINTF("return [%d]", g_rate_a_selected);
+    return g_rate_a_selected;
+}
+
+gboolean toolbar_is_rate_aa_selected()
+{
+    CL_TBPRINTF("return [%d]", g_rate_aa_selected);
+    return g_rate_aa_selected;
+}
+
+gboolean toolbar_is_rate_aaa_selected()
+{
+    CL_TBPRINTF("return [%d]", g_rate_aaa_selected);
+    return g_rate_aaa_selected;
 }

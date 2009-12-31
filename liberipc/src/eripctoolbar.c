@@ -109,7 +109,11 @@ static const iconMap_t g_icon_map_table[] = {
     {iconID_back, "back"},
     {iconID_lookup, "lookup"},
     {iconID_dictionary_search, "dictionary_search"},
-    {iconID_forward, "forward"}
+    {iconID_forward, "forward"},
+
+    {iconID_rate_a, "rate_a"},
+    {iconID_rate_aa, "rate_aa"},
+    {iconID_rate_aaa, "rate_aaa"}
 };
 
 int tbGetIconNumber(void)

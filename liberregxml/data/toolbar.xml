@@ -408,6 +408,22 @@
             <iconFileName id="3">forward_selected.png</iconFileName>
         </toolbarIcon>
 
+        <toolbarIcon name="rate_a">
+            <iconFileName id="1">rate_a.png</iconFileName>
+            <iconFileName id="2">rate_a_grey.png</iconFileName>
+            <iconFileName id="3">rate_a_selected.png</iconFileName>
+        </toolbarIcon>
+        <toolbarIcon name="rate_aa">
+            <iconFileName id="1">rate_aa.png</iconFileName>
+            <iconFileName id="2">rate_aa_grey.png</iconFileName>
+            <iconFileName id="3">rate_aa_selected.png</iconFileName>
+        </toolbarIcon>
+        <toolbarIcon name="rate_aaa">
+            <iconFileName id="1">rate_aaa.png</iconFileName>
+            <iconFileName id="2">rate_aaa_grey.png</iconFileName>
+            <iconFileName id="3">rate_aaa_selected.png</iconFileName>
+        </toolbarIcon>
+
     </toolbarIcons>
 
 </iLiadRegistry>

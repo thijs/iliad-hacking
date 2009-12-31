@@ -162,6 +162,12 @@ static void             ctrl_select_listitem(int iconID, gboolean confirm_with_i
 static void             ctrl_listItem_edit(const int* index_tbl, ContentLister* theContentLister);
 static void             ctrl_metadata_editor_close(gboolean bSave);
 static void             ctrl_listItem_delete(const int* index_tbl, ContentLister* theContentLister);
+
+static void ctrl_listItem_rate_a(const int* index_tbl, ContentLister* theContentLister);
+static void ctrl_listItem_rate_aa(const int* index_tbl, ContentLister* theContentLister);
+static void ctrl_listItem_rate_aaa(const int* index_tbl, ContentLister* theContentLister);
+static void ctrl_listItem_rate(const int* index_tbl, ContentLister* theContentLister, int rating);
+
 static gboolean         ctrl_not_create_manifest(const char *path);
 
 static gboolean         ctrl_current_location_is_mobipocket(void);
@@ -633,6 +639,88 @@ static void ctrl_listItem_delete(const int* index_tbl, ContentLister* theContent
         ctrl_scan_content(theContentLister, ctrlScanCurrent, NULL);
     }
 }
+
+
+static void ctrl_listItem_rate_a(const int* index_tbl, ContentLister* theContentLister) {
+  ctrl_listItem_rate(index_tbl, theContentLister, 1);
+}
+static void ctrl_listItem_rate_aa(const int* index_tbl, ContentLister* theContentLister) {
+  ctrl_listItem_rate(index_tbl, theContentLister, 2);
+}
+static void ctrl_listItem_rate_aaa(const int* index_tbl, ContentLister* theContentLister) {
+  ctrl_listItem_rate(index_tbl, theContentLister, 3);
+}
+
+static void ctrl_listItem_rate(const int* index_tbl, ContentLister* theContentLister, int rating) {
+
+    clDisplayItem_t* theItem;
+    int              itemIndex = 0;
+    int              index;
+    const int*       indexPtr;
+    char*            argv[10];
+    int              argc;
+    char*            dir = NULL;
+    char*            cp;
+
+    CL_CONTROLPRINTF("entry: index [%d]", index_tbl[0]);
+
+    for (indexPtr = index_tbl ; *indexPtr >= 0 ; indexPtr++) {
+        index = *indexPtr;
+
+        if (index >= 0  &&  index < theContentLister->itemCount) {
+
+            CL_CURSORPRINTF("index [%d] [%s] itemCount [%d] rating [%d]",
+                            index,
+                            theContentLister->items[index].szFilename,
+                            theContentLister->itemCount,
+                            rating );
+
+            // rating mode: run rating script
+            erbusy_blink();
+            theItem = &theContentLister->items[index];
+
+            // update the stored index value
+            itemIndex = MAX_ITEMS_ON_ONE_PAGE * (theContentLister->currentPage - 1) + index;
+            mdsSetIndex(theContentLister->currentContentType, itemIndex);
+
+            switch (theItem->fit) {
+                    case mdsFitFile:
+                        CL_WARNPRINTF("-- rating file [%s]", theItem->szFilename);
+
+                        dir = alloca( strlen(theItem->szManifest) + 1 );
+                        g_assert(dir != NULL);
+                        strcpy(dir, theItem->szManifest);
+                        cp = strrchr(dir, '/');
+                        if (cp) {
+                            *cp = '\0';
+                            argc = 0;
+                            argv[argc++] = "/home/intent/ratealt";
+                            switch (rating) {
+                              case 1:
+                                argv[argc++] = "1";
+                                break;
+                              case 2:
+                                argv[argc++] = "2";
+                                break;
+                              case 3:
+                                argv[argc++] = "3";
+                                break;
+                            }
+                            argv[argc++] = dir;
+                            argv[argc] = NULL;
+                            g_assert( argc < (sizeof(argv)/sizeof(argv[0])) );
+                            fork_exec(argc, argv);
+                        }
+                        break;
+
+                    default:
+                        CL_ERRORPRINTF("-- unknown fit [%d] item [%s]", theItem->fit, theItem->szFilename);
+                        break;
+            }
+        }
+    }
+}
+
 
 void ctrl_listItem_clicked(int index, gpointer data)
 {
@@ -1225,11 +1313,19 @@ static void ctrl_display_item_view(ContentLister * theContentLister)
                 {
                     toolbar_setIconState(iconID_search,   iconState_grey  );
                     toolbar_setIconState(iconID_sort,     iconState_grey  );
+
+                    toolbar_setIconState(iconID_rate_a,   iconState_grey  );
+                    toolbar_setIconState(iconID_rate_aa,  iconState_grey  );
+                    toolbar_setIconState(iconID_rate_aaa, iconState_grey  );
                 }
                 else
                 {
                     toolbar_setIconState(iconID_search,   iconState_normal);
                     toolbar_setIconState(iconID_sort,     iconState_normal);
+
+                    toolbar_setIconState(iconID_rate_a,   iconState_normal);
+                    toolbar_setIconState(iconID_rate_aa,  iconState_normal);
+                    toolbar_setIconState(iconID_rate_aaa, iconState_normal);
                 }
                 
                 toolbar_enableUpdate();
@@ -1244,6 +1340,11 @@ static void ctrl_display_item_view(ContentLister * theContentLister)
                 toolbar_setIconState(iconID_share,    iconState_grey);
                 toolbar_setIconState(iconID_tagging,  iconState_grey);
                 toolbar_setIconState(iconID_trashcan, iconState_grey);
+
+                toolbar_setIconState(iconID_rate_a,   iconState_grey  );
+                toolbar_setIconState(iconID_rate_aa,  iconState_grey  );
+                toolbar_setIconState(iconID_rate_aaa, iconState_grey  );
+
                 toolbar_enableUpdate();
                 break;
 
@@ -1261,6 +1362,11 @@ static void ctrl_display_item_view(ContentLister * theContentLister)
                 }
                 toolbar_setIconState(iconID_sort,        iconState_grey);
                 toolbar_setIconState(iconID_share,       iconState_grey  );
+
+                toolbar_setIconState(iconID_rate_a,   iconState_grey  );
+                toolbar_setIconState(iconID_rate_aa,  iconState_grey  );
+                toolbar_setIconState(iconID_rate_aaa, iconState_grey  );
+
                 toolbar_enableUpdate();
                 break;
 
@@ -1272,6 +1378,11 @@ static void ctrl_display_item_view(ContentLister * theContentLister)
                 toolbar_setIconState(iconID_share,    iconState_grey);
                 toolbar_setIconState(iconID_tagging,  iconState_grey);
                 toolbar_setIconState(iconID_trashcan, iconState_grey);
+
+                toolbar_setIconState(iconID_rate_a,   iconState_grey  );
+                toolbar_setIconState(iconID_rate_aa,  iconState_grey  );
+                toolbar_setIconState(iconID_rate_aaa, iconState_grey  );
+
                 toolbar_enableUpdate();
         }
 
@@ -2258,6 +2369,10 @@ void listerShowErrorScreen(ctrlErrorType_e errorType)
         toolbar_setIconState(iconID_tagging,  iconState_grey);
         toolbar_setIconState(iconID_trashcan, iconState_grey);
 
+        toolbar_setIconState(iconID_rate_a,   iconState_grey  );
+        toolbar_setIconState(iconID_rate_aa,  iconState_grey  );
+        toolbar_setIconState(iconID_rate_aaa, iconState_grey  );
+
         // hide keyboard
         ctrl_hide_keyboard(iconState_grey);
         toolbar_enableUpdate();
@@ -2462,6 +2577,10 @@ static void ctrl_select_stop(gboolean restore_toolbar)
                 toolbar_setIconState(iconID_share,       iconState_grey);
                 toolbar_setIconState(iconID_tagging,     iconState_grey);
                 toolbar_setIconState(iconID_trashcan,    iconState_grey);
+
+                toolbar_setIconState(iconID_rate_a,   iconState_grey  );
+                toolbar_setIconState(iconID_rate_aa,  iconState_grey  );
+                toolbar_setIconState(iconID_rate_aaa, iconState_grey  );
             }
             else
             {
@@ -2472,6 +2591,10 @@ static void ctrl_select_stop(gboolean restore_toolbar)
                     toolbar_setIconState(iconID_share,    iconState_grey  );
                     toolbar_setIconState(iconID_tagging,  iconState_grey  );
                     toolbar_setIconState(iconID_trashcan, iconState_normal);
+
+                    toolbar_setIconState(iconID_rate_a,   iconState_grey  );
+                    toolbar_setIconState(iconID_rate_aa,  iconState_grey  );
+                    toolbar_setIconState(iconID_rate_aaa, iconState_grey  );
                 }
                 else
                 {
@@ -2480,6 +2603,10 @@ static void ctrl_select_stop(gboolean restore_toolbar)
                     toolbar_setIconState(iconID_share,    iconState_normal);
                     toolbar_setIconState(iconID_tagging,  iconState_normal);
                     toolbar_setIconState(iconID_trashcan, iconState_normal);
+
+                    toolbar_setIconState(iconID_rate_a,   iconState_normal);
+                    toolbar_setIconState(iconID_rate_aa,  iconState_normal);
+                    toolbar_setIconState(iconID_rate_aaa, iconState_normal);
                 }
             }
             toolbar_enableUpdate();
@@ -2576,6 +2703,11 @@ void ctrl_select_listitem(int iconID, gboolean confirm_with_icon, on_item_select
     toolbar_setIconState(iconID_share,    iconState_grey);
     toolbar_setIconState(iconID_tagging,  iconState_grey);
     toolbar_setIconState(iconID_trashcan, iconState_grey);
+
+    toolbar_setIconState(iconID_rate_a,   iconState_grey);
+    toolbar_setIconState(iconID_rate_aa,  iconState_grey);
+    toolbar_setIconState(iconID_rate_aaa, iconState_grey);
+
     toolbar_setIconState(iconID, iconState_selected);
     toolbar_enableUpdate();
     
@@ -2692,6 +2824,16 @@ void ctrl_on_icon_clicked(int iconID, int iconState)
                 
                 case iconID_trashcan:
                     ctrl_select_listitem(iconID_trashcan, TRUE, ctrl_listItem_delete);
+                    break;
+
+                case iconID_rate_a:
+                    ctrl_select_listitem(iconID_rate_a, TRUE, ctrl_listItem_rate_a);
+                    break;
+                case iconID_rate_aa:
+                    ctrl_select_listitem(iconID_rate_aa, TRUE, ctrl_listItem_rate_aa);
+                    break;
+                case iconID_rate_aaa:
+                    ctrl_select_listitem(iconID_rate_aaa, TRUE, ctrl_listItem_rate_aaa);
                     break;
 
                 default:

@@ -123,6 +123,10 @@ typedef enum
     iconID_lookup,
     iconID_dictionary_search,
     iconID_forward,
+
+    iconID_rate_a,
+    iconID_rate_aa,
+    iconID_rate_aaa,
 } e_iconID_t;
 
 // states in which the icon can appear on screen
