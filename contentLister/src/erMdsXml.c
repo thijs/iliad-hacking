@@ -229,10 +229,12 @@ static void parseYMetadata(xmlDocPtr doc, xmlNodePtr cur, clDisplayItem_t * disp
                     fclose(f);
                   }
 
-                  //*key++;
+                  // cheat
+                  key[0] = '/';
+
                   // This path is not verified and taken relative from
                   // shared folder
-                  nPathLength = g_snprintf(displayItem->clIconURL, ERMDS_MAX_FILENAME_SIZE, "/usr/local/share/contentlister/icons/%s", key);
+                  nPathLength = g_snprintf(displayItem->clIconURL, ERMDS_MAX_FILENAME_SIZE, "/usr/local/share/contentlister/icons%s", key);
 
                   if ((f=fopen("/tmp/iconURL", "w"))) {
                     fprintf(f,"clIconURL [%s]\n", displayItem->clIconURL );
