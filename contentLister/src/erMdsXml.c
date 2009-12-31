@@ -224,7 +224,7 @@ static void parseYMetadata(xmlDocPtr doc, xmlNodePtr cur, clDisplayItem_t * disp
                   *key++;
                   // This path is not verified and taken relative from
                   // shared folder
-                  nPathLength = g_snprintf(displayItem->clIconURL, ERMDS_MAX_FILENAME_SIZE, "%s/%s", "/usr/local/share/contentlister/icons", key);
+                  nPathLength = g_snprintf(displayItem->clIconURL, ERMDS_MAX_FILENAME_SIZE, "/usr/local/share/contentlister/icons/%s", key);
                 }
                 else {
                   // This path is not verified and no absolute paths are allowed
