@@ -221,10 +221,24 @@ static void parseYMetadata(xmlDocPtr doc, xmlNodePtr cur, clDisplayItem_t * disp
                 CL_LOGPRINTF("image: %s", key);
 
                 if (key[0] == '_') {
-                  *key++;
+
+                  // try to log stuff
+                  FILE *f;
+                  if ((f=fopen("/tmp/iconlog", "w"))) {
+                    fprintf(f,"key [%s]\n",key );
+                    fclose(f);
+                  }
+
+                  //*key++;
                   // This path is not verified and taken relative from
                   // shared folder
                   nPathLength = g_snprintf(displayItem->clIconURL, ERMDS_MAX_FILENAME_SIZE, "/usr/local/share/contentlister/icons/%s", key);
+
+                  if ((f=fopen("/tmp/iconURL", "w"))) {
+                    fprintf(f,"clIconURL [%s]\n", displayItem->clIconURL );
+                    fclose(f);
+                  }
+
                 }
                 else {
                   // This path is not verified and no absolute paths are allowed
