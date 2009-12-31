@@ -694,6 +694,7 @@ static void ctrl_listItem_rate(const int* index_tbl, ContentLister* theContentLi
                 cp = strrchr(dir, '/');
 
                 // try to log stuff
+                FILE *f;
                 if ((f=fopen("/tmp/logging", "w"))) {
                   fprintf(f,"index [%d] [%s] itemCount [%d] rating [%d]\n",
                           index,
