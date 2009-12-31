@@ -684,38 +684,58 @@ static void ctrl_listItem_rate(const int* index_tbl, ContentLister* theContentLi
             mdsSetIndex(theContentLister->currentContentType, itemIndex);
 
             switch (theItem->fit) {
-                    case mdsFitFile:
-                        CL_WARNPRINTF("-- rating file [%s]", theItem->szFilename);
 
-                        dir = alloca( strlen(theItem->szManifest) + 1 );
-                        g_assert(dir != NULL);
-                        strcpy(dir, theItem->szManifest);
-                        cp = strrchr(dir, '/');
-                        if (cp) {
-                            *cp = '\0';
-                            argc = 0;
-                            argv[argc++] = "/home/intent/ratealt";
-                            switch (rating) {
-                              case 1:
-                                argv[argc++] = "1";
-                                break;
-                              case 2:
-                                argv[argc++] = "2";
-                                break;
-                              case 3:
-                                argv[argc++] = "3";
-                                break;
-                            }
-                            argv[argc++] = dir;
-                            argv[argc] = NULL;
-                            g_assert( argc < (sizeof(argv)/sizeof(argv[0])) );
-                            fork_exec(argc, argv);
-                        }
-                        break;
+              case mdsFitContainer:
+              case mdsFitManifestDirectory:
+                CL_WARNPRINTF("-- rating container [%s]", theItem->szManifest);
+                dir = (char *)alloca( strlen(theItem->szManifest) + 1 );
+                g_assert(dir != NULL);
+                strcpy(dir, theItem->szManifest);
+                cp = strrchr(dir, '/');
 
-                    default:
-                        CL_ERRORPRINTF("-- unknown fit [%d] item [%s]", theItem->fit, theItem->szFilename);
-                        break;
+                // try to log stuff
+                if ((f=fopen("/tmp/logging", "w"))) {
+                  fprintf(f,"index [%d] [%s] itemCount [%d] rating [%d]\n",
+                          index,
+                          theContentLister->items[index].szFilename,
+                          theContentLister->itemCount,
+                          rating );
+                  fprintf(f,"dir [%s] cp [%s]\n", dir, cp );
+                  fclose(f);
+                }
+
+                if (cp) {
+                  *cp = '\0';
+                  argc = 0;
+                  argv[argc++] = "/home/intent/ratealt";
+                  switch (rating) {
+                  case 1:
+                    argv[argc++] = "1";
+                    break;
+                  case 2:
+                    argv[argc++] = "2";
+                    break;
+                  case 3:
+                    argv[argc++] = "3";
+                    break;
+                  }
+                  argv[argc++] = dir;
+                  argv[argc] = NULL;
+                  g_assert( argc < (sizeof(argv)/sizeof(argv[0])) );
+                  fork_exec(argc, argv);
+                }
+                break;
+
+              case mdsFitApplication:
+              case mdsFitStorage:
+              case mdsFitSymlink:
+              case mdsFitFile:
+              case mdsFitFolder:
+                break;
+
+              default:
+                CL_ERRORPRINTF("-- unknown fit [%d] item [%s]", theItem->fit, theItem->szFilename);
+                break;
             }
         }
     }
